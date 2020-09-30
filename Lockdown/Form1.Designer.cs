@@ -31,13 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
-            this.NavigationPanel = new System.Windows.Forms.Panel();
             this.FormControlPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.MinimizeLabel = new System.Windows.Forms.Label();
+            this.ExitLabel = new System.Windows.Forms.Label();
+            this.NavigationPanel = new System.Windows.Forms.Panel();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
-            this.NavigationPanel.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,8 +46,8 @@
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(244, 440);
-            this.LogoPanel.TabIndex = 0;
+            this.LogoPanel.Size = new System.Drawing.Size(200, 440);
+            this.LogoPanel.TabIndex = 1;
             // 
             // LogoImgBox
             // 
@@ -56,52 +55,53 @@
             this.LogoImgBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoImgBox.Image")));
             this.LogoImgBox.Location = new System.Drawing.Point(0, 0);
             this.LogoImgBox.Name = "LogoImgBox";
-            this.LogoImgBox.Size = new System.Drawing.Size(244, 440);
+            this.LogoImgBox.Size = new System.Drawing.Size(200, 440);
             this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.LogoImgBox.TabIndex = 0;
             this.LogoImgBox.TabStop = false;
-            // 
-            // NavigationPanel
-            // 
-            this.NavigationPanel.Controls.Add(this.FormControlPanel);
-            this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavigationPanel.Location = new System.Drawing.Point(244, 0);
-            this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(490, 440);
-            this.NavigationPanel.TabIndex = 1;
+            this.LogoImgBox.Click += new System.EventHandler(this.LogoImgBox_Click);
             // 
             // FormControlPanel
             // 
-            this.FormControlPanel.Controls.Add(this.label2);
-            this.FormControlPanel.Controls.Add(this.label1);
+            this.FormControlPanel.Controls.Add(this.MinimizeLabel);
+            this.FormControlPanel.Controls.Add(this.ExitLabel);
             this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FormControlPanel.Location = new System.Drawing.Point(0, 0);
+            this.FormControlPanel.Location = new System.Drawing.Point(200, 0);
             this.FormControlPanel.Name = "FormControlPanel";
-            this.FormControlPanel.Size = new System.Drawing.Size(490, 29);
+            this.FormControlPanel.Size = new System.Drawing.Size(534, 29);
             this.FormControlPanel.TabIndex = 0;
             // 
-            // label1
+            // MinimizeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(469, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.MinimizeLabel.AutoSize = true;
+            this.MinimizeLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimizeLabel.Location = new System.Drawing.Point(497, 0);
+            this.MinimizeLabel.Name = "MinimizeLabel";
+            this.MinimizeLabel.Size = new System.Drawing.Size(16, 20);
+            this.MinimizeLabel.TabIndex = 1;
+            this.MinimizeLabel.Text = "–";
+            this.MinimizeLabel.Click += new System.EventHandler(this.MinimizeLabel_Click);
             // 
-            // label2
+            // ExitLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(453, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "–";
+            this.ExitLabel.AutoSize = true;
+            this.ExitLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitLabel.Location = new System.Drawing.Point(513, 0);
+            this.ExitLabel.Name = "ExitLabel";
+            this.ExitLabel.Size = new System.Drawing.Size(21, 20);
+            this.ExitLabel.TabIndex = 0;
+            this.ExitLabel.Text = "X";
+            this.ExitLabel.Click += new System.EventHandler(this.exitLabelClick);
+            // 
+            // NavigationPanel
+            // 
+            this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NavigationPanel.Location = new System.Drawing.Point(200, 29);
+            this.NavigationPanel.Name = "NavigationPanel";
+            this.NavigationPanel.Size = new System.Drawing.Size(534, 411);
+            this.NavigationPanel.TabIndex = 2;
             // 
             // Form1
             // 
@@ -109,6 +109,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(33)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(734, 440);
             this.Controls.Add(this.NavigationPanel);
+            this.Controls.Add(this.FormControlPanel);
             this.Controls.Add(this.LogoPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -117,7 +118,6 @@
             this.Text = "Form1";
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
-            this.NavigationPanel.ResumeLayout(false);
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -125,13 +125,12 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Panel LogoPanel;
+        private System.Windows.Forms.Panel FormControlPanel;
+        private System.Windows.Forms.Label ExitLabel;
+        private System.Windows.Forms.Label MinimizeLabel;
         private System.Windows.Forms.PictureBox LogoImgBox;
         private System.Windows.Forms.Panel NavigationPanel;
-        private System.Windows.Forms.Panel FormControlPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -17,9 +17,19 @@ namespace Lockdown
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void exitLabelClick(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LogoImgBox_Click(object sender, EventArgs e)
+        {
+            //Starts default profile lock
+        }
+
+        private void MinimizeLabel_Click(object sender, EventArgs e)
+        {
+            //Minimizes the window
         }
     }
 }
