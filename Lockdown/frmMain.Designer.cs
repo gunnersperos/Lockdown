@@ -108,6 +108,7 @@
             // 
             // btnProfiles
             // 
+            this.btnProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfiles.ForeColor = System.Drawing.SystemColors.WindowText;
             this.btnProfiles.Location = new System.Drawing.Point(6, 6);
@@ -115,23 +116,23 @@
             this.btnProfiles.Size = new System.Drawing.Size(516, 90);
             this.btnProfiles.TabIndex = 0;
             this.btnProfiles.Text = "Profiles";
-            this.btnProfiles.UseVisualStyleBackColor = true;
+            this.btnProfiles.UseVisualStyleBackColor = false;
             this.btnProfiles.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(734, 440);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.FormControlPanel);
             this.Controls.Add(this.LogoPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);

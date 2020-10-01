@@ -50,12 +50,13 @@
             // 
             this.NavigationPanel.Controls.Add(this.btnUnblockApp);
             this.NavigationPanel.Controls.Add(this.btnAddBlockedApp);
+            this.NavigationPanel.Controls.Add(this.FormControlPanel);
             this.NavigationPanel.Controls.Add(this.listBlockedApps);
             this.NavigationPanel.Controls.Add(this.cbProfiles);
             this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NavigationPanel.Location = new System.Drawing.Point(200, 29);
+            this.NavigationPanel.Location = new System.Drawing.Point(200, 0);
             this.NavigationPanel.Name = "NavigationPanel";
-            this.NavigationPanel.Size = new System.Drawing.Size(600, 421);
+            this.NavigationPanel.Size = new System.Drawing.Size(544, 440);
             this.NavigationPanel.TabIndex = 5;
             // 
             // btnUnblockApp
@@ -98,18 +99,18 @@
             // 
             this.LogoPanel.Controls.Add(this.LogoImgBox);
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LogoPanel.Location = new System.Drawing.Point(0, 29);
+            this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(200, 421);
+            this.LogoPanel.Size = new System.Drawing.Size(200, 440);
             this.LogoPanel.TabIndex = 4;
             // 
             // LogoImgBox
             // 
-            this.LogoImgBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogoImgBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.LogoImgBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoImgBox.Image")));
             this.LogoImgBox.Location = new System.Drawing.Point(0, 0);
             this.LogoImgBox.Name = "LogoImgBox";
-            this.LogoImgBox.Size = new System.Drawing.Size(200, 421);
+            this.LogoImgBox.Size = new System.Drawing.Size(200, 440);
             this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.LogoImgBox.TabIndex = 0;
             this.LogoImgBox.TabStop = false;
@@ -121,7 +122,7 @@
             this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.FormControlPanel.Location = new System.Drawing.Point(0, 0);
             this.FormControlPanel.Name = "FormControlPanel";
-            this.FormControlPanel.Size = new System.Drawing.Size(800, 29);
+            this.FormControlPanel.Size = new System.Drawing.Size(544, 29);
             this.FormControlPanel.TabIndex = 3;
             // 
             // MinimizeLabel
@@ -129,7 +130,7 @@
             this.MinimizeLabel.AutoSize = true;
             this.MinimizeLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.MinimizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinimizeLabel.Location = new System.Drawing.Point(763, 0);
+            this.MinimizeLabel.Location = new System.Drawing.Point(507, 0);
             this.MinimizeLabel.Name = "MinimizeLabel";
             this.MinimizeLabel.Size = new System.Drawing.Size(16, 20);
             this.MinimizeLabel.TabIndex = 1;
@@ -140,7 +141,7 @@
             this.ExitLabel.AutoSize = true;
             this.ExitLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.ExitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitLabel.Location = new System.Drawing.Point(779, 0);
+            this.ExitLabel.Location = new System.Drawing.Point(523, 0);
             this.ExitLabel.Name = "ExitLabel";
             this.ExitLabel.Size = new System.Drawing.Size(21, 20);
             this.ExitLabel.TabIndex = 0;
@@ -156,11 +157,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.ClientSize = new System.Drawing.Size(744, 440);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.LogoPanel);
-            this.Controls.Add(this.FormControlPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProfiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
