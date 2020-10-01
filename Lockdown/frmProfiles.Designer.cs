@@ -165,7 +165,6 @@
             this.Name = "frmProfiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProfiles";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.NavigationPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
