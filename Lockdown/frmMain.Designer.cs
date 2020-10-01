@@ -1,6 +1,6 @@
 ﻿namespace Lockdown
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.MinimizeLabel = new System.Windows.Forms.Label();
             this.ExitLabel = new System.Windows.Forms.Label();
             this.NavigationPanel = new System.Windows.Forms.Panel();
+            this.btnProfiles = new System.Windows.Forms.Button();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
+            this.NavigationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -97,29 +99,44 @@
             // 
             // NavigationPanel
             // 
+            this.NavigationPanel.Controls.Add(this.btnProfiles);
             this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationPanel.Location = new System.Drawing.Point(200, 29);
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(534, 411);
             this.NavigationPanel.TabIndex = 2;
             // 
-            // Form1
+            // btnProfiles
+            // 
+            this.btnProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfiles.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnProfiles.Location = new System.Drawing.Point(6, 6);
+            this.btnProfiles.Name = "btnProfiles";
+            this.btnProfiles.Size = new System.Drawing.Size(516, 90);
+            this.btnProfiles.TabIndex = 0;
+            this.btnProfiles.Text = "Profiles";
+            this.btnProfiles.UseVisualStyleBackColor = true;
+            this.btnProfiles.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(33)))), ((int)(((byte)(61)))));
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(734, 440);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.FormControlPanel);
             this.Controls.Add(this.LogoPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
+            this.NavigationPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -131,6 +148,7 @@
         private System.Windows.Forms.Label MinimizeLabel;
         private System.Windows.Forms.PictureBox LogoImgBox;
         private System.Windows.Forms.Panel NavigationPanel;
+        private System.Windows.Forms.Button btnProfiles;
     }
 }
 
