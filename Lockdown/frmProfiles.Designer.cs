@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfiles));
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.btnStartProfile = new System.Windows.Forms.Button();
-            this.ProfilePanel = new System.Windows.Forms.Panel();
+            this.panelProfile = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BlockedWebPanel = new System.Windows.Forms.Panel();
             this.listBlockedWebsites = new System.Windows.Forms.ListBox();
@@ -49,7 +49,7 @@
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.NavigationPanel.SuspendLayout();
-            this.ProfilePanel.SuspendLayout();
+            this.panelProfile.SuspendLayout();
             this.BlockedWebPanel.SuspendLayout();
             this.BlockedAppPanel.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
@@ -60,7 +60,7 @@
             // NavigationPanel
             // 
             this.NavigationPanel.Controls.Add(this.btnStartProfile);
-            this.NavigationPanel.Controls.Add(this.ProfilePanel);
+            this.NavigationPanel.Controls.Add(this.panelProfile);
             this.NavigationPanel.Controls.Add(this.BlockedWebPanel);
             this.NavigationPanel.Controls.Add(this.BlockedAppPanel);
             this.NavigationPanel.Controls.Add(this.FormControlPanel);
@@ -88,14 +88,14 @@
             this.btnStartProfile.UseVisualStyleBackColor = false;
             this.btnStartProfile.Click += new System.EventHandler(this.btnStartProfile_Click);
             // 
-            // ProfilePanel
+            // panelProfile
             // 
-            this.ProfilePanel.Controls.Add(this.label1);
-            this.ProfilePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ProfilePanel.Location = new System.Drawing.Point(0, 29);
-            this.ProfilePanel.Name = "ProfilePanel";
-            this.ProfilePanel.Size = new System.Drawing.Size(530, 94);
-            this.ProfilePanel.TabIndex = 5;
+            this.panelProfile.Controls.Add(this.label1);
+            this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelProfile.Location = new System.Drawing.Point(0, 29);
+            this.panelProfile.Name = "panelProfile";
+            this.panelProfile.Size = new System.Drawing.Size(530, 94);
+            this.panelProfile.TabIndex = 5;
             // 
             // label1
             // 
@@ -313,8 +313,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProfiles";
             this.NavigationPanel.ResumeLayout(false);
-            this.ProfilePanel.ResumeLayout(false);
-            this.ProfilePanel.PerformLayout();
+            this.panelProfile.ResumeLayout(false);
+            this.panelProfile.PerformLayout();
             this.BlockedWebPanel.ResumeLayout(false);
             this.BlockedAppPanel.ResumeLayout(false);
             this.FormControlPanel.ResumeLayout(false);
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Button btnUnblockApp;
         private System.Windows.Forms.Button btnAddBlockedApp;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel ProfilePanel;
+        private System.Windows.Forms.Panel panelProfile;
         private System.Windows.Forms.Panel BlockedWebPanel;
         private System.Windows.Forms.ListBox listBlockedWebsites;
         private System.Windows.Forms.Button btnUnblockWebsite;

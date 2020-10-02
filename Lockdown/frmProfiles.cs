@@ -12,7 +12,7 @@ using System.IO;
 namespace Lockdown
 {
     public partial class frmProfiles : Form
-    {
+    { 
         private const string BLOCKED_APPS_SCRIPT = "C:\\Users\\Gunner\\source\\repos\\Lockdown\\Lockdown\\Resources\\Scripts\\BlockList.ps1";
         public frmProfiles()
         {
@@ -40,17 +40,16 @@ namespace Lockdown
         {
             try
             {
-                
-                string blockedApp = string.Empty;
+                BlockedApp blockedApp = new BlockedApp();
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    blockedApp = openFileDialog1.FileName;
+                    blockedApp.SetPath(openFileDialog1.FileName);
                     using (StreamWriter sw = File.AppendText(BLOCKED_APPS_SCRIPT))
                     {
-                        sw.WriteLine($"ICACLS \"{blockedApp}\" /deny Everyone:RX");
+                        sw.WriteLine($"ICACLS \"{blockedApp.appPath}\" /deny Everyone:RX");
                     }
                 }
-                return blockedApp;
+                return blockedApp.appName;
             }
             catch (Exception ex)
             {
@@ -67,6 +66,8 @@ namespace Lockdown
         private void btnUnblockApp_Click(object sender, EventArgs e)
         {
             //Removes app from list
+            listBlockedApps.Items.RemoveAt(listBlockedApps.SelectedIndex);
+
         }
 
         private void btnUnblockWebsite_Click(object sender, EventArgs e)

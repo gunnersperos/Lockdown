@@ -13,7 +13,6 @@ namespace Lockdown
 {
     public partial class frmMain : Form
     {
-        private bool _mouseDown = false;
         private const string BLOCKED_APPS_SCRIPT = @"C:\Users\Gunner\source\repos\Lockdown\Lockdown\Resources\Scripts\BlockList.ps1";
         public frmMain()
         {
@@ -48,8 +47,6 @@ namespace Lockdown
                 Process.Start(runScript);
             }
         }
-
-        
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
