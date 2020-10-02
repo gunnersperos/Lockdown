@@ -28,19 +28,6 @@ namespace Lockdown
             this.Close();
         }
 
-        private void lblMaxMinForm_Click(object sender, EventArgs e)
-        {
-            //if form is maxed, make it normal, else, maximize it
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
         private void lblMinimize_Click(object sender, EventArgs e)
         {
             //Minimizes the window
