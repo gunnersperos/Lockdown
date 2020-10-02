@@ -13,16 +13,87 @@ namespace Lockdown
 {
     public partial class frmMain : Form
     {
+        private bool _mouseDown = false;
         private const string BLOCKED_APPS_SCRIPT = @"C:\Users\Gunner\source\repos\Lockdown\Lockdown\Resources\Scripts\BlockList.ps1";
         public frmMain()
         {
             InitializeComponent();
+            //this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
-        private void exitLabelClick(object sender, EventArgs e)
+        #region Resize Form (all of this is not working yet)
+        //found this code in a YouTube video
+
+        //
+
+
+
+        private void lblResize_MouseDown(object sender, MouseEventArgs e)
+        {
+            _mouseDown = true;
+            this.MouseMove += new MouseEventHandler(lblResize_MouseMove);
+            //ResizeWindow(false);
+            
+        }
+
+        private void lblResize_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point currPos = MousePosition;
+            this.Width = currPos.X - this.Location.X;
+            this.Height = currPos.Y - this.Location.Y;
+            
+
+        }
+
+        private void lblResize_MouseUp(object sender, MouseEventArgs e)
+        {
+            _mouseDown = false;
+            //ResizeWindow(true);
+        }
+
+        private void ResizeWindow(bool endLoop)
+        {
+            while (true)
+            {
+                Point currPos = MousePosition;
+                this.Width = currPos.X - this.Location.X;
+                this.Height = currPos.Y - this.Location.Y;
+                if (endLoop)
+                {
+                    return;
+                }
+            }
+        }
+
+
+
+        #endregion
+
+        #region Title Bar Controls
+        private void lblExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        private void lblMinimize_Click(object sender, EventArgs e)
+        {
+            //Minimizes the window
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblMaxMinForm_Click(object sender, EventArgs e)
+        {
+            //if form is maxed, make it normal, else, maximize it
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+        #endregion
+
 
         private void LogoImgBox_Click(object sender, EventArgs e)
         {
@@ -39,10 +110,7 @@ namespace Lockdown
             }
         }
 
-        private void MinimizeLabel_Click(object sender, EventArgs e)
-        {
-            //Minimizes the window
-        }
+        
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
@@ -57,5 +125,8 @@ namespace Lockdown
                 throw ex;
             }
         }
+
+        
+
     }
 }

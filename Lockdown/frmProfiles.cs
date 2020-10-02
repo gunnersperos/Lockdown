@@ -22,10 +22,32 @@ namespace Lockdown
             cbProfiles.Items.Add(profile1);
         }
 
-        private void ExitLabel_Click(object sender, EventArgs e)
+        #region Title Bar Controls
+        private void lblExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void lblMaxMinForm_Click(object sender, EventArgs e)
+        {
+            //if form is maxed, make it normal, else, maximize it
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void lblMinimize_Click(object sender, EventArgs e)
+        {
+            //Minimizes the window
+            this.WindowState = FormWindowState.Minimized;
+        }
+        #endregion
+
 
         private string AddBlockedApp()
         {
@@ -54,5 +76,7 @@ namespace Lockdown
         {
             listBlockedApps.Items.Add(AddBlockedApp());
         }
+
+        
     }
 }
