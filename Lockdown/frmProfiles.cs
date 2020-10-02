@@ -78,5 +78,10 @@ namespace Lockdown
         {
             //Adds website to list
         }
+
+        private void btnStartProfile_Click(object sender, EventArgs e)
+        {
+            //Runs script using the lists in the profile
+        }
     }
 }

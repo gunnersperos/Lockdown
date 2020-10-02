@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfiles));
             this.NavigationPanel = new System.Windows.Forms.Panel();
+            this.btnStartProfile = new System.Windows.Forms.Button();
             this.ProfilePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BlockedWebPanel = new System.Windows.Forms.Panel();
@@ -58,6 +59,7 @@
             // 
             // NavigationPanel
             // 
+            this.NavigationPanel.Controls.Add(this.btnStartProfile);
             this.NavigationPanel.Controls.Add(this.ProfilePanel);
             this.NavigationPanel.Controls.Add(this.BlockedWebPanel);
             this.NavigationPanel.Controls.Add(this.BlockedAppPanel);
@@ -68,6 +70,23 @@
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(530, 440);
             this.NavigationPanel.TabIndex = 5;
+            // 
+            // btnStartProfile
+            // 
+            this.btnStartProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnStartProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnStartProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnStartProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnStartProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStartProfile.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartProfile.ForeColor = System.Drawing.Color.White;
+            this.btnStartProfile.Location = new System.Drawing.Point(438, 402);
+            this.btnStartProfile.Name = "btnStartProfile";
+            this.btnStartProfile.Size = new System.Drawing.Size(88, 32);
+            this.btnStartProfile.TabIndex = 6;
+            this.btnStartProfile.Text = "Start Profile";
+            this.btnStartProfile.UseVisualStyleBackColor = false;
+            this.btnStartProfile.Click += new System.EventHandler(this.btnStartProfile_Click);
             // 
             // ProfilePanel
             // 
@@ -82,22 +101,23 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 38F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Impact", 38F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(502, 59);
+            this.label1.Size = new System.Drawing.Size(469, 63);
             this.label1.TabIndex = 6;
             this.label1.Text = "Profile UI will go here";
             // 
             // BlockedWebPanel
             // 
+            this.BlockedWebPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BlockedWebPanel.Controls.Add(this.listBlockedWebsites);
             this.BlockedWebPanel.Controls.Add(this.btnUnblockWebsite);
             this.BlockedWebPanel.Controls.Add(this.btnAddBlockedWebsite);
             this.BlockedWebPanel.Location = new System.Drawing.Point(266, 129);
             this.BlockedWebPanel.Name = "BlockedWebPanel";
-            this.BlockedWebPanel.Size = new System.Drawing.Size(260, 308);
+            this.BlockedWebPanel.Size = new System.Drawing.Size(260, 267);
             this.BlockedWebPanel.TabIndex = 5;
             // 
             // listBlockedWebsites
@@ -105,11 +125,13 @@
             this.listBlockedWebsites.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
             this.listBlockedWebsites.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBlockedWebsites.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listBlockedWebsites.Font = new System.Drawing.Font("Impact", 10F);
             this.listBlockedWebsites.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.listBlockedWebsites.FormattingEnabled = true;
+            this.listBlockedWebsites.ItemHeight = 17;
             this.listBlockedWebsites.Location = new System.Drawing.Point(0, 0);
             this.listBlockedWebsites.Name = "listBlockedWebsites";
-            this.listBlockedWebsites.Size = new System.Drawing.Size(260, 223);
+            this.listBlockedWebsites.Size = new System.Drawing.Size(260, 189);
             this.listBlockedWebsites.TabIndex = 1;
             // 
             // btnUnblockWebsite
@@ -120,8 +142,9 @@
             this.btnUnblockWebsite.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnUnblockWebsite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnUnblockWebsite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnblockWebsite.Font = new System.Drawing.Font("Impact", 10F);
             this.btnUnblockWebsite.ForeColor = System.Drawing.Color.White;
-            this.btnUnblockWebsite.Location = new System.Drawing.Point(0, 250);
+            this.btnUnblockWebsite.Location = new System.Drawing.Point(0, 209);
             this.btnUnblockWebsite.Name = "btnUnblockWebsite";
             this.btnUnblockWebsite.Size = new System.Drawing.Size(260, 29);
             this.btnUnblockWebsite.TabIndex = 3;
@@ -137,8 +160,9 @@
             this.btnAddBlockedWebsite.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnAddBlockedWebsite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnAddBlockedWebsite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddBlockedWebsite.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBlockedWebsite.ForeColor = System.Drawing.Color.White;
-            this.btnAddBlockedWebsite.Location = new System.Drawing.Point(0, 279);
+            this.btnAddBlockedWebsite.Location = new System.Drawing.Point(0, 238);
             this.btnAddBlockedWebsite.Name = "btnAddBlockedWebsite";
             this.btnAddBlockedWebsite.Size = new System.Drawing.Size(260, 29);
             this.btnAddBlockedWebsite.TabIndex = 2;
@@ -153,7 +177,7 @@
             this.BlockedAppPanel.Controls.Add(this.btnAddBlockedApp);
             this.BlockedAppPanel.Location = new System.Drawing.Point(0, 129);
             this.BlockedAppPanel.Name = "BlockedAppPanel";
-            this.BlockedAppPanel.Size = new System.Drawing.Size(260, 308);
+            this.BlockedAppPanel.Size = new System.Drawing.Size(260, 267);
             this.BlockedAppPanel.TabIndex = 4;
             // 
             // listBlockedApps
@@ -161,11 +185,13 @@
             this.listBlockedApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
             this.listBlockedApps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBlockedApps.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listBlockedApps.Font = new System.Drawing.Font("Impact", 10F);
             this.listBlockedApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.listBlockedApps.FormattingEnabled = true;
+            this.listBlockedApps.ItemHeight = 17;
             this.listBlockedApps.Location = new System.Drawing.Point(0, 0);
             this.listBlockedApps.Name = "listBlockedApps";
-            this.listBlockedApps.Size = new System.Drawing.Size(260, 223);
+            this.listBlockedApps.Size = new System.Drawing.Size(260, 189);
             this.listBlockedApps.TabIndex = 1;
             // 
             // btnUnblockApp
@@ -176,8 +202,9 @@
             this.btnUnblockApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnUnblockApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnUnblockApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnblockApp.Font = new System.Drawing.Font("Impact", 10F);
             this.btnUnblockApp.ForeColor = System.Drawing.Color.White;
-            this.btnUnblockApp.Location = new System.Drawing.Point(0, 250);
+            this.btnUnblockApp.Location = new System.Drawing.Point(0, 209);
             this.btnUnblockApp.Name = "btnUnblockApp";
             this.btnUnblockApp.Size = new System.Drawing.Size(260, 29);
             this.btnUnblockApp.TabIndex = 2;
@@ -193,8 +220,9 @@
             this.btnAddBlockedApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnAddBlockedApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnAddBlockedApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddBlockedApp.Font = new System.Drawing.Font("Impact", 10F);
             this.btnAddBlockedApp.ForeColor = System.Drawing.Color.White;
-            this.btnAddBlockedApp.Location = new System.Drawing.Point(0, 279);
+            this.btnAddBlockedApp.Location = new System.Drawing.Point(0, 238);
             this.btnAddBlockedApp.Name = "btnAddBlockedApp";
             this.btnAddBlockedApp.Size = new System.Drawing.Size(260, 29);
             this.btnAddBlockedApp.TabIndex = 3;
@@ -317,5 +345,6 @@
         private System.Windows.Forms.Button btnAddBlockedWebsite;
         private System.Windows.Forms.Panel BlockedAppPanel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnStartProfile;
     }
 }

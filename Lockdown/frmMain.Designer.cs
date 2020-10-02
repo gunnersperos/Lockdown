@@ -120,7 +120,7 @@
             this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Font = new System.Drawing.Font("Impact", 22F);
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Location = new System.Drawing.Point(6, 294);
             this.btnSettings.Name = "btnSettings";
@@ -138,7 +138,7 @@
             this.btnReminders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnReminders.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnReminders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReminders.Font = new System.Drawing.Font("Impact", 22F);
             this.btnReminders.ForeColor = System.Drawing.Color.White;
             this.btnReminders.Location = new System.Drawing.Point(6, 198);
             this.btnReminders.Name = "btnReminders";
@@ -156,7 +156,7 @@
             this.btnScheduler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnScheduler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnScheduler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnScheduler.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduler.Font = new System.Drawing.Font("Impact", 22F);
             this.btnScheduler.ForeColor = System.Drawing.Color.White;
             this.btnScheduler.Location = new System.Drawing.Point(6, 102);
             this.btnScheduler.Name = "btnScheduler";
@@ -174,7 +174,7 @@
             this.btnProfiles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
             this.btnProfiles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfiles.Font = new System.Drawing.Font("Impact", 22F);
             this.btnProfiles.ForeColor = System.Drawing.Color.White;
             this.btnProfiles.Location = new System.Drawing.Point(6, 6);
             this.btnProfiles.Name = "btnProfiles";
