@@ -137,9 +137,14 @@
             // 
             // btnProfiles
             // 
-            this.btnProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnProfiles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnProfiles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnProfiles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnProfiles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfiles.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnProfiles.ForeColor = System.Drawing.Color.White;
             this.btnProfiles.Location = new System.Drawing.Point(6, 6);
             this.btnProfiles.Name = "btnProfiles";
             this.btnProfiles.Size = new System.Drawing.Size(516, 90);
@@ -151,7 +156,7 @@
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(730, 440);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.FormControlPanel);

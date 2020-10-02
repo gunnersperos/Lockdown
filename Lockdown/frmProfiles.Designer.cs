@@ -33,6 +33,7 @@
             this.btnUnblockApp = new System.Windows.Forms.Button();
             this.btnAddBlockedApp = new System.Windows.Forms.Button();
             this.FormControlPanel = new System.Windows.Forms.Panel();
+            this.lblMinMaxForm = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.listBlockedApps = new System.Windows.Forms.ListBox();
@@ -40,7 +41,6 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lblMinMaxForm = new System.Windows.Forms.Label();
             this.NavigationPanel.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
@@ -62,21 +62,33 @@
             // 
             // btnUnblockApp
             // 
+            this.btnUnblockApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnUnblockApp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnUnblockApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnUnblockApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnUnblockApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnblockApp.ForeColor = System.Drawing.Color.White;
             this.btnUnblockApp.Location = new System.Drawing.Point(7, 216);
             this.btnUnblockApp.Name = "btnUnblockApp";
             this.btnUnblockApp.Size = new System.Drawing.Size(196, 23);
             this.btnUnblockApp.TabIndex = 3;
             this.btnUnblockApp.Text = "Unblock App";
-            this.btnUnblockApp.UseVisualStyleBackColor = true;
+            this.btnUnblockApp.UseVisualStyleBackColor = false;
             // 
             // btnAddBlockedApp
             // 
+            this.btnAddBlockedApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnAddBlockedApp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnAddBlockedApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnAddBlockedApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnAddBlockedApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddBlockedApp.ForeColor = System.Drawing.Color.White;
             this.btnAddBlockedApp.Location = new System.Drawing.Point(7, 187);
             this.btnAddBlockedApp.Name = "btnAddBlockedApp";
             this.btnAddBlockedApp.Size = new System.Drawing.Size(196, 23);
             this.btnAddBlockedApp.TabIndex = 2;
             this.btnAddBlockedApp.Text = "Block App";
-            this.btnAddBlockedApp.UseVisualStyleBackColor = true;
+            this.btnAddBlockedApp.UseVisualStyleBackColor = false;
             this.btnAddBlockedApp.Click += new System.EventHandler(this.btnAddBlockedApp_Click);
             // 
             // FormControlPanel
@@ -90,11 +102,26 @@
             this.FormControlPanel.Size = new System.Drawing.Size(530, 29);
             this.FormControlPanel.TabIndex = 3;
             // 
+            // lblMinMaxForm
+            // 
+            this.lblMinMaxForm.AutoSize = true;
+            this.lblMinMaxForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblMinMaxForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinMaxForm.ForeColor = System.Drawing.Color.White;
+            this.lblMinMaxForm.Location = new System.Drawing.Point(462, 0);
+            this.lblMinMaxForm.Name = "lblMinMaxForm";
+            this.lblMinMaxForm.Size = new System.Drawing.Size(31, 31);
+            this.lblMinMaxForm.TabIndex = 2;
+            this.lblMinMaxForm.Text = "□";
+            this.lblMinMaxForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblMinMaxForm.Click += new System.EventHandler(this.lblMaxMinForm_Click);
+            // 
             // lblMinimize
             // 
             this.lblMinimize.AutoSize = true;
             this.lblMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimize.ForeColor = System.Drawing.Color.White;
             this.lblMinimize.Location = new System.Drawing.Point(493, 0);
             this.lblMinimize.Name = "lblMinimize";
             this.lblMinimize.Size = new System.Drawing.Size(16, 20);
@@ -107,6 +134,7 @@
             this.lblExit.AutoSize = true;
             this.lblExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.White;
             this.lblExit.Location = new System.Drawing.Point(509, 0);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(21, 20);
@@ -116,10 +144,13 @@
             // 
             // listBlockedApps
             // 
+            this.listBlockedApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.listBlockedApps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBlockedApps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.listBlockedApps.FormattingEnabled = true;
             this.listBlockedApps.Location = new System.Drawing.Point(6, 33);
             this.listBlockedApps.Name = "listBlockedApps";
-            this.listBlockedApps.Size = new System.Drawing.Size(197, 147);
+            this.listBlockedApps.Size = new System.Drawing.Size(197, 145);
             this.listBlockedApps.TabIndex = 1;
             // 
             // cbProfiles
@@ -156,24 +187,11 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.ReadOnlyChecked = true;
             // 
-            // lblMinMaxForm
-            // 
-            this.lblMinMaxForm.AutoSize = true;
-            this.lblMinMaxForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblMinMaxForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinMaxForm.Location = new System.Drawing.Point(462, 0);
-            this.lblMinMaxForm.Name = "lblMinMaxForm";
-            this.lblMinMaxForm.Size = new System.Drawing.Size(31, 31);
-            this.lblMinMaxForm.TabIndex = 2;
-            this.lblMinMaxForm.Text = "□";
-            this.lblMinMaxForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblMinMaxForm.Click += new System.EventHandler(this.lblMaxMinForm_Click);
-            // 
             // frmProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(730, 440);
             this.Controls.Add(this.NavigationPanel);
             this.Controls.Add(this.LogoPanel);
