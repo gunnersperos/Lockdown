@@ -126,7 +126,19 @@ namespace Lockdown
             }
         }
 
-        
+        private void btnScheduler_Click(object sender, EventArgs e)
+        {
+            //Opens Scheduler Form
+        }
 
+        private void btnReminders_Click(object sender, EventArgs e)
+        {
+            //Opens Reminders Form
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            //Opens Settings Form
+        }
     }
 }

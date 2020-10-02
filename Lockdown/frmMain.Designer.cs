@@ -32,11 +32,12 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FormControlPanel = new System.Windows.Forms.Panel();
-            this.lblMaxMinForm = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.NavigationPanel = new System.Windows.Forms.Panel();
-            this.lblResize = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnReminders = new System.Windows.Forms.Button();
+            this.btnScheduler = new System.Windows.Forms.Button();
             this.btnProfiles = new System.Windows.Forms.Button();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
@@ -67,7 +68,6 @@
             // 
             // FormControlPanel
             // 
-            this.FormControlPanel.Controls.Add(this.lblMaxMinForm);
             this.FormControlPanel.Controls.Add(this.lblMinimize);
             this.FormControlPanel.Controls.Add(this.lblExit);
             this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,18 +75,6 @@
             this.FormControlPanel.Name = "FormControlPanel";
             this.FormControlPanel.Size = new System.Drawing.Size(530, 29);
             this.FormControlPanel.TabIndex = 0;
-            // 
-            // lblMaxMinForm
-            // 
-            this.lblMaxMinForm.AutoSize = true;
-            this.lblMaxMinForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblMaxMinForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxMinForm.Location = new System.Drawing.Point(463, 0);
-            this.lblMaxMinForm.Name = "lblMaxMinForm";
-            this.lblMaxMinForm.Size = new System.Drawing.Size(30, 31);
-            this.lblMaxMinForm.TabIndex = 2;
-            this.lblMaxMinForm.Text = "□";
-            this.lblMaxMinForm.Click += new System.EventHandler(this.lblMaxMinForm_Click);
             // 
             // lblMinimize
             // 
@@ -114,7 +102,9 @@
             // 
             // NavigationPanel
             // 
-            this.NavigationPanel.Controls.Add(this.lblResize);
+            this.NavigationPanel.Controls.Add(this.btnSettings);
+            this.NavigationPanel.Controls.Add(this.btnReminders);
+            this.NavigationPanel.Controls.Add(this.btnScheduler);
             this.NavigationPanel.Controls.Add(this.btnProfiles);
             this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationPanel.Location = new System.Drawing.Point(200, 29);
@@ -122,18 +112,59 @@
             this.NavigationPanel.Size = new System.Drawing.Size(530, 411);
             this.NavigationPanel.TabIndex = 2;
             // 
-            // lblResize
+            // btnSettings
             // 
-            this.lblResize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblResize.AutoSize = true;
-            this.lblResize.Location = new System.Drawing.Point(515, 397);
-            this.lblResize.Name = "lblResize";
-            this.lblResize.Size = new System.Drawing.Size(16, 13);
-            this.lblResize.TabIndex = 1;
-            this.lblResize.Text = "◢";
-            this.lblResize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblResize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblResize_MouseDown);
-            this.lblResize.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblResize_MouseUp);
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Location = new System.Drawing.Point(6, 294);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(516, 103);
+            this.btnSettings.TabIndex = 4;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnReminders
+            // 
+            this.btnReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnReminders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnReminders.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnReminders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnReminders.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnReminders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReminders.ForeColor = System.Drawing.Color.White;
+            this.btnReminders.Location = new System.Drawing.Point(6, 198);
+            this.btnReminders.Name = "btnReminders";
+            this.btnReminders.Size = new System.Drawing.Size(516, 103);
+            this.btnReminders.TabIndex = 3;
+            this.btnReminders.Text = "Reminders";
+            this.btnReminders.UseVisualStyleBackColor = false;
+            this.btnReminders.Click += new System.EventHandler(this.btnReminders_Click);
+            // 
+            // btnScheduler
+            // 
+            this.btnScheduler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnScheduler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnScheduler.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnScheduler.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnScheduler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnScheduler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScheduler.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduler.ForeColor = System.Drawing.Color.White;
+            this.btnScheduler.Location = new System.Drawing.Point(6, 102);
+            this.btnScheduler.Name = "btnScheduler";
+            this.btnScheduler.Size = new System.Drawing.Size(516, 103);
+            this.btnScheduler.TabIndex = 2;
+            this.btnScheduler.Text = "Scheduler";
+            this.btnScheduler.UseVisualStyleBackColor = false;
+            this.btnScheduler.Click += new System.EventHandler(this.btnScheduler_Click);
             // 
             // btnProfiles
             // 
@@ -147,7 +178,7 @@
             this.btnProfiles.ForeColor = System.Drawing.Color.White;
             this.btnProfiles.Location = new System.Drawing.Point(6, 6);
             this.btnProfiles.Name = "btnProfiles";
-            this.btnProfiles.Size = new System.Drawing.Size(516, 90);
+            this.btnProfiles.Size = new System.Drawing.Size(516, 103);
             this.btnProfiles.TabIndex = 0;
             this.btnProfiles.Text = "Profiles";
             this.btnProfiles.UseVisualStyleBackColor = false;
@@ -173,7 +204,6 @@
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.NavigationPanel.ResumeLayout(false);
-            this.NavigationPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -186,8 +216,9 @@
         private System.Windows.Forms.PictureBox LogoImgBox;
         private System.Windows.Forms.Panel NavigationPanel;
         private System.Windows.Forms.Button btnProfiles;
-        private System.Windows.Forms.Label lblMaxMinForm;
-        private System.Windows.Forms.Label lblResize;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnReminders;
+        private System.Windows.Forms.Button btnScheduler;
     }
 }
 

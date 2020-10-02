@@ -77,6 +77,19 @@ namespace Lockdown
             listBlockedApps.Items.Add(AddBlockedApp());
         }
 
-        
+        private void btnUnblockApp_Click(object sender, EventArgs e)
+        {
+            //Removes app from list
+        }
+
+        private void btnUnblockWebsite_Click(object sender, EventArgs e)
+        {
+            //Removes website from list
+        }
+
+        private void btnAddBlockedWebsite_Click(object sender, EventArgs e)
+        {
+            //Adds website to list
+        }
     }
 }
