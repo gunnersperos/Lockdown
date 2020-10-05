@@ -82,6 +82,7 @@
             this.lblMinimize.AutoSize = true;
             this.lblMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.lblMinimize.Location = new System.Drawing.Point(493, 0);
             this.lblMinimize.Name = "lblMinimize";
             this.lblMinimize.Size = new System.Drawing.Size(16, 20);
@@ -94,6 +95,7 @@
             this.lblExit.AutoSize = true;
             this.lblExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.lblExit.Location = new System.Drawing.Point(509, 0);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(21, 20);
@@ -122,7 +124,7 @@
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnSettings.Location = new System.Drawing.Point(6, 294);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(516, 103);
@@ -140,7 +142,7 @@
             this.btnReminders.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnReminders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReminders.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnReminders.ForeColor = System.Drawing.Color.White;
+            this.btnReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnReminders.Location = new System.Drawing.Point(6, 198);
             this.btnReminders.Name = "btnReminders";
             this.btnReminders.Size = new System.Drawing.Size(516, 103);
@@ -158,7 +160,7 @@
             this.btnScheduler.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnScheduler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScheduler.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnScheduler.ForeColor = System.Drawing.Color.White;
+            this.btnScheduler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnScheduler.Location = new System.Drawing.Point(6, 102);
             this.btnScheduler.Name = "btnScheduler";
             this.btnScheduler.Size = new System.Drawing.Size(516, 103);
@@ -176,7 +178,7 @@
             this.btnProfiles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
             this.btnProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfiles.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnProfiles.ForeColor = System.Drawing.Color.White;
+            this.btnProfiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnProfiles.Location = new System.Drawing.Point(6, 6);
             this.btnProfiles.Name = "btnProfiles";
             this.btnProfiles.Size = new System.Drawing.Size(516, 103);
