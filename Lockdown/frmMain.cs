@@ -23,7 +23,7 @@ namespace Lockdown
         #region Title Bar Controls
         private void lblExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
         private void lblMinimize_Click(object sender, EventArgs e)
         {
@@ -75,6 +75,11 @@ namespace Lockdown
         private void btnSettings_Click(object sender, EventArgs e)
         {
             //Opens Settings Form
+        }
+
+        private void MenuItemClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

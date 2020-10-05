@@ -41,10 +41,13 @@
             this.btnScheduler = new System.Windows.Forms.Button();
             this.btnProfiles = new System.Windows.Forms.Button();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.NotifyIconMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
+            this.NotifyIconMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -192,9 +195,27 @@
             this.NotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.NotifyIcon.BalloonTipText = "Test";
             this.NotifyIcon.BalloonTipTitle = "Test";
+            this.NotifyIcon.ContextMenuStrip = this.NotifyIconMenu;
             this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
             this.NotifyIcon.Text = "Lockdown";
             this.NotifyIcon.Visible = true;
+            // 
+            // NotifyIconMenu
+            // 
+            this.NotifyIconMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.HelpBalloon;
+            this.NotifyIconMenu.AllowMerge = false;
+            this.NotifyIconMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemClose});
+            this.NotifyIconMenu.Name = "NotifyIconMenu";
+            this.NotifyIconMenu.ShowImageMargin = false;
+            this.NotifyIconMenu.Size = new System.Drawing.Size(156, 48);
+            // 
+            // MenuItemClose
+            // 
+            this.MenuItemClose.Name = "MenuItemClose";
+            this.MenuItemClose.Size = new System.Drawing.Size(155, 22);
+            this.MenuItemClose.Text = "Close";
+            this.MenuItemClose.Click += new System.EventHandler(this.MenuItemClose_Click);
             // 
             // frmMain
             // 
@@ -217,6 +238,7 @@
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.NavigationPanel.ResumeLayout(false);
+            this.NotifyIconMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -233,6 +255,8 @@
         private System.Windows.Forms.Button btnReminders;
         private System.Windows.Forms.Button btnScheduler;
         private System.Windows.Forms.NotifyIcon NotifyIcon;
+        private System.Windows.Forms.ContextMenuStrip NotifyIconMenu;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemClose;
     }
 }
 
