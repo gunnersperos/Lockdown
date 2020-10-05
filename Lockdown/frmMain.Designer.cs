@@ -191,6 +191,7 @@
             this.NotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.NotifyIcon.BalloonTipText = "Test";
             this.NotifyIcon.BalloonTipTitle = "Test";
+            this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
             this.NotifyIcon.Text = "Lockdown";
             this.NotifyIcon.Visible = true;
             // 
@@ -204,6 +205,7 @@
             this.Controls.Add(this.LogoPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(730, 440);
             this.Name = "frmMain";
