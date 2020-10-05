@@ -93,9 +93,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Images\LockdownIcon.ico" />
     <Content Include="Resources\Images\TestLogo.png" />
     <Content Include="Resources\Images\TestLogoInvert.ico" />
     <Content Include="Resources\Images\TestLogoInvert.png" />
+    <Content Include="Resources\Images\TestLogo_Cheeseman %281%29.png" />
     <Content Include="Resources\Images\TestLogo_Cheeseman.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

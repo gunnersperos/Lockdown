@@ -286,12 +286,11 @@
             // 
             // LogoImgBox
             // 
-            this.LogoImgBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.LogoImgBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoImgBox.Image")));
-            this.LogoImgBox.Location = new System.Drawing.Point(0, 0);
+            this.LogoImgBox.Location = new System.Drawing.Point(12, 0);
             this.LogoImgBox.Name = "LogoImgBox";
-            this.LogoImgBox.Size = new System.Drawing.Size(200, 440);
-            this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.LogoImgBox.Size = new System.Drawing.Size(180, 440);
+            this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoImgBox.TabIndex = 0;
             this.LogoImgBox.TabStop = false;
             // 
