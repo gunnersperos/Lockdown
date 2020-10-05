@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
@@ -39,6 +40,7 @@
             this.btnReminders = new System.Windows.Forms.Button();
             this.btnScheduler = new System.Windows.Forms.Button();
             this.btnProfiles = new System.Windows.Forms.Button();
+            this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
@@ -184,6 +186,14 @@
             this.btnProfiles.UseVisualStyleBackColor = false;
             this.btnProfiles.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // NotifyIcon
+            // 
+            this.NotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.NotifyIcon.BalloonTipText = "Test";
+            this.NotifyIcon.BalloonTipTitle = "Test";
+            this.NotifyIcon.Text = "Lockdown";
+            this.NotifyIcon.Visible = true;
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -219,6 +229,7 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnReminders;
         private System.Windows.Forms.Button btnScheduler;
+        private System.Windows.Forms.NotifyIcon NotifyIcon;
     }
 }
 
