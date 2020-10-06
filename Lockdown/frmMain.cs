@@ -52,6 +52,7 @@ namespace Lockdown
         {
             try
             {
+                this.Hide();
                 frmProfiles profiles = new frmProfiles();
                 profiles.Show();
             }
@@ -80,6 +81,11 @@ namespace Lockdown
         private void MenuItemClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
         }
     }
 }

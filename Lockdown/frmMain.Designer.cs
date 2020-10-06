@@ -199,6 +199,7 @@
             this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
             this.NotifyIcon.Text = "Lockdown";
             this.NotifyIcon.Visible = true;
+            this.NotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseClick);
             // 
             // NotifyIconMenu
             // 
@@ -208,7 +209,7 @@
             this.MenuItemClose});
             this.NotifyIconMenu.Name = "NotifyIconMenu";
             this.NotifyIconMenu.ShowImageMargin = false;
-            this.NotifyIconMenu.Size = new System.Drawing.Size(156, 48);
+            this.NotifyIconMenu.Size = new System.Drawing.Size(79, 26);
             // 
             // MenuItemClose
             // 

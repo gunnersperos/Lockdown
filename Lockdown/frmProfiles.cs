@@ -25,7 +25,7 @@ namespace Lockdown
         #region Title Bar Controls
         private void lblExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void lblMinimize_Click(object sender, EventArgs e)
