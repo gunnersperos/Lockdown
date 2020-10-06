@@ -214,7 +214,7 @@
             // MenuItemClose
             // 
             this.MenuItemClose.Name = "MenuItemClose";
-            this.MenuItemClose.Size = new System.Drawing.Size(155, 22);
+            this.MenuItemClose.Size = new System.Drawing.Size(78, 22);
             this.MenuItemClose.Text = "Close";
             this.MenuItemClose.Click += new System.EventHandler(this.MenuItemClose_Click);
             // 
