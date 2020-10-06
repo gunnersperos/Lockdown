@@ -36,6 +36,7 @@ namespace Lockdown
         #endregion
 
 
+        #region Block Apps
         private string AddBlockedApp()
         {
             try
@@ -70,6 +71,9 @@ namespace Lockdown
 
         }
 
+        #endregion
+
+        #region Block Websites
         private void btnUnblockWebsite_Click(object sender, EventArgs e)
         {
             //Removes website from list
@@ -79,6 +83,8 @@ namespace Lockdown
         {
             //Adds website to list
         }
+
+        #endregion
 
         private void btnStartProfile_Click(object sender, EventArgs e)
         {

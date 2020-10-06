@@ -233,7 +233,7 @@
             this.MinimumSize = new System.Drawing.Size(730, 440);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Lockdown";
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);

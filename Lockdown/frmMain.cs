@@ -17,7 +17,6 @@ namespace Lockdown
         public frmMain()
         {
             InitializeComponent();
-            //this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         #region Title Bar Controls
@@ -48,13 +47,16 @@ namespace Lockdown
             }
         }
 
+        #region Navigation Buttons
+
         private void btnProfile_Click(object sender, EventArgs e)
         {
             try
             {
-                this.Hide();
                 frmProfiles profiles = new frmProfiles();
                 profiles.Show();
+                profiles.BringToFront();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -77,7 +79,9 @@ namespace Lockdown
         {
             //Opens Settings Form
         }
+        #endregion
 
+        #region NotifyIcon
         private void MenuItemClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -85,7 +89,14 @@ namespace Lockdown
 
         private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Show();
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Show();
+                this.BringToFront();
+                //close all other open forms? or open active form?
+            }
         }
+
+        #endregion
     }
 }
