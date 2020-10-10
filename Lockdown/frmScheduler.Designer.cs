@@ -31,8 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScheduler));
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
+            this.FormControlPanel = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.Panel();
+            this.lblExit = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
+            this.FormControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -54,11 +58,42 @@
             this.LogoImgBox.TabIndex = 0;
             this.LogoImgBox.TabStop = false;
             // 
+            // FormControlPanel
+            // 
+            this.FormControlPanel.Controls.Add(this.lblExit);
+            this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FormControlPanel.Location = new System.Drawing.Point(200, 0);
+            this.FormControlPanel.Name = "FormControlPanel";
+            this.FormControlPanel.Size = new System.Drawing.Size(530, 29);
+            this.FormControlPanel.TabIndex = 1;
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(200, 29);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(530, 411);
+            this.ContentPanel.TabIndex = 2;
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblExit.Location = new System.Drawing.Point(509, 0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(21, 20);
+            this.lblExit.TabIndex = 0;
+            this.lblExit.Text = "X";
+            // 
             // frmScheduler
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(730, 440);
+            this.Controls.Add(this.ContentPanel);
+            this.Controls.Add(this.FormControlPanel);
             this.Controls.Add(this.LogoPanel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -70,6 +105,8 @@
             this.Text = "Lockdown";
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
+            this.FormControlPanel.ResumeLayout(false);
+            this.FormControlPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -78,5 +115,8 @@
 
         private System.Windows.Forms.Panel LogoPanel;
         private System.Windows.Forms.PictureBox LogoImgBox;
+        private System.Windows.Forms.Panel FormControlPanel;
+        private System.Windows.Forms.Panel ContentPanel;
+        private System.Windows.Forms.Label lblExit;
     }
 }
