@@ -32,6 +32,7 @@
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
+            this.boxProfiles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BlockedWebPanel = new System.Windows.Forms.Panel();
             this.listBlockedWebsites = new System.Windows.Forms.ListBox();
@@ -90,6 +91,7 @@
             // 
             // panelProfile
             // 
+            this.panelProfile.Controls.Add(this.boxProfiles);
             this.panelProfile.Controls.Add(this.label1);
             this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProfile.Location = new System.Drawing.Point(0, 29);
@@ -97,17 +99,36 @@
             this.panelProfile.Size = new System.Drawing.Size(530, 94);
             this.panelProfile.TabIndex = 5;
             // 
+            // boxProfiles
+            // 
+            this.boxProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.boxProfiles.DropDownHeight = 200;
+            this.boxProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.boxProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxProfiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.boxProfiles.FormattingEnabled = true;
+            this.boxProfiles.IntegralHeight = false;
+            this.boxProfiles.Items.AddRange(new object[] {
+            "Test1",
+            "Test2",
+            "Test3"});
+            this.boxProfiles.Location = new System.Drawing.Point(154, 27);
+            this.boxProfiles.Name = "boxProfiles";
+            this.boxProfiles.Size = new System.Drawing.Size(355, 50);
+            this.boxProfiles.TabIndex = 7;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 38F);
+            this.label1.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Location = new System.Drawing.Point(30, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(469, 63);
+            this.label1.Size = new System.Drawing.Size(128, 45);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Profile UI will go here";
+            this.label1.Text = "Profile:";
             // 
             // BlockedWebPanel
             // 
@@ -346,5 +367,6 @@
         private System.Windows.Forms.Panel BlockedAppPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStartProfile;
+        private System.Windows.Forms.ComboBox boxProfiles;
     }
 }
