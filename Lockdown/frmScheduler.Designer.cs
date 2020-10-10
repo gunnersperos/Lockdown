@@ -34,6 +34,7 @@
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.ContentPanel = new System.Windows.Forms.Panel();
             this.lblExit = new System.Windows.Forms.Label();
+            this.lblMinimize = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // FormControlPanel
             // 
+            this.FormControlPanel.Controls.Add(this.lblMinimize);
             this.FormControlPanel.Controls.Add(this.lblExit);
             this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.FormControlPanel.Location = new System.Drawing.Point(200, 0);
@@ -86,6 +88,18 @@
             this.lblExit.Size = new System.Drawing.Size(21, 20);
             this.lblExit.TabIndex = 0;
             this.lblExit.Text = "X";
+            // 
+            // lblMinimize
+            // 
+            this.lblMinimize.AutoSize = true;
+            this.lblMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblMinimize.Location = new System.Drawing.Point(493, 0);
+            this.lblMinimize.Name = "lblMinimize";
+            this.lblMinimize.Size = new System.Drawing.Size(16, 20);
+            this.lblMinimize.TabIndex = 1;
+            this.lblMinimize.Text = "–";
             // 
             // frmScheduler
             // 
@@ -118,5 +132,6 @@
         private System.Windows.Forms.Panel FormControlPanel;
         private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.Label lblExit;
+        private System.Windows.Forms.Label lblMinimize;
     }
 }
