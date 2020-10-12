@@ -59,6 +59,24 @@
     <Compile Include="frmProfiles.Designer.cs">
       <DependentUpon>frmProfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReminders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReminders.Designer.cs">
+      <DependentUpon>frmReminders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduler.Designer.cs">
+      <DependentUpon>frmScheduler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +86,15 @@
     <EmbeddedResource Include="frmProfiles.resx">
       <DependentUpon>frmProfiles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReminders.resx">
+      <DependentUpon>frmReminders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduler.resx">
+      <DependentUpon>frmScheduler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
