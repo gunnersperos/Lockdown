@@ -32,9 +32,10 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FromControlPanel = new System.Windows.Forms.Panel();
-            this.ContentPanel = new System.Windows.Forms.Panel();
-            this.lblExit = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
+            this.lblExit = new System.Windows.Forms.Label();
+            this.ContentPanel = new System.Windows.Forms.Panel();
+            this.lblBack = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FromControlPanel.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // FromControlPanel
             // 
+            this.FromControlPanel.Controls.Add(this.lblBack);
             this.FromControlPanel.Controls.Add(this.lblMinimize);
             this.FromControlPanel.Controls.Add(this.lblExit);
             this.FromControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -68,26 +70,6 @@
             this.FromControlPanel.Name = "FromControlPanel";
             this.FromControlPanel.Size = new System.Drawing.Size(530, 29);
             this.FromControlPanel.TabIndex = 1;
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentPanel.Location = new System.Drawing.Point(200, 29);
-            this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(530, 411);
-            this.ContentPanel.TabIndex = 2;
-            // 
-            // lblExit
-            // 
-            this.lblExit.AutoSize = true;
-            this.lblExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblExit.Location = new System.Drawing.Point(509, 0);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(21, 20);
-            this.lblExit.TabIndex = 0;
-            this.lblExit.Text = "X";
             // 
             // lblMinimize
             // 
@@ -100,6 +82,41 @@
             this.lblMinimize.Size = new System.Drawing.Size(16, 20);
             this.lblMinimize.TabIndex = 1;
             this.lblMinimize.Text = "–";
+            this.lblMinimize.Click += new System.EventHandler(this.lblMinimize_Click);
+            // 
+            // lblExit
+            // 
+            this.lblExit.AutoSize = true;
+            this.lblExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblExit.Location = new System.Drawing.Point(509, 0);
+            this.lblExit.Name = "lblExit";
+            this.lblExit.Size = new System.Drawing.Size(21, 20);
+            this.lblExit.TabIndex = 0;
+            this.lblExit.Text = "X";
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(200, 29);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(530, 411);
+            this.ContentPanel.TabIndex = 2;
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblBack.Location = new System.Drawing.Point(0, 0);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(20, 20);
+            this.lblBack.TabIndex = 3;
+            this.lblBack.Text = "◁";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
             // frmSettings
             // 
@@ -133,5 +150,6 @@
         private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblMinimize;
+        private System.Windows.Forms.Label lblBack;
     }
 }

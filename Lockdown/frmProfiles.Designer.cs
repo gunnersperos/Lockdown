@@ -33,7 +33,7 @@
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
             this.boxProfiles = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProfile = new System.Windows.Forms.Label();
             this.BlockedWebPanel = new System.Windows.Forms.Panel();
             this.listBlockedWebsites = new System.Windows.Forms.ListBox();
             this.btnUnblockWebsite = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.btnUnblockApp = new System.Windows.Forms.Button();
             this.btnAddBlockedApp = new System.Windows.Forms.Button();
             this.FormControlPanel = new System.Windows.Forms.Panel();
+            this.lblBack = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.cbProfiles = new System.Windows.Forms.ComboBox();
@@ -92,7 +93,7 @@
             // panelProfile
             // 
             this.panelProfile.Controls.Add(this.boxProfiles);
-            this.panelProfile.Controls.Add(this.label1);
+            this.panelProfile.Controls.Add(this.lblProfile);
             this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProfile.Location = new System.Drawing.Point(0, 29);
             this.panelProfile.Name = "panelProfile";
@@ -118,17 +119,17 @@
             this.boxProfiles.Size = new System.Drawing.Size(355, 50);
             this.boxProfiles.TabIndex = 7;
             // 
-            // label1
+            // lblProfile
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.label1.Location = new System.Drawing.Point(30, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 45);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Profile:";
+            this.lblProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblProfile.AutoSize = true;
+            this.lblProfile.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblProfile.Location = new System.Drawing.Point(30, 32);
+            this.lblProfile.Name = "lblProfile";
+            this.lblProfile.Size = new System.Drawing.Size(128, 45);
+            this.lblProfile.TabIndex = 6;
+            this.lblProfile.Text = "Profile:";
             // 
             // BlockedWebPanel
             // 
@@ -253,6 +254,7 @@
             // 
             // FormControlPanel
             // 
+            this.FormControlPanel.Controls.Add(this.lblBack);
             this.FormControlPanel.Controls.Add(this.lblMinimize);
             this.FormControlPanel.Controls.Add(this.lblExit);
             this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -260,6 +262,19 @@
             this.FormControlPanel.Name = "FormControlPanel";
             this.FormControlPanel.Size = new System.Drawing.Size(530, 29);
             this.FormControlPanel.TabIndex = 3;
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblBack.Location = new System.Drawing.Point(0, 0);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(20, 20);
+            this.lblBack.TabIndex = 2;
+            this.lblBack.Text = "◁";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
             // lblMinimize
             // 
@@ -365,8 +380,9 @@
         private System.Windows.Forms.Button btnUnblockWebsite;
         private System.Windows.Forms.Button btnAddBlockedWebsite;
         private System.Windows.Forms.Panel BlockedAppPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.Button btnStartProfile;
         private System.Windows.Forms.ComboBox boxProfiles;
+        private System.Windows.Forms.Label lblBack;
     }
 }

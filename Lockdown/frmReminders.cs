@@ -12,9 +12,26 @@ namespace Lockdown
 {
     public partial class frmReminders : Form
     {
+        public Form pForm;
         public frmReminders()
         {
             InitializeComponent();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void lblMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            this.pForm.Show();
+            this.Hide();
         }
     }
 }

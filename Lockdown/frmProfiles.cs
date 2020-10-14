@@ -14,6 +14,7 @@ namespace Lockdown
     public partial class frmProfiles : Form
     { 
         private const string BLOCKED_APPS_SCRIPT = "C:\\Users\\Gunner\\source\\repos\\Lockdown\\Lockdown\\Resources\\Scripts\\BlockList.ps1";
+        public Form pForm;
         public frmProfiles()
         {
             InitializeComponent();
@@ -89,6 +90,12 @@ namespace Lockdown
         private void btnStartProfile_Click(object sender, EventArgs e)
         {
             //Runs script using the lists in the profile
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
+        {
+            this.pForm.Show();
+            this.Hide();
         }
     }
 }
