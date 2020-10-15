@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReminders));
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.lblReminders = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
@@ -41,15 +40,16 @@
             this.lblDefaultReminders = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAddReminder = new System.Windows.Forms.Label();
-            this.clbMy = new System.Windows.Forms.CheckedListBox();
+            this.clbMyReminders = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.clbDefault = new System.Windows.Forms.CheckedListBox();
+            this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.LogoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
             this.ContentPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -60,16 +60,6 @@
             this.LogoPanel.Name = "LogoPanel";
             this.LogoPanel.Size = new System.Drawing.Size(200, 440);
             this.LogoPanel.TabIndex = 0;
-            // 
-            // LogoImgBox
-            // 
-            this.LogoImgBox.Image = global::Lockdown.Properties.Resources.TestLogo_Cheeseman__1_;
-            this.LogoImgBox.Location = new System.Drawing.Point(12, 0);
-            this.LogoImgBox.Name = "LogoImgBox";
-            this.LogoImgBox.Size = new System.Drawing.Size(180, 440);
-            this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoImgBox.TabIndex = 0;
-            this.LogoImgBox.TabStop = false;
             // 
             // FormControlPanel
             // 
@@ -167,7 +157,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lblAddReminder);
-            this.panel2.Controls.Add(this.clbMy);
+            this.panel2.Controls.Add(this.clbMyReminders);
             this.panel2.Location = new System.Drawing.Point(276, 32);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 280);
@@ -184,16 +174,17 @@
             this.lblAddReminder.Size = new System.Drawing.Size(25, 26);
             this.lblAddReminder.TabIndex = 2;
             this.lblAddReminder.Text = "+";
+            this.lblAddReminder.Click += new System.EventHandler(this.lblAddReminder_Click);
             // 
-            // clbMy
+            // clbMyReminders
             // 
-            this.clbMy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.clbMy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.clbMy.FormattingEnabled = true;
-            this.clbMy.Location = new System.Drawing.Point(4, 3);
-            this.clbMy.Name = "clbMy";
-            this.clbMy.Size = new System.Drawing.Size(243, 274);
-            this.clbMy.TabIndex = 1;
+            this.clbMyReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.clbMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.clbMyReminders.FormattingEnabled = true;
+            this.clbMyReminders.Location = new System.Drawing.Point(4, 3);
+            this.clbMyReminders.Name = "clbMyReminders";
+            this.clbMyReminders.Size = new System.Drawing.Size(243, 274);
+            this.clbMyReminders.TabIndex = 1;
             // 
             // panel1
             // 
@@ -213,6 +204,16 @@
             this.clbDefault.Size = new System.Drawing.Size(243, 274);
             this.clbDefault.TabIndex = 0;
             // 
+            // LogoImgBox
+            // 
+            this.LogoImgBox.Image = global::Lockdown.Properties.Resources.TestLogo_Cheeseman__1_;
+            this.LogoImgBox.Location = new System.Drawing.Point(12, 0);
+            this.LogoImgBox.Name = "LogoImgBox";
+            this.LogoImgBox.Size = new System.Drawing.Size(180, 440);
+            this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoImgBox.TabIndex = 0;
+            this.LogoImgBox.TabStop = false;
+            // 
             // frmReminders
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -230,7 +231,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lockdown";
             this.LogoPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.ContentPanel.ResumeLayout(false);
@@ -238,6 +238,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,7 +256,7 @@
         private System.Windows.Forms.Label lblMyReminders;
         private System.Windows.Forms.Label lblDefaultReminders;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckedListBox clbMy;
+        private System.Windows.Forms.CheckedListBox clbMyReminders;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckedListBox clbDefault;
         private System.Windows.Forms.Label lblAddReminder;
