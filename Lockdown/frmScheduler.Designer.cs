@@ -32,10 +32,10 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FormControlPanel = new System.Windows.Forms.Panel();
+            this.lblBack = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
-            this.lblBack = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
@@ -71,6 +71,19 @@
             this.FormControlPanel.Size = new System.Drawing.Size(530, 29);
             this.FormControlPanel.TabIndex = 1;
             // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblBack.Location = new System.Drawing.Point(0, 0);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(20, 20);
+            this.lblBack.TabIndex = 4;
+            this.lblBack.Text = "◁";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            // 
             // lblMinimize
             // 
             this.lblMinimize.AutoSize = true;
@@ -104,19 +117,6 @@
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(530, 411);
             this.ContentPanel.TabIndex = 2;
-            // 
-            // lblBack
-            // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblBack.Location = new System.Drawing.Point(0, 0);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(20, 20);
-            this.lblBack.TabIndex = 4;
-            this.lblBack.Text = "◁";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
             // frmScheduler
             // 

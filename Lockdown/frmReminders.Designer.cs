@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReminders));
             this.LogoPanel = new System.Windows.Forms.Panel();
+            this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.lblReminders = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
@@ -43,13 +44,12 @@
             this.clbMyReminders = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.clbDefault = new System.Windows.Forms.CheckedListBox();
-            this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.LogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
             this.ContentPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -60,6 +60,16 @@
             this.LogoPanel.Name = "LogoPanel";
             this.LogoPanel.Size = new System.Drawing.Size(200, 440);
             this.LogoPanel.TabIndex = 0;
+            // 
+            // LogoImgBox
+            // 
+            this.LogoImgBox.Image = global::Lockdown.Properties.Resources.TestLogo_Cheeseman__1_;
+            this.LogoImgBox.Location = new System.Drawing.Point(12, 0);
+            this.LogoImgBox.Name = "LogoImgBox";
+            this.LogoImgBox.Size = new System.Drawing.Size(180, 440);
+            this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoImgBox.TabIndex = 0;
+            this.LogoImgBox.TabStop = false;
             // 
             // FormControlPanel
             // 
@@ -76,10 +86,11 @@
             // lblReminders
             // 
             this.lblReminders.AutoSize = true;
-            this.lblReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReminders.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.lblReminders.Location = new System.Drawing.Point(211, 2);
             this.lblReminders.Name = "lblReminders";
-            this.lblReminders.Size = new System.Drawing.Size(102, 24);
+            this.lblReminders.Size = new System.Drawing.Size(96, 23);
             this.lblReminders.TabIndex = 0;
             this.lblReminders.Text = "Reminders";
             // 
@@ -137,20 +148,22 @@
             // lblMyReminders
             // 
             this.lblMyReminders.AutoSize = true;
-            this.lblMyReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMyReminders.Location = new System.Drawing.Point(315, 3);
+            this.lblMyReminders.Font = new System.Drawing.Font("Impact", 16F);
+            this.lblMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblMyReminders.Location = new System.Drawing.Point(333, 3);
             this.lblMyReminders.Name = "lblMyReminders";
-            this.lblMyReminders.Size = new System.Drawing.Size(153, 26);
+            this.lblMyReminders.Size = new System.Drawing.Size(140, 27);
             this.lblMyReminders.TabIndex = 3;
             this.lblMyReminders.Text = "My Reminders";
             // 
             // lblDefaultReminders
             // 
             this.lblDefaultReminders.AutoSize = true;
-            this.lblDefaultReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefaultReminders.Font = new System.Drawing.Font("Impact", 16F);
+            this.lblDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.lblDefaultReminders.Location = new System.Drawing.Point(35, 3);
             this.lblDefaultReminders.Name = "lblDefaultReminders";
-            this.lblDefaultReminders.Size = new System.Drawing.Size(193, 26);
+            this.lblDefaultReminders.Size = new System.Drawing.Size(179, 27);
             this.lblDefaultReminders.TabIndex = 2;
             this.lblDefaultReminders.Text = "Default Reminders";
             // 
@@ -178,12 +191,14 @@
             // 
             // clbMyReminders
             // 
-            this.clbMyReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.clbMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.clbMyReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.clbMyReminders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clbMyReminders.Font = new System.Drawing.Font("Impact", 10F);
+            this.clbMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.clbMyReminders.FormattingEnabled = true;
             this.clbMyReminders.Location = new System.Drawing.Point(4, 3);
             this.clbMyReminders.Name = "clbMyReminders";
-            this.clbMyReminders.Size = new System.Drawing.Size(243, 274);
+            this.clbMyReminders.Size = new System.Drawing.Size(243, 268);
             this.clbMyReminders.TabIndex = 1;
             // 
             // panel1
@@ -196,23 +211,15 @@
             // 
             // clbDefault
             // 
-            this.clbDefault.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.clbDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.clbDefault.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.clbDefault.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clbDefault.Font = new System.Drawing.Font("Impact", 10F);
+            this.clbDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.clbDefault.FormattingEnabled = true;
             this.clbDefault.Location = new System.Drawing.Point(4, 4);
             this.clbDefault.Name = "clbDefault";
-            this.clbDefault.Size = new System.Drawing.Size(243, 274);
+            this.clbDefault.Size = new System.Drawing.Size(243, 268);
             this.clbDefault.TabIndex = 0;
-            // 
-            // LogoImgBox
-            // 
-            this.LogoImgBox.Image = global::Lockdown.Properties.Resources.TestLogo_Cheeseman__1_;
-            this.LogoImgBox.Location = new System.Drawing.Point(12, 0);
-            this.LogoImgBox.Name = "LogoImgBox";
-            this.LogoImgBox.Size = new System.Drawing.Size(180, 440);
-            this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoImgBox.TabIndex = 0;
-            this.LogoImgBox.TabStop = false;
             // 
             // frmReminders
             // 
@@ -231,6 +238,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lockdown";
             this.LogoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.ContentPanel.ResumeLayout(false);
@@ -238,7 +246,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.ResumeLayout(false);
 
         }
