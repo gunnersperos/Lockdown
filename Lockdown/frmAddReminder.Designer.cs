@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddReminder));
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.lblAddReminder = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
@@ -272,8 +273,10 @@
             this.Controls.Add(this.ContentPanel);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddReminder";
-            this.Text = "frmAddReminder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lockdown";
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.LogoPanel.ResumeLayout(false);
