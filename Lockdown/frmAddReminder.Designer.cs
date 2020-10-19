@@ -187,9 +187,9 @@
             this.cboType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.cboType.Font = new System.Drawing.Font("Impact", 8.25F);
             this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(358, 222);
+            this.cboType.Location = new System.Drawing.Point(351, 219);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(105, 23);
+            this.cboType.Size = new System.Drawing.Size(112, 23);
             this.cboType.TabIndex = 8;
             // 
             // cboRepeat
@@ -197,7 +197,7 @@
             this.cboRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.cboRepeat.Font = new System.Drawing.Font("Impact", 8.25F);
             this.cboRepeat.FormattingEnabled = true;
-            this.cboRepeat.Location = new System.Drawing.Point(550, 127);
+            this.cboRepeat.Location = new System.Drawing.Point(545, 125);
             this.cboRepeat.Name = "cboRepeat";
             this.cboRepeat.Size = new System.Drawing.Size(147, 23);
             this.cboRepeat.TabIndex = 7;
@@ -226,7 +226,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Impact", 14F);
-            this.lblType.Location = new System.Drawing.Point(206, 219);
+            this.lblType.Location = new System.Drawing.Point(213, 219);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(132, 23);
             this.lblType.TabIndex = 4;
@@ -236,7 +236,7 @@
             // 
             this.lblRepeat.AutoSize = true;
             this.lblRepeat.Font = new System.Drawing.Font("Impact", 14F);
-            this.lblRepeat.Location = new System.Drawing.Point(469, 122);
+            this.lblRepeat.Location = new System.Drawing.Point(469, 125);
             this.lblRepeat.Name = "lblRepeat";
             this.lblRepeat.Size = new System.Drawing.Size(70, 23);
             this.lblRepeat.TabIndex = 3;
@@ -246,7 +246,7 @@
             // 
             this.lblHowOften.AutoSize = true;
             this.lblHowOften.Font = new System.Drawing.Font("Impact", 14F);
-            this.lblHowOften.Location = new System.Drawing.Point(206, 122);
+            this.lblHowOften.Location = new System.Drawing.Point(213, 125);
             this.lblHowOften.Name = "lblHowOften";
             this.lblHowOften.Size = new System.Drawing.Size(93, 23);
             this.lblHowOften.TabIndex = 2;
@@ -256,7 +256,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Impact", 14F);
-            this.lblName.Location = new System.Drawing.Point(206, 32);
+            this.lblName.Location = new System.Drawing.Point(213, 37);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(59, 23);
             this.lblName.TabIndex = 1;
