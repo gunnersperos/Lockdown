@@ -36,16 +36,16 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.ContentPanel = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblHowOften = new System.Windows.Forms.Label();
-            this.lblRepeat = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.cboHowOften = new System.Windows.Forms.ComboBox();
-            this.cboRepeat = new System.Windows.Forms.ComboBox();
-            this.cboType = new System.Windows.Forms.ComboBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cboType = new System.Windows.Forms.ComboBox();
+            this.cboRepeat = new System.Windows.Forms.ComboBox();
+            this.cboHowOften = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblRepeat = new System.Windows.Forms.Label();
+            this.lblHowOften = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.FormControlPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
@@ -67,10 +67,10 @@
             // lblAddReminder
             // 
             this.lblAddReminder.AutoSize = true;
-            this.lblAddReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddReminder.Font = new System.Drawing.Font("Impact", 14F);
             this.lblAddReminder.Location = new System.Drawing.Point(211, 2);
             this.lblAddReminder.Name = "lblAddReminder";
-            this.lblAddReminder.Size = new System.Drawing.Size(133, 24);
+            this.lblAddReminder.Size = new System.Drawing.Size(119, 23);
             this.lblAddReminder.TabIndex = 0;
             this.lblAddReminder.Text = "Add Reminder";
             // 
@@ -147,105 +147,120 @@
             this.ContentPanel.Size = new System.Drawing.Size(730, 440);
             this.ContentPanel.TabIndex = 5;
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(206, 32);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 24);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Name:";
-            // 
-            // lblHowOften
-            // 
-            this.lblHowOften.AutoSize = true;
-            this.lblHowOften.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHowOften.Location = new System.Drawing.Point(206, 122);
-            this.lblHowOften.Name = "lblHowOften";
-            this.lblHowOften.Size = new System.Drawing.Size(104, 24);
-            this.lblHowOften.TabIndex = 2;
-            this.lblHowOften.Text = "How Often:";
-            // 
-            // lblRepeat
-            // 
-            this.lblRepeat.AutoSize = true;
-            this.lblRepeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRepeat.Location = new System.Drawing.Point(469, 122);
-            this.lblRepeat.Name = "lblRepeat";
-            this.lblRepeat.Size = new System.Drawing.Size(75, 24);
-            this.lblRepeat.TabIndex = 3;
-            this.lblRepeat.Text = "Repeat:";
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(206, 219);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(146, 24);
-            this.lblType.TabIndex = 4;
-            this.lblType.Text = "Reminder Type:";
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.txtName.Location = new System.Drawing.Point(278, 37);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(185, 20);
-            this.txtName.TabIndex = 5;
-            // 
-            // cboHowOften
-            // 
-            this.cboHowOften.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.cboHowOften.FormattingEnabled = true;
-            this.cboHowOften.Location = new System.Drawing.Point(316, 125);
-            this.cboHowOften.Name = "cboHowOften";
-            this.cboHowOften.Size = new System.Drawing.Size(147, 21);
-            this.cboHowOften.TabIndex = 6;
-            // 
-            // cboRepeat
-            // 
-            this.cboRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.cboRepeat.FormattingEnabled = true;
-            this.cboRepeat.Location = new System.Drawing.Point(550, 127);
-            this.cboRepeat.Name = "cboRepeat";
-            this.cboRepeat.Size = new System.Drawing.Size(147, 21);
-            this.cboRepeat.TabIndex = 7;
-            // 
-            // cboType
-            // 
-            this.cboType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(358, 222);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(105, 21);
-            this.cboType.TabIndex = 8;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.btnCancel.Location = new System.Drawing.Point(210, 387);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(122, 41);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Impact", 16F);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.btnSave.Location = new System.Drawing.Point(338, 387);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 41);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Impact", 16F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCancel.Location = new System.Drawing.Point(210, 387);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(122, 41);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cboType
+            // 
+            this.cboType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.cboType.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(358, 222);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(105, 23);
+            this.cboType.TabIndex = 8;
+            // 
+            // cboRepeat
+            // 
+            this.cboRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.cboRepeat.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.cboRepeat.FormattingEnabled = true;
+            this.cboRepeat.Location = new System.Drawing.Point(550, 127);
+            this.cboRepeat.Name = "cboRepeat";
+            this.cboRepeat.Size = new System.Drawing.Size(147, 23);
+            this.cboRepeat.TabIndex = 7;
+            // 
+            // cboHowOften
+            // 
+            this.cboHowOften.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.cboHowOften.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.cboHowOften.FormattingEnabled = true;
+            this.cboHowOften.Location = new System.Drawing.Point(316, 125);
+            this.cboHowOften.Name = "cboHowOften";
+            this.cboHowOften.Size = new System.Drawing.Size(147, 23);
+            this.cboHowOften.TabIndex = 6;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtName.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.txtName.Location = new System.Drawing.Point(278, 37);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(185, 21);
+            this.txtName.TabIndex = 5;
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblType.Location = new System.Drawing.Point(206, 219);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(132, 23);
+            this.lblType.TabIndex = 4;
+            this.lblType.Text = "Reminder Type:";
+            // 
+            // lblRepeat
+            // 
+            this.lblRepeat.AutoSize = true;
+            this.lblRepeat.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblRepeat.Location = new System.Drawing.Point(469, 122);
+            this.lblRepeat.Name = "lblRepeat";
+            this.lblRepeat.Size = new System.Drawing.Size(70, 23);
+            this.lblRepeat.TabIndex = 3;
+            this.lblRepeat.Text = "Repeat:";
+            // 
+            // lblHowOften
+            // 
+            this.lblHowOften.AutoSize = true;
+            this.lblHowOften.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblHowOften.Location = new System.Drawing.Point(206, 122);
+            this.lblHowOften.Name = "lblHowOften";
+            this.lblHowOften.Size = new System.Drawing.Size(93, 23);
+            this.lblHowOften.TabIndex = 2;
+            this.lblHowOften.Text = "How Often:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblName.Location = new System.Drawing.Point(206, 32);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(59, 23);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name:";
             // 
             // frmAddReminder
             // 
