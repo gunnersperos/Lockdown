@@ -10,10 +10,10 @@ namespace Lockdown
     {
         #region Class Members
         public string name { get; set; }
-        private bool isReminderOn { get; set; }
-        private int remindInterval { get; set; }
-        private int repeatInterval { get; set; }
-        private int reminderType { get; set; }
+        public bool isReminderOn { get; set; }
+        public int remindInterval { get; set; }
+        public int repeatInterval { get; set; }
+        public int reminderType { get; set; }
         private enum ReminderType
         {
             banner = 1,

@@ -131,7 +131,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Data\Reminders\isReminderOn.txt" />
     <Content Include="Resources\Data\Reminders\Reminders.txt" />
+    <Content Include="Resources\Data\Reminders\reminderType.txt" />
+    <Content Include="Resources\Data\Reminders\remindInterval.txt" />
+    <Content Include="Resources\Data\Reminders\repeatInterval.txt" />
     <Content Include="Resources\Images\LockdownIcon.ico" />
     <Content Include="Resources\Images\TestLogo_Cheeseman %281%29.png" />
     <Content Include="Resources\Images\TestLogo_Cheeseman.png" />

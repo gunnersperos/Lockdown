@@ -13,7 +13,7 @@ namespace Lockdown
     public partial class frmAddReminder : Form
     {
         public Form parentForm;
-        private const string REMINDERS_FILE_PATH = @"C:\Users\Gunner\Source\Repos\Lockdown1\Lockdown\Resources\Data\Reminders\Reminders.txt";
+        private const string REMINDERS_FILE_PATH = @"C:\Users\Gunner\Source\Repos\Lockdown1\Lockdown\Resources\Data\Reminders\";
         public frmAddReminder()
         {
             InitializeComponent();
@@ -34,9 +34,29 @@ namespace Lockdown
 
         private void AddReminder()
         {
-            Reminder newReminder = new Reminder(txtName.Text);
-            System.IO.File.AppendAllText(REMINDERS_FILE_PATH, "\n");
-            System.IO.File.AppendAllText(REMINDERS_FILE_PATH, newReminder.name);
+            //set all properties
+            Reminder newReminder = new Reminder();
+            newReminder.name = txtName.Text;
+            newReminder.isReminderOn = false;
+            newReminder.remindInterval = 0;// cboHowOften.SelectedValue;
+            newReminder.repeatInterval = 0;// cboRepeat.SelectedValue;
+            newReminder.reminderType = 0;// cboType.SelectedValue;
+
+            //write to txt files to store data
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "Reminders.txt", newReminder.name);
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "Reminders.txt", "\n");
+
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "isReminderOn.txt", newReminder.isReminderOn.ToString());
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "isReminderOn.txt", "\n");
+
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "remindInterval.txt", newReminder.remindInterval.ToString());
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "remindInterval.txt", "\n");
+
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "repeatInterval.txt", newReminder.repeatInterval.ToString());
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "repeatInterval.txt", "\n");
+
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "reminderType.txt", newReminder.reminderType.ToString());
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "reminderType.txt", "\n");
         }
     }
 }
