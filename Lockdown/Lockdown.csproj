@@ -77,6 +77,12 @@
     <Compile Include="frmScheduler.Designer.cs">
       <DependentUpon>frmScheduler.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSetSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetSchedule.Designer.cs">
+      <DependentUpon>frmSetSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmScheduler.resx">
       <DependentUpon>frmScheduler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetSchedule.resx">
+      <DependentUpon>frmSetSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>

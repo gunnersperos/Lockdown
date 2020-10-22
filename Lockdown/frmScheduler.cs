@@ -33,5 +33,11 @@ namespace Lockdown
             this.pForm.Show();
             this.Hide();
         }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            frmSetSchedule setSchedule = new frmSetSchedule();
+            setSchedule.Show();
+        }
     }
 }

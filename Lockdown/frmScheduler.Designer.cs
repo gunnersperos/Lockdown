@@ -36,9 +36,11 @@
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
+            this.ContentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -112,11 +114,21 @@
             // 
             // ContentPanel
             // 
+            this.ContentPanel.Controls.Add(this.monthCalendar1);
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentPanel.Location = new System.Drawing.Point(200, 29);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(530, 411);
             this.ContentPanel.TabIndex = 2;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
+            this.monthCalendar1.Location = new System.Drawing.Point(33, 12);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.ShowTodayCircle = false;
+            this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // frmScheduler
             // 
@@ -138,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
+            this.ContentPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblMinimize;
         private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
