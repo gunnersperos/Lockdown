@@ -13,7 +13,7 @@ namespace Lockdown
 {
     public partial class frmMain : Form
     {
-        private const string BLOCKED_APPS_SCRIPT = @"C:\Users\Gunner\source\repos\Lockdown\Lockdown\Resources\Scripts\BlockList.ps1";
+        private const string BLOCKED_APPS_SCRIPT = @"~\Lockdown\Resources\Scripts\BlockList.ps1";
 
         //Create instance of each form
         private frmProfiles profiles = new frmProfiles();
