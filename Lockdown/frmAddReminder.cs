@@ -13,7 +13,7 @@ namespace Lockdown
     public partial class frmAddReminder : Form
     {
         public Form parentForm;
-        private const string REMINDERS_FILE_PATH = @"C:\Users\Gunner\Source\Repos\Lockdown1\Lockdown\Resources\Data\Reminders\";
+        private const string REMINDERS_FILE_PATH = @"~\Lockdown\Resources\Data\Reminders\";
         public frmAddReminder()
         {
             InitializeComponent();
