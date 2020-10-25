@@ -32,13 +32,17 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.FromControlPanel = new System.Windows.Forms.Panel();
+            this.lblBack = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
-            this.lblBack = new System.Windows.Forms.Label();
+            this.btnGeneral = new System.Windows.Forms.Button();
+            this.btnAccessibility = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FromControlPanel.SuspendLayout();
+            this.ContentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoPanel
@@ -71,6 +75,19 @@
             this.FromControlPanel.Size = new System.Drawing.Size(530, 29);
             this.FromControlPanel.TabIndex = 1;
             // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblBack.Location = new System.Drawing.Point(0, 0);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(20, 20);
+            this.lblBack.TabIndex = 3;
+            this.lblBack.Text = "◁";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            // 
             // lblMinimize
             // 
             this.lblMinimize.AutoSize = true;
@@ -99,24 +116,62 @@
             // 
             // ContentPanel
             // 
+            this.ContentPanel.Controls.Add(this.btnAbout);
+            this.ContentPanel.Controls.Add(this.btnAccessibility);
+            this.ContentPanel.Controls.Add(this.btnGeneral);
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentPanel.Location = new System.Drawing.Point(200, 29);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(530, 411);
             this.ContentPanel.TabIndex = 2;
             // 
-            // lblBack
+            // btnGeneral
             // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblBack.Location = new System.Drawing.Point(0, 0);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(20, 20);
-            this.lblBack.TabIndex = 3;
-            this.lblBack.Text = "◁";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            this.btnGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnGeneral.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnGeneral.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnGeneral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGeneral.Font = new System.Drawing.Font("Impact", 22F);
+            this.btnGeneral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnGeneral.Location = new System.Drawing.Point(15, 67);
+            this.btnGeneral.Name = "btnGeneral";
+            this.btnGeneral.Size = new System.Drawing.Size(503, 79);
+            this.btnGeneral.TabIndex = 0;
+            this.btnGeneral.Text = "General";
+            this.btnGeneral.UseVisualStyleBackColor = false;
+            // 
+            // btnAccessibility
+            // 
+            this.btnAccessibility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnAccessibility.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnAccessibility.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnAccessibility.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnAccessibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccessibility.Font = new System.Drawing.Font("Impact", 22F);
+            this.btnAccessibility.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnAccessibility.Location = new System.Drawing.Point(15, 152);
+            this.btnAccessibility.Name = "btnAccessibility";
+            this.btnAccessibility.Size = new System.Drawing.Size(503, 79);
+            this.btnAccessibility.TabIndex = 1;
+            this.btnAccessibility.Text = "Accessibility";
+            this.btnAccessibility.UseVisualStyleBackColor = false;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Impact", 22F);
+            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnAbout.Location = new System.Drawing.Point(15, 237);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(503, 79);
+            this.btnAbout.TabIndex = 2;
+            this.btnAbout.Text = "About";
+            this.btnAbout.UseVisualStyleBackColor = false;
             // 
             // frmSettings
             // 
@@ -138,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FromControlPanel.ResumeLayout(false);
             this.FromControlPanel.PerformLayout();
+            this.ContentPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -151,5 +207,8 @@
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblMinimize;
         private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.Button btnGeneral;
+        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnAccessibility;
     }
 }
