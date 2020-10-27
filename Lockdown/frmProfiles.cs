@@ -13,7 +13,7 @@ namespace Lockdown
 {
     public partial class frmProfiles : Form
     { 
-        private const string BLOCKED_APPS_SCRIPT = "C:\\Users\\Gunner\\source\\repos\\Lockdown\\Lockdown\\Resources\\Scripts\\BlockList.ps1";
+        private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockList.ps1";
         public Form pForm;
         public frmProfiles()
         {
@@ -21,6 +21,7 @@ namespace Lockdown
 
             Profiles profile1 = new Profiles("Gunner", true, null, null);
             cbProfiles.Items.Add(profile1);
+            profile1.CreateSaveFiles();
         }
 
         #region Title Bar Controls
