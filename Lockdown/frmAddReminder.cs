@@ -17,6 +17,7 @@ namespace Lockdown
         public frmAddReminder()
         {
             InitializeComponent();
+            PopulateDropdowns();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,6 +58,34 @@ namespace Lockdown
 
             System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "reminderType.txt", newReminder.reminderType.ToString());
             System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "reminderType.txt", "\n");
+        }
+
+        private void PopulateDropdowns()
+        {
+            //How Often Dropdown
+            for (int i = 5; i < 60; i += 5)
+            {
+                cboHowOften.Items.Add(i + " minutes");
+            }
+            for (int j = 60; j < 120; j += 5)
+            {
+                if (j > 60)
+                {
+                    cboHowOften.Items.Add("1 hour " + (j - 60) + " minutes");
+                }
+                else
+                {
+                    cboHowOften.Items.Add("1 hour");
+                }
+            }
+            cboHowOften.Items.Add("2 hours");
+
+            //Reminder Type Dropdown
+            var types = Enum.GetValues(typeof(Reminder.ReminderType));
+            foreach (var type in types)
+            {
+                cboType.Items.Add(type);
+            }
         }
     }
 }

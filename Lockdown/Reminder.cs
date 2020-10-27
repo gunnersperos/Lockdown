@@ -14,7 +14,7 @@ namespace Lockdown
         public int remindInterval { get; set; }
         public int repeatInterval { get; set; }
         public int reminderType { get; set; }
-        private enum ReminderType
+        public enum ReminderType
         {
             banner = 1,
             popup = 2

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddReminder));
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.lblAddReminder = new System.Windows.Forms.Label();
-            this.lblBack = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.LogoPanel = new System.Windows.Forms.Panel();
@@ -56,7 +55,6 @@
             // FormControlPanel
             // 
             this.FormControlPanel.Controls.Add(this.lblAddReminder);
-            this.FormControlPanel.Controls.Add(this.lblBack);
             this.FormControlPanel.Controls.Add(this.lblMinimize);
             this.FormControlPanel.Controls.Add(this.lblExit);
             this.FormControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -74,18 +72,6 @@
             this.lblAddReminder.Size = new System.Drawing.Size(119, 23);
             this.lblAddReminder.TabIndex = 0;
             this.lblAddReminder.Text = "Add Reminder";
-            // 
-            // lblBack
-            // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblBack.Location = new System.Drawing.Point(0, 0);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(20, 20);
-            this.lblBack.TabIndex = 3;
-            this.lblBack.Text = "◁";
             // 
             // lblMinimize
             // 
@@ -291,7 +277,6 @@
 
         private System.Windows.Forms.Panel FormControlPanel;
         private System.Windows.Forms.Label lblAddReminder;
-        private System.Windows.Forms.Label lblBack;
         private System.Windows.Forms.Label lblMinimize;
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Panel LogoPanel;
