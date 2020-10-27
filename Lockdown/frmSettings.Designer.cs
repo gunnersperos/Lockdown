@@ -36,9 +36,11 @@
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
-            this.btnGeneral = new System.Windows.Forms.Button();
-            this.btnAccessibility = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
+            this.lblAbout = new System.Windows.Forms.Label();
+            this.lblGeneral = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSetting1 = new System.Windows.Forms.Label();
+            this.lblSetting2 = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FromControlPanel.SuspendLayout();
@@ -116,62 +118,71 @@
             // 
             // ContentPanel
             // 
-            this.ContentPanel.Controls.Add(this.btnAbout);
-            this.ContentPanel.Controls.Add(this.btnAccessibility);
-            this.ContentPanel.Controls.Add(this.btnGeneral);
+            this.ContentPanel.Controls.Add(this.lblSetting2);
+            this.ContentPanel.Controls.Add(this.lblSetting1);
+            this.ContentPanel.Controls.Add(this.label1);
+            this.ContentPanel.Controls.Add(this.lblGeneral);
+            this.ContentPanel.Controls.Add(this.lblAbout);
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentPanel.Location = new System.Drawing.Point(200, 29);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(530, 411);
             this.ContentPanel.TabIndex = 2;
             // 
-            // btnGeneral
+            // lblAbout
             // 
-            this.btnGeneral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnGeneral.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnGeneral.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnGeneral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGeneral.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnGeneral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnGeneral.Location = new System.Drawing.Point(15, 67);
-            this.btnGeneral.Name = "btnGeneral";
-            this.btnGeneral.Size = new System.Drawing.Size(503, 79);
-            this.btnGeneral.TabIndex = 0;
-            this.btnGeneral.Text = "General";
-            this.btnGeneral.UseVisualStyleBackColor = false;
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.Font = new System.Drawing.Font("Impact", 22F);
+            this.lblAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblAbout.Location = new System.Drawing.Point(40, 269);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(94, 37);
+            this.lblAbout.TabIndex = 0;
+            this.lblAbout.Text = "About:";
             // 
-            // btnAccessibility
+            // lblGeneral
             // 
-            this.btnAccessibility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnAccessibility.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnAccessibility.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnAccessibility.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnAccessibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccessibility.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnAccessibility.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnAccessibility.Location = new System.Drawing.Point(15, 152);
-            this.btnAccessibility.Name = "btnAccessibility";
-            this.btnAccessibility.Size = new System.Drawing.Size(503, 79);
-            this.btnAccessibility.TabIndex = 1;
-            this.btnAccessibility.Text = "Accessibility";
-            this.btnAccessibility.UseVisualStyleBackColor = false;
+            this.lblGeneral.AutoSize = true;
+            this.lblGeneral.Font = new System.Drawing.Font("Impact", 22F);
+            this.lblGeneral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblGeneral.Location = new System.Drawing.Point(40, 3);
+            this.lblGeneral.Name = "lblGeneral";
+            this.lblGeneral.Size = new System.Drawing.Size(120, 37);
+            this.lblGeneral.TabIndex = 1;
+            this.lblGeneral.Text = "General:";
             // 
-            // btnAbout
+            // label1
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnAbout.Location = new System.Drawing.Point(15, 237);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(503, 79);
-            this.btnAbout.TabIndex = 2;
-            this.btnAbout.Text = "About";
-            this.btnAbout.UseVisualStyleBackColor = false;
+            this.label1.Font = new System.Drawing.Font("Impact", 10F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.label1.Location = new System.Drawing.Point(62, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(426, 44);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Lockdown is a project created by three college seniors from University of Cincinn" +
+    "ati.";
+            // 
+            // lblSetting1
+            // 
+            this.lblSetting1.AutoSize = true;
+            this.lblSetting1.Font = new System.Drawing.Font("Impact", 10F);
+            this.lblSetting1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblSetting1.Location = new System.Drawing.Point(65, 53);
+            this.lblSetting1.Name = "lblSetting1";
+            this.lblSetting1.Size = new System.Drawing.Size(56, 18);
+            this.lblSetting1.TabIndex = 3;
+            this.lblSetting1.Text = "Setting1:";
+            // 
+            // lblSetting2
+            // 
+            this.lblSetting2.AutoSize = true;
+            this.lblSetting2.Font = new System.Drawing.Font("Impact", 10F);
+            this.lblSetting2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblSetting2.Location = new System.Drawing.Point(65, 95);
+            this.lblSetting2.Name = "lblSetting2";
+            this.lblSetting2.Size = new System.Drawing.Size(58, 18);
+            this.lblSetting2.TabIndex = 4;
+            this.lblSetting2.Text = "Setting2:";
             // 
             // frmSettings
             // 
@@ -194,6 +205,7 @@
             this.FromControlPanel.ResumeLayout(false);
             this.FromControlPanel.PerformLayout();
             this.ContentPanel.ResumeLayout(false);
+            this.ContentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,8 +219,10 @@
         private System.Windows.Forms.Label lblExit;
         private System.Windows.Forms.Label lblMinimize;
         private System.Windows.Forms.Label lblBack;
-        private System.Windows.Forms.Button btnGeneral;
-        private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button btnAccessibility;
+        private System.Windows.Forms.Label lblAbout;
+        private System.Windows.Forms.Label lblSetting2;
+        private System.Windows.Forms.Label lblSetting1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblGeneral;
     }
 }

@@ -20,7 +20,7 @@ namespace Lockdown
 
         private void lblExit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void lblMinimize_Click(object sender, EventArgs e)
