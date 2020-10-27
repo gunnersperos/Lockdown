@@ -38,5 +38,61 @@ namespace Lockdown
         }
 
         #endregion
+
+        #region Methods
+
+        public void CreateSaveFiles()
+        {
+            //if user doesn't already have directories and files for saving, create them
+
+            // **General Lockdown Directory** \\
+            if (System.IO.Directory.Exists(@"C:\Program Files\Lockdown"))
+            {
+                return; //dont need to run rest of method if these all already exist
+            }
+            else
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown");
+            }
+
+            // **Reminders Directory and Files** \\
+            List<string> reminderFiles = new List<string>
+                {
+                "isReminderOn.txt",
+                "Reminders.txt",
+                "reminderType.txt",
+                "remindInterval.txt",
+                "repeatInterval.txt"
+                };
+            if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Reminders"))
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown\Reminders");
+                if (reminderFiles != System.IO.Directory.GetFiles(@"C:\Program Files\Lockdown\Reminders").ToList<string>())//this probably wont work right
+                {
+                    foreach (var file in reminderFiles)
+                    {
+                        System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Reminders\" + file, string.Empty);
+                    }
+                }
+            }
+
+            // **Scripts** \\
+            List<string> scriptFiles = new List<string>
+                {
+                "BlockAppList.ps1",
+                "BlockSiteList.ps1"
+                };
+            if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Scripts"))
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown\Scripts");
+                //assume if directory doesn't exist neither do files?
+                foreach (var file in scriptFiles)
+                {
+                    System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Scripts\" + file, string.Empty);
+                }
+            }
+        }
+
+        #endregion
     }
 }
