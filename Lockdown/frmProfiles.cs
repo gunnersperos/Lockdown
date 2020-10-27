@@ -20,6 +20,7 @@ namespace Lockdown
             InitializeComponent();
 
             Profiles profile1 = new Profiles("Gunner", true, null, null);
+            boxProfiles.Text = "ProfileNameHere";
             cbProfiles.Items.Add(profile1);
             profile1.CreateSaveFiles();
         }

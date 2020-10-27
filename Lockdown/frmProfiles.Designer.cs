@@ -123,7 +123,6 @@
             // 
             this.boxProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.boxProfiles.DropDownHeight = 200;
-            this.boxProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boxProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.boxProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxProfiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
