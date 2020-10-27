@@ -44,6 +44,7 @@ namespace Lockdown
             try
             {
                 BlockedApp blockedApp = new BlockedApp();
+                openFileDialog1.InitialDirectory = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     blockedApp.SetPath(openFileDialog1.FileName);

@@ -333,7 +333,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.InitialDirectory = @"C:\Program Data\Microsoft\Windows\Start Menu\Programs";
             this.openFileDialog1.ReadOnlyChecked = true;
             // 
             // frmProfiles
