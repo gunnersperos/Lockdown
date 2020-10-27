@@ -32,6 +32,7 @@
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
+            this.btnNewProfile = new System.Windows.Forms.Button();
             this.boxProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfile = new System.Windows.Forms.Label();
             this.BlockedWebPanel = new System.Windows.Forms.Panel();
@@ -92,6 +93,7 @@
             // 
             // panelProfile
             // 
+            this.panelProfile.Controls.Add(this.btnNewProfile);
             this.panelProfile.Controls.Add(this.boxProfiles);
             this.panelProfile.Controls.Add(this.lblProfile);
             this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
@@ -99,6 +101,23 @@
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(530, 94);
             this.panelProfile.TabIndex = 5;
+            // 
+            // btnNewProfile
+            // 
+            this.btnNewProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnNewProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnNewProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnNewProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnNewProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewProfile.Font = new System.Drawing.Font("Impact", 22F);
+            this.btnNewProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnNewProfile.Location = new System.Drawing.Point(474, 27);
+            this.btnNewProfile.Name = "btnNewProfile";
+            this.btnNewProfile.Size = new System.Drawing.Size(35, 50);
+            this.btnNewProfile.TabIndex = 8;
+            this.btnNewProfile.Text = "+";
+            this.btnNewProfile.UseVisualStyleBackColor = false;
+            this.btnNewProfile.Click += new System.EventHandler(this.btnNewProfile_Click);
             // 
             // boxProfiles
             // 
@@ -114,9 +133,9 @@
             "Test1",
             "Test2",
             "Test3"});
-            this.boxProfiles.Location = new System.Drawing.Point(154, 27);
+            this.boxProfiles.Location = new System.Drawing.Point(130, 27);
             this.boxProfiles.Name = "boxProfiles";
-            this.boxProfiles.Size = new System.Drawing.Size(355, 50);
+            this.boxProfiles.Size = new System.Drawing.Size(318, 50);
             this.boxProfiles.TabIndex = 7;
             // 
             // lblProfile
@@ -125,7 +144,7 @@
             this.lblProfile.AutoSize = true;
             this.lblProfile.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblProfile.Location = new System.Drawing.Point(30, 32);
+            this.lblProfile.Location = new System.Drawing.Point(6, 32);
             this.lblProfile.Name = "lblProfile";
             this.lblProfile.Size = new System.Drawing.Size(128, 45);
             this.lblProfile.TabIndex = 6;
@@ -384,5 +403,6 @@
         private System.Windows.Forms.Button btnStartProfile;
         private System.Windows.Forms.ComboBox boxProfiles;
         private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.Button btnNewProfile;
     }
 }

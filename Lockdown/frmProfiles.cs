@@ -99,5 +99,10 @@ namespace Lockdown
             this.pForm.Show();
             this.Hide();
         }
+
+        private void btnNewProfile_Click(object sender, EventArgs e)
+        {
+            //allows user to create a new profile
+        }
     }
 }
