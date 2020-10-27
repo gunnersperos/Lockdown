@@ -17,7 +17,7 @@ namespace Lockdown
         public frmReminders()
         {
             InitializeComponent();
-            UpdateMyRemindersList();
+            //UpdateMyRemindersList();
         }
 
         public void UpdateMyRemindersList()
