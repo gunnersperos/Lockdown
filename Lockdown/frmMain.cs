@@ -13,7 +13,7 @@ namespace Lockdown
 {
     public partial class frmMain : Form
     {
-        private const string BLOCKED_APPS_SCRIPT = @"~\Lockdown\Resources\Scripts\BlockList.ps1";
+        private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Scripts\BlockList.ps1";
 
         //Create instance of each form
         private frmProfiles profiles = new frmProfiles();
@@ -37,12 +37,19 @@ namespace Lockdown
         }
         #endregion
 
+        #region Run Lock
+        
 
         private void LogoImgBox_Click(object sender, EventArgs e)
         {
-            //Starts default profile lock
+            
+        }
+
+        private void BlockApps()
+        {
             if (MessageBox.Show("Block this Profile's apps?", "Block Apps", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                //
                 var runScript = new ProcessStartInfo()
                 {
                     FileName = "powershell.exe",
@@ -52,6 +59,8 @@ namespace Lockdown
                 Process.Start(runScript);
             }
         }
+
+        #endregion
 
         #region Navigation Buttons
 

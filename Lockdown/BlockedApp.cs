@@ -12,6 +12,7 @@ namespace Lockdown
         public string appName { get; set; }
         public string appPath { get; set; }
 
+        #region Constructors
         public BlockedApp()
         {
             this.appName = string.Empty;
@@ -23,6 +24,7 @@ namespace Lockdown
             this.appPath = path;
             this.appName = GetAppName();
         }
+        #endregion
 
         public string GetAppName()
         {
@@ -48,5 +50,7 @@ namespace Lockdown
             this.appPath = path;
             this.appName = GetAppName();
         }
+
+
     }
 }

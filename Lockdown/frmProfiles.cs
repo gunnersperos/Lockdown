@@ -14,15 +14,23 @@ namespace Lockdown
     public partial class frmProfiles : Form
     { 
         private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockList.ps1";
+        private const string PROFILES_LIST = @"C:\Program Files\Lockdown\Profiles\ProfilesList.txt";
+        private const string BLOCKED_APP_LIST = @"C:\Program Files\Lockdown\Profiles\";
         public Form pForm;
+
+        private Profiles _inUseProfile = new Profiles();
         public frmProfiles()
         {
             InitializeComponent();
+            
+        }
 
-            Profiles profile1 = new Profiles("Gunner", true, null, null);
-            boxProfiles.Text = "ProfileNameHere";
-            cbProfiles.Items.Add(profile1);
-            profile1.CreateSaveFiles();
+        private void frmProfiles_Load(object sender, EventArgs e)
+        {
+            Profiles profile = new Profiles();
+            profile.CreateSaveFiles();
+
+            PopulateProfilesBox();
         }
 
         #region Title Bar Controls
@@ -45,14 +53,18 @@ namespace Lockdown
             try
             {
                 BlockedApp blockedApp = new BlockedApp();
+                //open dialog box for user to pick an app to block
                 openFileDialog1.InitialDirectory = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     blockedApp.SetPath(openFileDialog1.FileName);
-                    using (StreamWriter sw = File.AppendText(BLOCKED_APPS_SCRIPT))
-                    {
-                        sw.WriteLine($"ICACLS \"{blockedApp.appPath}\" /deny Everyone:RX");
-                    }
+                    //add blocked app to this profile's txt file
+                    System.IO.File.AppendAllText(BLOCKED_APP_LIST + _inUseProfile.profileName + "BlockedApps.txt", blockedApp.appPath + "\n");
+
+                    //using (StreamWriter sw = File.AppendText(BLOCKED_APPS_SCRIPT))
+                    //{
+                    //    sw.WriteLine($"ICACLS \"{blockedApp.appPath}\" /deny Everyone:RX");
+                    //}
                 }
                 return blockedApp.appName;
             }
@@ -71,8 +83,10 @@ namespace Lockdown
         private void btnUnblockApp_Click(object sender, EventArgs e)
         {
             //Removes app from list
-            listBlockedApps.Items.RemoveAt(listBlockedApps.SelectedIndex);
-
+            if (listBlockedApps.SelectedIndex > -1)
+            {
+                listBlockedApps.Items.RemoveAt(listBlockedApps.SelectedIndex);
+            }
         }
 
         #endregion
@@ -90,6 +104,8 @@ namespace Lockdown
 
         #endregion
 
+        #region Events
+
         private void btnStartProfile_Click(object sender, EventArgs e)
         {
             //Runs script using the lists in the profile
@@ -104,6 +120,103 @@ namespace Lockdown
         private void btnNewProfile_Click(object sender, EventArgs e)
         {
             //allows user to create a new profile
+
+            //show create profile controls, hide the others //do this instead of using new form?
+            ProfileButtonVisibleChange(true);
         }
+
+        private void btnCreateProfile_Click(object sender, EventArgs e)
+        {
+            // Create new profile if profile name isn't blank
+            if (!string.IsNullOrWhiteSpace(txtNewProfile.Text))
+            {
+                Profiles newProfile = new Profiles();
+                newProfile.CreateProfile(txtNewProfile.Text);
+            }
+            txtNewProfile.Text = string.Empty;
+            ProfileButtonVisibleChange(false);
+            PopulateProfilesBox();
+        }
+
+        private void btnCancelCreateProfile_Click(object sender, EventArgs e)
+        {
+            txtNewProfile.Text = string.Empty;
+            ProfileButtonVisibleChange(false);
+        }
+
+        private void cbProfiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //refresh listboxes
+            GetProfileData();
+        }
+
+        #endregion
+
+        #region Methods
+
+        public void PopulateProfilesBox()
+        {
+            string[] allProfiles = System.IO.File.ReadAllLines(PROFILES_LIST);
+            cbProfiles.Items.Clear();
+            foreach (var profile in allProfiles)
+            {
+                cbProfiles.Items.Add(profile);
+            }
+        }
+
+        private void ProfileButtonVisibleChange(bool newProfile)
+        {
+            //flips the visibility when creating new profile or not
+            lblNewProfile.Visible = newProfile;
+            txtNewProfile.Visible = newProfile;
+            btnCreateProfile.Visible = newProfile;
+            btnCancelCreateProfile.Visible = newProfile;
+
+            lblProfile.Visible = !newProfile;
+            cbProfiles.Visible = !newProfile;
+            btnNewProfile.Visible = !newProfile;
+        }
+
+        private void GetProfileData()
+        {
+            string currProfileName = cbProfiles.Text;
+            if (currProfileName == string.Empty)
+            {
+                return; // if no profile return
+            }
+            this._inUseProfile.profileName = currProfileName;
+            //find the right file for profile to get the blocked app list from
+            this._inUseProfile.GetBlockedAppsList();
+
+            //populate blocked apps list control
+            listBlockedApps.Items.Clear();
+            foreach (var app in _inUseProfile.blockedApps)
+            {
+                listBlockedApps.Items.Add(GetAppName(app));
+            }
+            
+        }
+
+        public string GetAppName(string appPath) //copied this from BlockedApp.cs
+        {
+            //gets the app name from the filepath
+            string name = string.Empty;
+            foreach (char character in appPath)
+            {
+                if (character == '.')
+                {
+                    return name;
+                }
+                name += character;
+                if (character == '\\')
+                {
+                    name = string.Empty;
+                }
+            }
+            return name;
+        }
+
+        #endregion
+
     }
 }

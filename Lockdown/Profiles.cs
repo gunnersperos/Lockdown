@@ -10,9 +10,9 @@ namespace Lockdown
     {
         #region Class Members
         //private members for Profiles Class
-        private string profileName { get; set; }
+        public string profileName { get; set; }
         private bool profileEnabled { get; set; }
-        private List<string> blockedApps { get; set; }
+        public List<string> blockedApps { get; set; }
         private List<string> blockedWebsites { get; set; }
 
         #endregion
@@ -48,7 +48,7 @@ namespace Lockdown
             // **General Lockdown Directory** \\
             if (System.IO.Directory.Exists(@"C:\Program Files\Lockdown"))
             {
-                return; //dont need to run rest of method if these all already exist
+                //return; //dont need to run rest of method if these all already exist
             }
             else
             {
@@ -76,6 +76,13 @@ namespace Lockdown
                 }
             }
 
+            // **Create Profiles Name List** \\
+            if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Profiles"))
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown\Profiles");
+                System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\ProfilesList.txt", string.Empty);
+            }
+
             // **Scripts** \\
             List<string> scriptFiles = new List<string>
                 {
@@ -90,7 +97,33 @@ namespace Lockdown
                 {
                     System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Scripts\" + file, string.Empty);
                 }
+                //Write initial commands in BlockAppList.ps1
+                System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Scripts\BlockAppList.ps1", string.Empty);
             }
+        }
+
+        public void CreateProfile(string profileName)
+        {
+            if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Profiles"))
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown\Profiles");
+            }
+            if (System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Profiles"))
+            {
+                //create the files for the new profile, 
+                System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profileName + "BlockedApps.txt", string.Empty);
+                //System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profile.profileName + "_BlockedApps.ps1", string.Empty);
+                //System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profile.profileName + "_BlockedSites.ps1", string.Empty);
+
+                //add new profile to profiles list file
+                System.IO.File.AppendAllText(@"C:\Program Files\Lockdown\Profiles\ProfilesList.txt", profileName + "\n");
+            }
+        }
+
+        public void GetBlockedAppsList()
+        {
+            string[] appsArray = System.IO.File.ReadAllLines(@"C:\Program Files\Lockdown\Profiles\" + profileName + "BlockedApps.txt");
+            this.blockedApps = appsArray.ToList<string>();
         }
 
         #endregion
