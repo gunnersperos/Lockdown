@@ -32,6 +32,10 @@
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
+            this.btnCreateProfile = new System.Windows.Forms.Button();
+            this.txtNewProfile = new System.Windows.Forms.TextBox();
+            this.btnCancelCreateProfile = new System.Windows.Forms.Button();
+            this.lblNewProfile = new System.Windows.Forms.Label();
             this.btnNewProfile = new System.Windows.Forms.Button();
             this.cbProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfile = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtNewProfile = new System.Windows.Forms.TextBox();
-            this.btnCancelCreateProfile = new System.Windows.Forms.Button();
-            this.lblNewProfile = new System.Windows.Forms.Label();
-            this.btnCreateProfile = new System.Windows.Forms.Button();
             this.NavigationPanel.SuspendLayout();
             this.panelProfile.SuspendLayout();
             this.BlockedWebPanel.SuspendLayout();
@@ -107,6 +107,64 @@
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(530, 94);
             this.panelProfile.TabIndex = 5;
+            // 
+            // btnCreateProfile
+            // 
+            this.btnCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnCreateProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnCreateProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnCreateProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnCreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateProfile.Font = new System.Drawing.Font("Impact", 22F);
+            this.btnCreateProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCreateProfile.Location = new System.Drawing.Point(450, 27);
+            this.btnCreateProfile.Name = "btnCreateProfile";
+            this.btnCreateProfile.Size = new System.Drawing.Size(35, 42);
+            this.btnCreateProfile.TabIndex = 13;
+            this.btnCreateProfile.Text = "✓";
+            this.btnCreateProfile.UseVisualStyleBackColor = false;
+            this.btnCreateProfile.Visible = false;
+            this.btnCreateProfile.Click += new System.EventHandler(this.btnCreateProfile_Click);
+            // 
+            // txtNewProfile
+            // 
+            this.txtNewProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.txtNewProfile.Location = new System.Drawing.Point(130, 27);
+            this.txtNewProfile.Name = "txtNewProfile";
+            this.txtNewProfile.Size = new System.Drawing.Size(318, 44);
+            this.txtNewProfile.TabIndex = 12;
+            this.txtNewProfile.Visible = false;
+            // 
+            // btnCancelCreateProfile
+            // 
+            this.btnCancelCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnCancelCreateProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnCancelCreateProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnCancelCreateProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnCancelCreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelCreateProfile.Font = new System.Drawing.Font("Impact", 22F);
+            this.btnCancelCreateProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCancelCreateProfile.Location = new System.Drawing.Point(491, 27);
+            this.btnCancelCreateProfile.Name = "btnCancelCreateProfile";
+            this.btnCancelCreateProfile.Size = new System.Drawing.Size(35, 42);
+            this.btnCancelCreateProfile.TabIndex = 11;
+            this.btnCancelCreateProfile.Text = "X";
+            this.btnCancelCreateProfile.UseVisualStyleBackColor = false;
+            this.btnCancelCreateProfile.Visible = false;
+            this.btnCancelCreateProfile.Click += new System.EventHandler(this.btnCancelCreateProfile_Click);
+            // 
+            // lblNewProfile
+            // 
+            this.lblNewProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNewProfile.AutoSize = true;
+            this.lblNewProfile.Font = new System.Drawing.Font("Impact", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblNewProfile.Location = new System.Drawing.Point(3, 3);
+            this.lblNewProfile.Name = "lblNewProfile";
+            this.lblNewProfile.Size = new System.Drawing.Size(124, 88);
+            this.lblNewProfile.TabIndex = 10;
+            this.lblNewProfile.Text = "New\nProfile:";
+            this.lblNewProfile.Visible = false;
             // 
             // btnNewProfile
             // 
@@ -350,63 +408,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.ReadOnlyChecked = true;
-            // 
-            // txtNewProfile
-            // 
-            this.txtNewProfile.Location = new System.Drawing.Point(130, 49);
-            this.txtNewProfile.Name = "txtNewProfile";
-            this.txtNewProfile.Size = new System.Drawing.Size(318, 20);
-            this.txtNewProfile.TabIndex = 12;
-            this.txtNewProfile.Visible = false;
-            // 
-            // btnCancelCreateProfile
-            // 
-            this.btnCancelCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnCancelCreateProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnCancelCreateProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnCancelCreateProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnCancelCreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelCreateProfile.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnCancelCreateProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnCancelCreateProfile.Location = new System.Drawing.Point(491, 27);
-            this.btnCancelCreateProfile.Name = "btnCancelCreateProfile";
-            this.btnCancelCreateProfile.Size = new System.Drawing.Size(35, 42);
-            this.btnCancelCreateProfile.TabIndex = 11;
-            this.btnCancelCreateProfile.Text = "X";
-            this.btnCancelCreateProfile.UseVisualStyleBackColor = false;
-            this.btnCancelCreateProfile.Visible = false;
-            this.btnCancelCreateProfile.Click += new System.EventHandler(this.btnCancelCreateProfile_Click);
-            // 
-            // lblNewProfile
-            // 
-            this.lblNewProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNewProfile.AutoSize = true;
-            this.lblNewProfile.Font = new System.Drawing.Font("Impact", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblNewProfile.Location = new System.Drawing.Point(3, 3);
-            this.lblNewProfile.Name = "lblNewProfile";
-            this.lblNewProfile.Size = new System.Drawing.Size(124, 88);
-            this.lblNewProfile.TabIndex = 10;
-            this.lblNewProfile.Text = "New\nProfile:";
-            this.lblNewProfile.Visible = false;
-            // 
-            // btnCreateProfile
-            // 
-            this.btnCreateProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnCreateProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnCreateProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnCreateProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnCreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateProfile.Font = new System.Drawing.Font("Impact", 22F);
-            this.btnCreateProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnCreateProfile.Location = new System.Drawing.Point(450, 27);
-            this.btnCreateProfile.Name = "btnCreateProfile";
-            this.btnCreateProfile.Size = new System.Drawing.Size(35, 42);
-            this.btnCreateProfile.TabIndex = 13;
-            this.btnCreateProfile.Text = "✓";
-            this.btnCreateProfile.UseVisualStyleBackColor = false;
-            this.btnCreateProfile.Visible = false;
-            this.btnCreateProfile.Click += new System.EventHandler(this.btnCreateProfile_Click);
             // 
             // frmProfiles
             // 
