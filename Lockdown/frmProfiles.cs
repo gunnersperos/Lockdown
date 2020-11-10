@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Lockdown
 {
@@ -16,6 +17,7 @@ namespace Lockdown
         private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockList.ps1";
         private const string PROFILES_LIST = @"C:\Program Files\Lockdown\Profiles\ProfilesList.txt";
         private const string BLOCKED_APP_LIST = @"C:\Program Files\Lockdown\Profiles\";
+        private const string BLOCKED_SITES_LIST = @"C:\Program Files\Lockdown\Profiles\";
         public Form pForm;
 
         private Profiles _inUseProfile = new Profiles();
@@ -92,14 +94,38 @@ namespace Lockdown
         #endregion
 
         #region Block Websites
+        private static void AddBlockedWebsites()
+        {
+            try
+            {
+                frmBlockWebsite blockSite = new frmBlockWebsite();
+                blockSite.Show();
+                blockSite.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public String UrlAdded(String url)
+        {
+            return url;
+        }
+
         private void btnUnblockWebsite_Click(object sender, EventArgs e)
         {
-            //Removes website from list
+            //Remove Website from list
+            if (listBlockedWebsites.SelectedIndex > -1)
+            {
+                listBlockedWebsites.Items.RemoveAt(listBlockedWebsites.SelectedIndex);
+            }
         }
 
         private void btnAddBlockedWebsite_Click(object sender, EventArgs e)
         {
             //Adds website to list
+            listBlockedApps.Items.Add(AddBlockedWebsites());
         }
 
         #endregion
