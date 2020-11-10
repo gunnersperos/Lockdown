@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfiles));
             this.NavigationPanel = new System.Windows.Forms.Panel();
+            this.btnStopProfile = new System.Windows.Forms.Button();
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
             this.btnCreateProfile = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnStopProfile = new System.Windows.Forms.Button();
             this.NavigationPanel.SuspendLayout();
             this.panelProfile.SuspendLayout();
             this.BlockedWebPanel.SuspendLayout();
@@ -77,6 +77,23 @@
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(530, 440);
             this.NavigationPanel.TabIndex = 5;
+            // 
+            // btnStopProfile
+            // 
+            this.btnStopProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnStopProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnStopProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnStopProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnStopProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopProfile.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnStopProfile.Location = new System.Drawing.Point(344, 402);
+            this.btnStopProfile.Name = "btnStopProfile";
+            this.btnStopProfile.Size = new System.Drawing.Size(88, 32);
+            this.btnStopProfile.TabIndex = 7;
+            this.btnStopProfile.Text = "Stop Profile";
+            this.btnStopProfile.UseVisualStyleBackColor = false;
+            this.btnStopProfile.Click += new System.EventHandler(this.btnStopProfile_Click);
             // 
             // btnStartProfile
             // 
@@ -410,23 +427,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.ReadOnlyChecked = true;
-            // 
-            // btnStopProfile
-            // 
-            this.btnStopProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnStopProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnStopProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnStopProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnStopProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopProfile.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnStopProfile.Location = new System.Drawing.Point(344, 402);
-            this.btnStopProfile.Name = "btnStopProfile";
-            this.btnStopProfile.Size = new System.Drawing.Size(88, 32);
-            this.btnStopProfile.TabIndex = 7;
-            this.btnStopProfile.Text = "Stop Profile";
-            this.btnStopProfile.UseVisualStyleBackColor = false;
-            this.btnStopProfile.Click += new System.EventHandler(this.btnStopProfile_Click);
             // 
             // frmProfiles
             // 

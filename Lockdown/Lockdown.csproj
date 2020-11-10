@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlockedApp.cs" />
+    <Compile Include="BlockedSite.cs" />
     <Compile Include="frmAddProfile.cs">
       <SubType>Form</SubType>
     </Compile>

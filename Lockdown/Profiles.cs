@@ -13,7 +13,7 @@ namespace Lockdown
         public string profileName { get; set; }
         private bool profileEnabled { get; set; }
         public List<string> blockedApps { get; set; }
-        private List<string> blockedWebsites { get; set; }
+        public List<string> blockedWebsites { get; set; }
 
         #endregion
 
@@ -112,8 +112,7 @@ namespace Lockdown
             {
                 //create the files for the new profile, 
                 System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profileName + "BlockedApps.txt", string.Empty);
-                //System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profile.profileName + "_BlockedApps.ps1", string.Empty);
-                //System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profile.profileName + "_BlockedSites.ps1", string.Empty);
+                System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\" + profileName + "BlockedSites.txt", string.Empty);
 
                 //add new profile to profiles list file
                 System.IO.File.AppendAllText(@"C:\Program Files\Lockdown\Profiles\ProfilesList.txt", profileName + "\n");
@@ -124,6 +123,12 @@ namespace Lockdown
         {
             string[] appsArray = System.IO.File.ReadAllLines(@"C:\Program Files\Lockdown\Profiles\" + profileName + "BlockedApps.txt");
             this.blockedApps = appsArray.ToList<string>();
+        }
+
+        public void GetBlockedSitesList()
+        {
+            string[] sitesArray = System.IO.File.ReadAllLines(@"C:\Program Files\Lockdown\Profiles\" + profileName + "BlockedSites.txt");
+            this.blockedWebsites = sitesArray.ToList<string>();
         }
 
         #endregion

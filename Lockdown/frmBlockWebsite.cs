@@ -12,6 +12,7 @@ namespace Lockdown
 {
     public partial class frmBlockWebsite : Form
     {
+        public string url { get; set; }
         public frmBlockWebsite()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Lockdown
         private void btnURLSubmit_Click(object sender, EventArgs e)
         {
             //We want this to submit the url and put it in the list of blocked sites.
+            this.url = txtURL.Text;
         }
     }
 }

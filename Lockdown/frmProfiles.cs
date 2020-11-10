@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Lockdown
 {
     public partial class frmProfiles : Form
-    { 
+    {
         private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockAppList.ps1";
         private const string PROFILES_LIST = @"C:\Program Files\Lockdown\Profiles\ProfilesList.txt";
         private const string BLOCKED_APP_LIST = @"C:\Program Files\Lockdown\Profiles\";
@@ -63,11 +63,6 @@ namespace Lockdown
                     blockedApp.SetPath(openFileDialog1.FileName);
                     //add blocked app to this profile's txt file
                     System.IO.File.AppendAllText(BLOCKED_APP_LIST + _inUseProfile.profileName + "BlockedApps.txt", blockedApp.appPath + "\n");
-
-                    //using (StreamWriter sw = File.AppendText(BLOCKED_APPS_SCRIPT))
-                    //{
-                    //    sw.WriteLine($"ICACLS \"{blockedApp.appPath}\" /deny Everyone:RX");
-                    //}
                 }
                 return blockedApp.appName;
             }
@@ -109,7 +104,7 @@ namespace Lockdown
                 //overwrite ps script for each app
                 System.IO.File.WriteAllText(BLOCKED_APPS_SCRIPT, "cd ~\nICACLS "
                     + "\"" + app + "\"" + " /grant Everyone:RX");
-                //                                          ^ this is probably an issue
+                //                                          ^ this is possibly an issue
 
                 //run ps script
                 var runScript = new ProcessStartInfo()
@@ -125,6 +120,7 @@ namespace Lockdown
         private void StartProfile()
         {
             BlockApps();
+            //BlockSites();
         }
 
         private void StopProfile()
@@ -140,22 +136,35 @@ namespace Lockdown
         private void btnUnblockApp_Click(object sender, EventArgs e)
         {
             //Removes app from list
-            if (listBlockedApps.SelectedIndex > -1)
-            {
-                listBlockedApps.Items.RemoveAt(listBlockedApps.SelectedIndex);
-            }
+            //if (listBlockedApps.SelectedIndex > -1)
+            //{
+            //    listBlockedApps.Items.RemoveAt(listBlockedApps.SelectedIndex);
+            //}
         }
 
         #endregion
 
         #region Block Websites
-        private static void AddBlockedWebsites()
+        private string AddBlockedWebsites()
         {
             try
             {
-                frmBlockWebsite blockSite = new frmBlockWebsite();
-                blockSite.Show();
-                blockSite.BringToFront();
+                using (frmBlockWebsite addUrl = new frmBlockWebsite())
+                {
+                    var result = addUrl.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        string url = addUrl.url;
+                        BlockedSite blockedSite = new BlockedSite(url);
+
+                        //Add to selected profile's blocked site list
+                        System.IO.File.AppendAllText(BLOCKED_SITES_LIST + _inUseProfile.profileName + "BlockedSites.txt", blockedSite.url + "\n");
+
+                        return url;
+                    }
+                    return null;
+                }
             }
             catch (Exception ex)
             {
@@ -163,7 +172,7 @@ namespace Lockdown
             }
         }
 
-        public String UrlAdded(String url)
+        public string UrlAdded(string url)
         {
             return url;
         }
@@ -276,14 +285,25 @@ namespace Lockdown
                 return; // if no profile return
             }
             this._inUseProfile.profileName = currProfileName;
+
             //find the right file for profile to get the blocked app list from
             this._inUseProfile.GetBlockedAppsList();
+
+            // find the right file for profile to get the blocked site list from
+            this._inUseProfile.GetBlockedSitesList();
 
             //populate blocked apps list control
             listBlockedApps.Items.Clear();
             foreach (var app in _inUseProfile.blockedApps)
             {
                 listBlockedApps.Items.Add(GetAppName(app));
+            }
+
+            //populate blocked sites list control
+            listBlockedWebsites.Items.Clear();
+            foreach (var site in _inUseProfile.blockedWebsites)
+            {
+                listBlockedWebsites.Items.Add(GetSiteName(site));
             }
             
         }
@@ -307,8 +327,24 @@ namespace Lockdown
             return name;
         }
 
+        public string GetSiteName(string url) //copied this from BlockedSite.cs
+        {
+            //gets the site name from the url
+            string siteName = url;
+
+            //update comment if this works
+            char[] trimFront = { 'w', 'w', 'w', '.' };
+            char[] trimBack = { '.', 'c', 'o', 'm' };
+
+            //update comment if this works
+            siteName.Trim(trimFront);
+            siteName.Trim(trimBack);
+
+            return siteName;
+        }
+
         #endregion
 
-        
+
     }
 }
