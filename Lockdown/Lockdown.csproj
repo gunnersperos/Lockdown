@@ -59,6 +59,12 @@
     <Compile Include="frmAddReminder.Designer.cs">
       <DependentUpon>frmAddReminder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBlockWebsite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBlockWebsite.Designer.cs">
+      <DependentUpon>frmBlockWebsite.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddReminder.resx">
       <DependentUpon>frmAddReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBlockWebsite.resx">
+      <DependentUpon>frmBlockWebsite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
