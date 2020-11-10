@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Lockdown
 {
     public partial class frmProfiles : Form
     { 
-        private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockList.ps1";
+        private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockAppList.ps1";
         private const string PROFILES_LIST = @"C:\Program Files\Lockdown\Profiles\ProfilesList.txt";
         private const string BLOCKED_APP_LIST = @"C:\Program Files\Lockdown\Profiles\";
         public Form pForm;
@@ -70,9 +71,63 @@ namespace Lockdown
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "EXCEPTION");
                 throw ex;
             }
+        }
+
+        private void BlockApps()
+        {
+            //block apps from selected profile's blocked app list
+
+            //**(should use powershell directly instead of using script?)**\\
+            //loop through blocked apps and run ps script for each one
+            foreach (var app in _inUseProfile.blockedApps)
+            {
+                //overwrite ps script for each app
+                System.IO.File.WriteAllText(BLOCKED_APPS_SCRIPT, "cd ~\nICACLS "
+                    + "\"" + app + "\"" + " /deny Everyone:RX");
+
+                //run ps script
+                var runScript = new ProcessStartInfo()
+                {
+                    FileName = "powershell.exe",
+                    Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_APPS_SCRIPT}\"",
+                    UseShellExecute = false
+                };
+                Process.Start(runScript);
+            }
+        }
+
+        private void UnblockApps()
+        {
+            //unblocked previously blocked apps
+            foreach (var app in _inUseProfile.blockedApps)
+            {
+                //overwrite ps script for each app
+                System.IO.File.WriteAllText(BLOCKED_APPS_SCRIPT, "cd ~\nICACLS "
+                    + "\"" + app + "\"" + " /grant Everyone:RX");
+                //                                          ^ this is probably an issue
+
+                //run ps script
+                var runScript = new ProcessStartInfo()
+                {
+                    FileName = "powershell.exe",
+                    Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_APPS_SCRIPT}\"",
+                    UseShellExecute = false
+                };
+                Process.Start(runScript);
+            }
+        }
+
+        private void StartProfile()
+        {
+            BlockApps();
+        }
+
+        private void StopProfile()
+        {
+            UnblockApps();
         }
 
         private void btnAddBlockedApp_Click(object sender, EventArgs e)
@@ -109,6 +164,16 @@ namespace Lockdown
         private void btnStartProfile_Click(object sender, EventArgs e)
         {
             //Runs script using the lists in the profile
+            if (MessageBox.Show("Would you like to start this profile?",
+                "Start Profile", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                StartProfile();
+            }
+        }
+
+        private void btnStopProfile_Click(object sender, EventArgs e)
+        {
+            StopProfile();
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -218,5 +283,6 @@ namespace Lockdown
 
         #endregion
 
+        
     }
 }
