@@ -27,6 +27,8 @@ namespace Lockdown
         {
             //We want this to submit the url and put it in the list of blocked sites.
             this.url = txtURL.Text;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

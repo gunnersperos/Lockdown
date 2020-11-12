@@ -16,6 +16,7 @@ namespace Lockdown
     public partial class frmProfiles : Form
     {
         private const string BLOCKED_APPS_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockAppList.ps1";
+        private const string BLOCKED_SITES_SCRIPT = @"C:\Program Files\Lockdown\Scripts\BlockSiteList.ps1";
         private const string PROFILES_LIST = @"C:\Program Files\Lockdown\Profiles\ProfilesList.txt";
         private const string BLOCKED_APP_LIST = @"C:\Program Files\Lockdown\Profiles\";
         private const string BLOCKED_SITES_LIST = @"C:\Program Files\Lockdown\Profiles\";
@@ -117,17 +118,6 @@ namespace Lockdown
             }
         }
 
-        private void StartProfile()
-        {
-            BlockApps();
-            //BlockSites();
-        }
-
-        private void StopProfile()
-        {
-            UnblockApps();
-        }
-
         private void btnAddBlockedApp_Click(object sender, EventArgs e)
         {
             listBlockedApps.Items.Add(AddBlockedApp());
@@ -145,6 +135,28 @@ namespace Lockdown
         #endregion
 
         #region Block Websites
+
+        private void BlockSites()
+        {
+            //loop through blocked sites and run ps script for each one
+            foreach (var site in _inUseProfile.blockedWebsites)
+            {
+                //add site to hosts
+                System.IO.File.AppendAllText(@"C:\Windows\System32\drivers\etc\hosts",
+                    "127.0.0.1 " + site + ".com" + '\n'
+                  + "127.0.0.1 www." + site + ".com" + "\n");
+            }
+        }
+
+        private void UnblockSites()
+        {
+            foreach (var site in _inUseProfile.blockedWebsites)
+            {
+                //remove site from hosts
+                //not sure how to do this yet but more important to get reminders rn
+            }
+
+        }
         private string AddBlockedWebsites()
         {
             try
@@ -180,16 +192,18 @@ namespace Lockdown
         private void btnUnblockWebsite_Click(object sender, EventArgs e)
         {
             //Remove Website from list
-            if (listBlockedWebsites.SelectedIndex > -1)
-            {
-                listBlockedWebsites.Items.RemoveAt(listBlockedWebsites.SelectedIndex);
-            }
+            //if (listBlockedWebsites.SelectedIndex > -1)
+            //{
+            //    listBlockedWebsites.Items.RemoveAt(listBlockedWebsites.SelectedIndex);
+            //}
         }
 
         private void btnAddBlockedWebsite_Click(object sender, EventArgs e)
         {
-            //Adds website to list
-            listBlockedApps.Items.Add(AddBlockedWebsites());
+            //Adds website to list by refreshing profile
+            AddBlockedWebsites();
+            GetProfileData();
+            //listBlockedWebsites.Items.Add(AddBlockedWebsites());
         }
 
         #endregion
@@ -253,6 +267,18 @@ namespace Lockdown
         #endregion
 
         #region Methods
+
+        private void StartProfile()
+        {
+            //BlockApps();
+            BlockSites();
+        }
+
+        private void StopProfile()
+        {
+            UnblockApps();
+            //UnblockSites
+        }
 
         public void PopulateProfilesBox()
         {
@@ -329,18 +355,46 @@ namespace Lockdown
 
         public string GetSiteName(string url) //copied this from BlockedSite.cs
         {
-            //gets the site name from the url
-            string siteName = url;
+            //let's just make them put facebook instead of facebook.com etc.
+            return url.ToLower();
 
-            //update comment if this works
-            char[] trimFront = { 'w', 'w', 'w', '.' };
-            char[] trimBack = { '.', 'c', 'o', 'm' };
+            // gdi. this works if putting www.example.com but not example.com
+            //bool trimmingFront = true;
+            //bool trimmingBack = true;
+            //string name = string.Empty;
+            //foreach (char character in url)
+            //{
+            //    if (trimmingFront && character == '.')
+            //    {
+            //        name = string.Empty;
+            //        trimmingFront = false;
+            //        continue;
+            //    }
+            //    if (character == '.')
+            //    {
+            //        return name;
+            //    }
+            //    name += character;
+            //}
 
-            //update comment if this works
-            siteName.Trim(trimFront);
-            siteName.Trim(trimBack);
 
-            return siteName;
+            //return name;
+
+
+            ////gets the site name from the url
+            //string siteName = url;
+
+            ////update comment if this works
+            //char[] trimFront1 = { 'h', 't', 't', 'p', 's', ':', '/', '/' };
+            //char[] trimFront2 = { 'w', 'w', 'w', '.' };
+            //char[] trimBack = { '.', 'c', 'o', 'm' };
+
+            ////update comment if this works
+            //siteName = siteName.Trim(trimFront1);
+            //siteName = siteName.Trim(trimFront2);
+            //siteName = siteName.Trim(trimBack);
+
+            //return siteName;
         }
 
         #endregion
