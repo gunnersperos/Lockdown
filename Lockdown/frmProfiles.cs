@@ -121,6 +121,7 @@ namespace Lockdown
         private void btnAddBlockedApp_Click(object sender, EventArgs e)
         {
             listBlockedApps.Items.Add(AddBlockedApp());
+            GetProfileData();
         }
 
         private void btnUnblockApp_Click(object sender, EventArgs e)
@@ -153,7 +154,32 @@ namespace Lockdown
             foreach (var site in _inUseProfile.blockedWebsites)
             {
                 //remove site from hosts
-                //not sure how to do this yet but more important to get reminders rn
+                System.IO.File.WriteAllText(BLOCKED_SITES_SCRIPT,
+                    "Function Unblock {" + '\n'
+                  + "$hosts = 'C:\\Windows\\System32\\drivers\\etc\\hosts'" + '\n'
+                  + "$is_blocked = Get-Content -Path $hosts |" +'\n'
+                  + "Select-String -Pattern([regex]::Escape(\"" + site + ".com\"))" +'\n'
+                  + "If($is_blocked) {" + '\n'
+                  + "$newhosts = Get-Content -Path $hosts |" +'\n'
+                  + "Where-Object {" + '\n'
+                  + "$_ -notmatch([regex]::Escape(\"" + site + ".com\"))" + '\n'
+                  + "}" + '\n'
+                  + "Where-Object {" + '\n'
+                  + "$_ -notmatch([regex]::Escape(\"www." + site + ".com\"))" + '\n'
+                  + "}" + '\n'
+                  + "Set-Content -Path $hosts -Value $newhosts" + '\n'
+                  + "}" + '\n'
+                  + "}" + '\n'
+                  + "Unblock"
+                );
+                //run ps script
+                var runScript = new ProcessStartInfo()
+                {
+                    FileName = "powershell.exe",
+                    Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_SITES_SCRIPT}\"",
+                    UseShellExecute = false
+                };
+                Process.Start(runScript);
             }
 
         }
@@ -270,14 +296,14 @@ namespace Lockdown
 
         private void StartProfile()
         {
-            //BlockApps();
+            BlockApps();
             BlockSites();
         }
 
         private void StopProfile()
         {
             UnblockApps();
-            //UnblockSites
+            UnblockSites();
         }
 
         public void PopulateProfilesBox()
