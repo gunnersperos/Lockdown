@@ -151,12 +151,12 @@ namespace Lockdown
 
         private void UnblockSites()
         {
+            System.IO.File.WriteAllText(BLOCKED_SITES_SCRIPT, "Function Unblock {" + '\n');
             foreach (var site in _inUseProfile.blockedWebsites)
             {
                 //remove site from hosts
-                System.IO.File.WriteAllText(BLOCKED_SITES_SCRIPT,
-                    "Function Unblock {" + '\n'
-                  + "$hosts = 'C:\\Windows\\System32\\drivers\\etc\\hosts'" + '\n'
+                System.IO.File.AppendAllText(BLOCKED_SITES_SCRIPT,
+                  "$hosts = 'C:\\Windows\\System32\\drivers\\etc\\hosts'" + '\n'
                   + "$is_blocked = Get-Content -Path $hosts |" +'\n'
                   + "Select-String -Pattern([regex]::Escape(\"" + site + ".com\"))" +'\n'
                   + "If($is_blocked) {" + '\n'
@@ -169,19 +169,21 @@ namespace Lockdown
                   + "}" + '\n'
                   + "Set-Content -Path $hosts -Value $newhosts" + '\n'
                   + "}" + '\n'
-                  + "}" + '\n'
-                  + "Unblock"
                 );
-                //run ps script
-                var runScript = new ProcessStartInfo()
+            }
+            System.IO.File.AppendAllText(BLOCKED_SITES_SCRIPT,
+                "}" + '\n'
+                + "Unblock"
+            );
+
+            //run ps script
+            var runScript = new ProcessStartInfo()
                 {
                     FileName = "powershell.exe",
                     Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_SITES_SCRIPT}\"",
                     UseShellExecute = false
                 };
-                Process.Start(runScript);
-            }
-
+            Process.Start(runScript);
         }
         private string AddBlockedWebsites()
         {
