@@ -67,13 +67,16 @@ namespace Lockdown
             if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Reminders"))
             {
                 System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown\Reminders");
-                if (reminderFiles != System.IO.Directory.GetFiles(@"C:\Program Files\Lockdown\Reminders").ToList<string>())//this probably wont work right
-                {
-                    foreach (var file in reminderFiles)
-                    {
-                        System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Reminders\" + file, string.Empty);
-                    }
-                }
+                // testing out JSON
+                System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Reminders\Reminders.json", string.Empty);
+
+                //if (reminderFiles != System.IO.Directory.GetFiles(@"C:\Program Files\Lockdown\Reminders").ToList<string>())//this probably wont work right
+                //{
+                //    foreach (var file in reminderFiles)
+                //    {
+                //        System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Reminders\" + file, string.Empty);
+                //    }
+                //}
             }
 
             // **Create Profiles Name List** \\
