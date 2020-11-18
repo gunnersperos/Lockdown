@@ -25,6 +25,12 @@ namespace Lockdown
             InitializeComponent();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            Profiles profile = new Profiles();
+            profile.CreateSaveFiles();
+        }
+
         #region Title Bar Controls
         private void lblExit_Click(object sender, EventArgs e)
         {
@@ -150,5 +156,7 @@ namespace Lockdown
         }
 
         #endregion
+
+        
     }
 }

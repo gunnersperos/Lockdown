@@ -193,6 +193,7 @@
             // 
             this.clbMyReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
             this.clbMyReminders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clbMyReminders.CheckOnClick = true;
             this.clbMyReminders.Font = new System.Drawing.Font("Impact", 10F);
             this.clbMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.clbMyReminders.FormattingEnabled = true;
@@ -200,6 +201,9 @@
             this.clbMyReminders.Name = "clbMyReminders";
             this.clbMyReminders.Size = new System.Drawing.Size(243, 268);
             this.clbMyReminders.TabIndex = 1;
+            this.clbMyReminders.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbMyReminders_ItemCheck);
+            this.clbMyReminders.Click += new System.EventHandler(this.clbMyReminders_Click);
+            this.clbMyReminders.SelectedIndexChanged += new System.EventHandler(this.clbMyReminders_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -237,6 +241,7 @@
             this.Name = "frmReminders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lockdown";
+            this.Load += new System.EventHandler(this.frmReminders_Load);
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.FormControlPanel.ResumeLayout(false);

@@ -40,36 +40,14 @@ namespace Lockdown
             Reminder newReminder = new Reminder();
             newReminder.name = txtName.Text;
             newReminder.isReminderOn = false;
-            newReminder.remindInterval = 15;// cboHowOften.SelectedValue;
-            //newReminder.repeatInterval = 0;// cboRepeat.SelectedValue;
+            newReminder.remindInterval = (cboHowOften.SelectedIndex + 1) * 15; // index 1 is 15 minutes. do the math
             //newReminder.reminderType = 0;// cboType.SelectedValue;
 
             // Save to JSON
             string jsonString = JsonSerializer.Serialize(newReminder);
-            System.IO.File.AppendAllText(REMINDERS_FILE_PATH, jsonString);
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH, jsonString + '\n');
 
 
-
-
-
-
-
-
-            ////write to txt files to store data
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "Reminders.txt", newReminder.name);
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "Reminders.txt", "\n");
-
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "isReminderOn.txt", newReminder.isReminderOn.ToString());
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "isReminderOn.txt", "\n");
-
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "remindInterval.txt", newReminder.remindInterval.ToString());
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "remindInterval.txt", "\n");
-
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "repeatInterval.txt", newReminder.repeatInterval.ToString());
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "repeatInterval.txt", "\n");
-
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "reminderType.txt", newReminder.reminderType.ToString());
-            //System.IO.File.AppendAllText(REMINDERS_FILE_PATH + "reminderType.txt", "\n");
         }
 
         private void PopulateDropdowns()
@@ -115,11 +93,11 @@ namespace Lockdown
             }
             
             //Reminder Type Dropdown
-            var types = Enum.GetValues(typeof(Reminder.ReminderType));
-            foreach (var type in types)
-            {
-                cboType.Items.Add(type);
-            }
+            //var types = Enum.GetValues(typeof(Reminder.ReminderType));
+            //foreach (var type in types)
+            //{
+            //    cboType.Items.Add(type);
+            //}
         }
     }
 }

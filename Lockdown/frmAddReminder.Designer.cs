@@ -38,12 +38,8 @@
             this.ContentPanel = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cboType = new System.Windows.Forms.ComboBox();
-            this.cboRepeat = new System.Windows.Forms.ComboBox();
             this.cboHowOften = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.lblType = new System.Windows.Forms.Label();
-            this.lblRepeat = new System.Windows.Forms.Label();
             this.lblHowOften = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.FormControlPanel.SuspendLayout();
@@ -120,12 +116,8 @@
             // 
             this.ContentPanel.Controls.Add(this.btnSave);
             this.ContentPanel.Controls.Add(this.btnCancel);
-            this.ContentPanel.Controls.Add(this.cboType);
-            this.ContentPanel.Controls.Add(this.cboRepeat);
             this.ContentPanel.Controls.Add(this.cboHowOften);
             this.ContentPanel.Controls.Add(this.txtName);
-            this.ContentPanel.Controls.Add(this.lblType);
-            this.ContentPanel.Controls.Add(this.lblRepeat);
             this.ContentPanel.Controls.Add(this.lblHowOften);
             this.ContentPanel.Controls.Add(this.lblName);
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,26 +161,6 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // cboType
-            // 
-            this.cboType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.cboType.Font = new System.Drawing.Font("Impact", 8.25F);
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(351, 219);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(112, 23);
-            this.cboType.TabIndex = 8;
-            // 
-            // cboRepeat
-            // 
-            this.cboRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.cboRepeat.Font = new System.Drawing.Font("Impact", 8.25F);
-            this.cboRepeat.FormattingEnabled = true;
-            this.cboRepeat.Location = new System.Drawing.Point(545, 125);
-            this.cboRepeat.Name = "cboRepeat";
-            this.cboRepeat.Size = new System.Drawing.Size(147, 23);
-            this.cboRepeat.TabIndex = 7;
-            // 
             // cboHowOften
             // 
             this.cboHowOften.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
@@ -208,26 +180,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(185, 21);
             this.txtName.TabIndex = 5;
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Impact", 14F);
-            this.lblType.Location = new System.Drawing.Point(213, 219);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(132, 23);
-            this.lblType.TabIndex = 4;
-            this.lblType.Text = "Reminder Type:";
-            // 
-            // lblRepeat
-            // 
-            this.lblRepeat.AutoSize = true;
-            this.lblRepeat.Font = new System.Drawing.Font("Impact", 14F);
-            this.lblRepeat.Location = new System.Drawing.Point(469, 125);
-            this.lblRepeat.Name = "lblRepeat";
-            this.lblRepeat.Size = new System.Drawing.Size(70, 23);
-            this.lblRepeat.TabIndex = 3;
-            this.lblRepeat.Text = "Repeat:";
             // 
             // lblHowOften
             // 
@@ -284,12 +236,8 @@
         private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ComboBox cboType;
-        private System.Windows.Forms.ComboBox cboRepeat;
         private System.Windows.Forms.ComboBox cboHowOften;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.Label lblRepeat;
         private System.Windows.Forms.Label lblHowOften;
         private System.Windows.Forms.Label lblName;
     }

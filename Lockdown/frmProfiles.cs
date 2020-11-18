@@ -31,8 +31,9 @@ namespace Lockdown
 
         private void frmProfiles_Load(object sender, EventArgs e)
         {
-            Profiles profile = new Profiles();
-            profile.CreateSaveFiles();
+            //moving this to frmMain
+            //Profiles profile = new Profiles();
+            //profile.CreateSaveFiles();
 
             PopulateProfilesBox();
         }
