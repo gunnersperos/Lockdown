@@ -40,7 +40,7 @@ namespace Lockdown
             Reminder newReminder = new Reminder();
             newReminder.name = txtName.Text;
             newReminder.isReminderOn = false;
-            newReminder.remindInterval = (cboHowOften.SelectedIndex + 1) * 15; // index 1 is 15 minutes. do the math
+            newReminder.remindInterval = (cboHowOften.SelectedIndex + 1); // index 1 is 15 minutes. do the math
             //newReminder.reminderType = 0;// cboType.SelectedValue;
 
             // Save to JSON
@@ -53,12 +53,12 @@ namespace Lockdown
         private void PopulateDropdowns()
         {
             //How Often Dropdown
-            /*
-            for (int i = 5; i < 60; i += 5)
+
+            for (int i = 1; i < 60; i += 1)
             {
                 cboHowOften.Items.Add(i + " minutes");
             }
-            for (int j = 60; j < 120; j += 5)
+            for (int j = 60; j < 120; j += 1)
             {
                 if (j > 60)
                 {
@@ -70,27 +70,27 @@ namespace Lockdown
                 }
             }
             cboHowOften.Items.Add("2 hours");
-            */
-            for(int i = 15; i <= 240; i += 15)
-            {
-                if(i < 60)
-                {
-                    cboHowOften.Items.Add(i + " minutes");
-                }
-                else
-                {
-                    int hours = (i / 60);
-                    int minutes = i - (hours * 60);
-                    if(minutes == 0)
-                    {
-                        cboHowOften.Items.Add(hours + " hour(s)");
-                    }
-                    else
-                    {
-                        cboHowOften.Items.Add(hours + " hour(s) " + minutes + " minutes");
-                    }
-                }
-            }
+
+            //for (int i = 15; i <= 240; i += 15)
+            //{
+            //    if(i < 60)
+            //    {
+            //        cboHowOften.Items.Add(i + " minutes");
+            //    }
+            //    else
+            //    {
+            //        int hours = (i / 60);
+            //        int minutes = i - (hours * 60);
+            //        if(minutes == 0)
+            //        {
+            //            cboHowOften.Items.Add(hours + " hour(s)");
+            //        }
+            //        else
+            //        {
+            //            cboHowOften.Items.Add(hours + " hour(s) " + minutes + " minutes");
+            //        }
+            //    }
+            //}
             
             //Reminder Type Dropdown
             //var types = Enum.GetValues(typeof(Reminder.ReminderType));
