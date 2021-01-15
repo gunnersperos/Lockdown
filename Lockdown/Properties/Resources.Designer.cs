@@ -61,12 +61,22 @@ namespace Lockdown.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon LockdownIcon {
+        internal static System.Drawing.Bitmap Lock_Down_Arrow {
             get {
-                object obj = ResourceManager.GetObject("LockdownIcon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("Lock Down Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lock_Down_Arrow_cropped {
+            get {
+                object obj = ResourceManager.GetObject("Lock Down Arrow cropped", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

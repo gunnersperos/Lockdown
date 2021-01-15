@@ -193,6 +193,8 @@
     <Content Include="Resources\Data\Reminders\reminderType.txt" />
     <Content Include="Resources\Data\Reminders\remindInterval.txt" />
     <Content Include="Resources\Data\Reminders\repeatInterval.txt" />
+    <None Include="Resources\Images\Lock Down Arrow.png" />
+    <None Include="Resources\Images\Lock Down Arrow cropped.png" />
     <Content Include="Resources\Images\LockdownIcon.ico" />
     <Content Include="Resources\Images\TestLogo_Cheeseman %281%29.png" />
     <Content Include="Resources\Images\TestLogo_Cheeseman.png" />

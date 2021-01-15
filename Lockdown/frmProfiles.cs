@@ -291,6 +291,20 @@ namespace Lockdown
         {
             //refresh listboxes
             GetProfileData();
+            if ((string)cbProfiles.SelectedValue != string.Empty) // if actually choosing a profile
+            {
+                btnStartProfile.Visible = true;
+                btnStopProfile.Visible = false;
+                BlockedAppPanel.Visible = true;
+                BlockedWebPanel.Visible = true;
+            }
+            else // choosing index 0
+            {
+                btnStartProfile.Visible = false;
+                btnStopProfile.Visible = true;
+                BlockedAppPanel.Visible = false;
+                BlockedWebPanel.Visible = false;
+            }
         }
 
         #endregion
@@ -301,12 +315,30 @@ namespace Lockdown
         {
             BlockApps();
             BlockSites();
+            // disable everything that shouldn't be touched while profile is blocked
+            // and enable the stop profile button obviously
+            btnStartProfile.Visible = false;
+            btnStopProfile.Visible = true;
+            cbProfiles.Enabled = false;
+            btnNewProfile.Enabled = false;// make this into a method probably since it is used 3 times im just so lazy
+            BlockedAppPanel.Enabled = false;
+            BlockedWebPanel.Enabled = false;
+            panelLocked.Visible = true;
         }
 
         private void StopProfile()
         {
             UnblockApps();
             UnblockSites();
+            // enable everything that shouldn't be touched while profile is not blocked
+            // and enable the start profile button obviously
+            btnStartProfile.Visible = true;
+            btnStopProfile.Visible = false;
+            cbProfiles.Enabled = true;
+            btnNewProfile.Enabled = true;
+            BlockedAppPanel.Enabled = true;
+            BlockedWebPanel.Enabled = true;
+            panelLocked.Visible = false;
         }
 
         public void PopulateProfilesBox()
