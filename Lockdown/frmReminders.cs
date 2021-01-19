@@ -24,6 +24,10 @@ namespace Lockdown
         public frmReminders()
         {
             InitializeComponent();
+
+            Profiles profile = new Profiles();
+            profile.CreateSaveFiles(); // for some reason reminders loads first despite Program.cs saying to start with frmMain...
+
             UpdateMyRemindersList();
             StartReminders();
         }
