@@ -160,6 +160,26 @@ namespace Lockdown
             }
         }
 
+        private void RemoveBlockedApp(int appIndex)
+        {
+            //odd way of doing this but
+            //reads in all lines of current profile's blocked app list
+            //then overwriters it without the selected item of the blocked app list
+            //then updates profile
+            string[] blockedApps = System.IO.File.ReadAllLines(BLOCKED_APP_LIST + _inUseProfile.profileName + "BlockedApps.txt");
+            using(System.IO.StreamWriter file = new System.IO.StreamWriter(BLOCKED_APP_LIST + _inUseProfile.profileName + "BlockedApps.txt"))
+            {
+                for (int i = 0; i < appIndex; i++)
+                {
+                    if (i != appIndex)
+                    {
+                        file.WriteLine(blockedApps[i]);
+                    }
+                }
+            }
+            GetProfileData();
+        }
+
         private string AddBlockedWebsites()
         {
             try
@@ -185,6 +205,26 @@ namespace Lockdown
             {
                 throw ex;
             }
+        }
+
+        private void RemoveBlockedSite(int siteIndex)
+        {
+            //odd way of doing this but
+            //reads in all lines of current profile's blocked site list
+            //then overwriters it without the selected item of the blocked site list
+            //then updates profile
+            string[] blockedSites = System.IO.File.ReadAllLines(BLOCKED_SITES_LIST + _inUseProfile.profileName + "BlockedSites.txt");
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(BLOCKED_SITES_LIST + _inUseProfile.profileName + "BlockedSites.txt"))
+            {
+                for (int i = 0; i < siteIndex; i++)
+                {
+                    if (i != siteIndex)
+                    {
+                        file.WriteLine(blockedSites[i]);
+                    }
+                }
+            }
+            GetProfileData();
         }
 
         private void StartProfile()
@@ -375,6 +415,23 @@ namespace Lockdown
             tablessControl.SelectedTab = tabProfiles;
         }
 
+        private void btnUnblockApp_Click(object sender, EventArgs e)
+        {
+            if (listBlockedApps.SelectedIndex < 0)
+            {
+                return;
+            }
+            RemoveBlockedApp(listBlockedApps.SelectedIndex);
+        }
+
+        private void btnUnblockWebsite_Click(object sender, EventArgs e)
+        {
+            if (listBlockedWebsites.SelectedIndex < 0)
+            {
+                return;
+            }
+            RemoveBlockedSite(listBlockedWebsites.SelectedIndex);
+        }
 
         #endregion
 
