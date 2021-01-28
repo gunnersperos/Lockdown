@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfiles));
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.btnStopProfile = new System.Windows.Forms.Button();
+            this.panelLocked = new System.Windows.Forms.Panel();
+            this.pictureLockDown = new System.Windows.Forms.PictureBox();
+            this.lblProfileLocked = new System.Windows.Forms.Label();
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
             this.btnCreateProfile = new System.Windows.Forms.Button();
@@ -53,31 +56,28 @@
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.LogoPanel = new System.Windows.Forms.Panel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panelLocked = new System.Windows.Forms.Panel();
-            this.lblProfileLocked = new System.Windows.Forms.Label();
-            this.pictureLockDown = new System.Windows.Forms.PictureBox();
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.NavigationPanel.SuspendLayout();
+            this.panelLocked.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).BeginInit();
             this.panelProfile.SuspendLayout();
             this.BlockedWebPanel.SuspendLayout();
             this.BlockedAppPanel.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
-            this.panelLocked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.SuspendLayout();
             // 
             // NavigationPanel
             // 
             this.NavigationPanel.Controls.Add(this.btnStopProfile);
-            this.NavigationPanel.Controls.Add(this.panelLocked);
             this.NavigationPanel.Controls.Add(this.btnStartProfile);
             this.NavigationPanel.Controls.Add(this.panelProfile);
             this.NavigationPanel.Controls.Add(this.BlockedWebPanel);
             this.NavigationPanel.Controls.Add(this.BlockedAppPanel);
             this.NavigationPanel.Controls.Add(this.FormControlPanel);
+            this.NavigationPanel.Controls.Add(this.panelLocked);
             this.NavigationPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NavigationPanel.Location = new System.Drawing.Point(200, 0);
             this.NavigationPanel.Name = "NavigationPanel";
@@ -101,6 +101,37 @@
             this.btnStopProfile.UseVisualStyleBackColor = false;
             this.btnStopProfile.Visible = false;
             this.btnStopProfile.Click += new System.EventHandler(this.btnStopProfile_Click);
+            // 
+            // panelLocked
+            // 
+            this.panelLocked.Controls.Add(this.pictureLockDown);
+            this.panelLocked.Controls.Add(this.lblProfileLocked);
+            this.panelLocked.Location = new System.Drawing.Point(0, 126);
+            this.panelLocked.Name = "panelLocked";
+            this.panelLocked.Size = new System.Drawing.Size(527, 270);
+            this.panelLocked.TabIndex = 4;
+            this.panelLocked.Visible = false;
+            // 
+            // pictureLockDown
+            // 
+            this.pictureLockDown.Image = global::Lockdown.Properties.Resources.Lock_Down_Arrow_cropped;
+            this.pictureLockDown.Location = new System.Drawing.Point(186, 84);
+            this.pictureLockDown.Name = "pictureLockDown";
+            this.pictureLockDown.Size = new System.Drawing.Size(187, 178);
+            this.pictureLockDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureLockDown.TabIndex = 1;
+            this.pictureLockDown.TabStop = false;
+            // 
+            // lblProfileLocked
+            // 
+            this.lblProfileLocked.AutoSize = true;
+            this.lblProfileLocked.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileLocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblProfileLocked.Location = new System.Drawing.Point(90, 35);
+            this.lblProfileLocked.Name = "lblProfileLocked";
+            this.lblProfileLocked.Size = new System.Drawing.Size(383, 46);
+            this.lblProfileLocked.TabIndex = 0;
+            this.lblProfileLocked.Text = "Profile on Lockdown";
             // 
             // btnStartProfile
             // 
@@ -423,42 +454,6 @@
             this.LogoPanel.Size = new System.Drawing.Size(200, 440);
             this.LogoPanel.TabIndex = 4;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.ReadOnlyChecked = true;
-            // 
-            // panelLocked
-            // 
-            this.panelLocked.Controls.Add(this.pictureLockDown);
-            this.panelLocked.Controls.Add(this.lblProfileLocked);
-            this.panelLocked.Location = new System.Drawing.Point(0, 126);
-            this.panelLocked.Name = "panelLocked";
-            this.panelLocked.Size = new System.Drawing.Size(527, 270);
-            this.panelLocked.TabIndex = 4;
-            this.panelLocked.Visible = false;
-            // 
-            // lblProfileLocked
-            // 
-            this.lblProfileLocked.AutoSize = true;
-            this.lblProfileLocked.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileLocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblProfileLocked.Location = new System.Drawing.Point(90, 35);
-            this.lblProfileLocked.Name = "lblProfileLocked";
-            this.lblProfileLocked.Size = new System.Drawing.Size(383, 46);
-            this.lblProfileLocked.TabIndex = 0;
-            this.lblProfileLocked.Text = "Profile on Lockdown";
-            // 
-            // pictureLockDown
-            // 
-            this.pictureLockDown.Image = global::Lockdown.Properties.Resources.Lock_Down_Arrow_cropped;
-            this.pictureLockDown.Location = new System.Drawing.Point(186, 84);
-            this.pictureLockDown.Name = "pictureLockDown";
-            this.pictureLockDown.Size = new System.Drawing.Size(187, 178);
-            this.pictureLockDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureLockDown.TabIndex = 1;
-            this.pictureLockDown.TabStop = false;
-            // 
             // LogoImgBox
             // 
             this.LogoImgBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoImgBox.Image")));
@@ -468,6 +463,11 @@
             this.LogoImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoImgBox.TabIndex = 0;
             this.LogoImgBox.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.ReadOnlyChecked = true;
+            this.openFileDialog1.Title = "Choose an app to block";
             // 
             // frmProfiles
             // 
@@ -484,6 +484,9 @@
             this.Text = "Lockdown";
             this.Load += new System.EventHandler(this.frmProfiles_Load);
             this.NavigationPanel.ResumeLayout(false);
+            this.panelLocked.ResumeLayout(false);
+            this.panelLocked.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).EndInit();
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
             this.BlockedWebPanel.ResumeLayout(false);
@@ -491,9 +494,6 @@
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.LogoPanel.ResumeLayout(false);
-            this.panelLocked.ResumeLayout(false);
-            this.panelLocked.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).EndInit();
             this.ResumeLayout(false);
 

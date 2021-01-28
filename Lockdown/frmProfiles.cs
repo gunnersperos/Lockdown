@@ -91,7 +91,7 @@ namespace Lockdown
                 var runScript = new ProcessStartInfo()
                 {
                     FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_APPS_SCRIPT}\"",
+                    Arguments = $"-window minimized -NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_APPS_SCRIPT}\"",
                     UseShellExecute = false
                 };
                 Process.Start(runScript);
@@ -112,7 +112,7 @@ namespace Lockdown
                 var runScript = new ProcessStartInfo()
                 {
                     FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_APPS_SCRIPT}\"",
+                    Arguments = $"-window minimize -NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_APPS_SCRIPT}\"",
                     UseShellExecute = false
                 };
                 Process.Start(runScript);
@@ -181,7 +181,7 @@ namespace Lockdown
             var runScript = new ProcessStartInfo()
                 {
                     FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_SITES_SCRIPT}\"",
+                    Arguments = $"-window minimize -NoProfile -ExecutionPolicy bypass -file \"{BLOCKED_SITES_SCRIPT}\"",
                     UseShellExecute = false
                 };
             Process.Start(runScript);
