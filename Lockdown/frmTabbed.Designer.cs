@@ -237,6 +237,7 @@
             // tabProfiles
             // 
             this.tabProfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.tabProfiles.Controls.Add(this.panelLocked);
             this.tabProfiles.Controls.Add(this.panel1);
             this.tabProfiles.Location = new System.Drawing.Point(4, 5);
             this.tabProfiles.Name = "tabProfiles";
@@ -247,7 +248,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panelLocked);
+            this.panel1.Controls.Add(this.btnStartProfile);
             this.panel1.Controls.Add(this.panelProfile);
             this.panel1.Controls.Add(this.BlockedWebPanel);
             this.panel1.Controls.Add(this.BlockedAppPanel);
@@ -262,9 +263,9 @@
             this.panelLocked.Controls.Add(this.btnStopProfile);
             this.panelLocked.Controls.Add(this.pictureLockDown);
             this.panelLocked.Controls.Add(this.lblProfileLocked);
-            this.panelLocked.Location = new System.Drawing.Point(0, 97);
+            this.panelLocked.Location = new System.Drawing.Point(3, 89);
             this.panelLocked.Name = "panelLocked";
-            this.panelLocked.Size = new System.Drawing.Size(528, 305);
+            this.panelLocked.Size = new System.Drawing.Size(510, 316);
             this.panelLocked.TabIndex = 6;
             this.panelLocked.Visible = false;
             // 
@@ -309,7 +310,6 @@
             // 
             // panelProfile
             // 
-            this.panelProfile.Controls.Add(this.btnStartProfile);
             this.panelProfile.Controls.Add(this.btnNewProfile);
             this.panelProfile.Controls.Add(this.cbProfiles);
             this.panelProfile.Controls.Add(this.lblProfile);
@@ -328,7 +328,7 @@
             this.btnStartProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStartProfile.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStartProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnStartProfile.Location = new System.Drawing.Point(4, 59);
+            this.btnStartProfile.Location = new System.Drawing.Point(130, 83);
             this.btnStartProfile.Name = "btnStartProfile";
             this.btnStartProfile.Size = new System.Drawing.Size(88, 32);
             this.btnStartProfile.TabIndex = 6;
@@ -379,7 +379,7 @@
             this.lblProfile.AutoSize = true;
             this.lblProfile.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblProfile.Location = new System.Drawing.Point(-4, 0);
+            this.lblProfile.Location = new System.Drawing.Point(-4, 27);
             this.lblProfile.Name = "lblProfile";
             this.lblProfile.Size = new System.Drawing.Size(128, 45);
             this.lblProfile.TabIndex = 6;
@@ -840,12 +840,12 @@
             this.MenuItemClose});
             this.NotifyIconMenu.Name = "NotifyIconMenu";
             this.NotifyIconMenu.ShowImageMargin = false;
-            this.NotifyIconMenu.Size = new System.Drawing.Size(156, 48);
+            this.NotifyIconMenu.Size = new System.Drawing.Size(79, 26);
             // 
             // MenuItemClose
             // 
             this.MenuItemClose.Name = "MenuItemClose";
-            this.MenuItemClose.Size = new System.Drawing.Size(155, 22);
+            this.MenuItemClose.Size = new System.Drawing.Size(78, 22);
             this.MenuItemClose.Text = "Close";
             this.MenuItemClose.Click += new System.EventHandler(this.MenuItemClose_Click);
             // 
