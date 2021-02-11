@@ -40,6 +40,10 @@
             this.btnProfiles = new System.Windows.Forms.Button();
             this.tabProfiles = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLocked = new System.Windows.Forms.Panel();
+            this.btnStopProfile = new System.Windows.Forms.Button();
+            this.pictureLockDown = new System.Windows.Forms.PictureBox();
+            this.lblProfileLocked = new System.Windows.Forms.Label();
             this.panelProfile = new System.Windows.Forms.Panel();
             this.btnStartProfile = new System.Windows.Forms.Button();
             this.btnNewProfile = new System.Windows.Forms.Button();
@@ -53,15 +57,26 @@
             this.listBlockedApps = new System.Windows.Forms.ListBox();
             this.btnUnblockApp = new System.Windows.Forms.Button();
             this.btnAddBlockedApp = new System.Windows.Forms.Button();
-            this.panelLocked = new System.Windows.Forms.Panel();
-            this.btnStopProfile = new System.Windows.Forms.Button();
-            this.pictureLockDown = new System.Windows.Forms.PictureBox();
-            this.lblProfileLocked = new System.Windows.Forms.Label();
             this.tabAddProfile = new System.Windows.Forms.TabPage();
             this.btnCreateProfile = new System.Windows.Forms.Button();
             this.txtNewProfile = new System.Windows.Forms.TextBox();
             this.btnCancelCreateProfile = new System.Windows.Forms.Button();
             this.lblNewProfile = new System.Windows.Forms.Label();
+            this.tabReminders = new System.Windows.Forms.TabPage();
+            this.ContentPanel = new System.Windows.Forms.Panel();
+            this.lblDefaultReminders = new System.Windows.Forms.Label();
+            this.lblMyReminders = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.clbDefaultReminders = new System.Windows.Forms.CheckedListBox();
+            this.lblAddReminder = new System.Windows.Forms.Label();
+            this.clbMyReminders = new System.Windows.Forms.CheckedListBox();
+            this.tabAddReminder = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cboHowOften = new System.Windows.Forms.ComboBox();
+            this.txtNewReminderName = new System.Windows.Forms.TextBox();
+            this.lblHowOften = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.lblBack = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
@@ -74,12 +89,16 @@
             this.NavigationPanel.SuspendLayout();
             this.tabProfiles.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelLocked.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).BeginInit();
             this.panelProfile.SuspendLayout();
             this.BlockedWebPanel.SuspendLayout();
             this.BlockedAppPanel.SuspendLayout();
-            this.panelLocked.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).BeginInit();
             this.tabAddProfile.SuspendLayout();
+            this.tabReminders.SuspendLayout();
+            this.ContentPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabAddReminder.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +126,8 @@
             this.tablessControl.Controls.Add(this.tabMain);
             this.tablessControl.Controls.Add(this.tabProfiles);
             this.tablessControl.Controls.Add(this.tabAddProfile);
+            this.tablessControl.Controls.Add(this.tabReminders);
+            this.tablessControl.Controls.Add(this.tabAddReminder);
             this.tablessControl.ItemSize = new System.Drawing.Size(0, 1);
             this.tablessControl.Location = new System.Drawing.Point(4, 23);
             this.tablessControl.Name = "tablessControl";
@@ -171,6 +192,7 @@
             this.btnReminders.TabIndex = 3;
             this.btnReminders.Text = "Reminders";
             this.btnReminders.UseVisualStyleBackColor = false;
+            this.btnReminders.Click += new System.EventHandler(this.btnReminders_Click);
             // 
             // btnScheduler
             // 
@@ -229,6 +251,56 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 399);
             this.panel1.TabIndex = 6;
+            // 
+            // panelLocked
+            // 
+            this.panelLocked.Controls.Add(this.btnStopProfile);
+            this.panelLocked.Controls.Add(this.pictureLockDown);
+            this.panelLocked.Controls.Add(this.lblProfileLocked);
+            this.panelLocked.Location = new System.Drawing.Point(0, 97);
+            this.panelLocked.Name = "panelLocked";
+            this.panelLocked.Size = new System.Drawing.Size(528, 305);
+            this.panelLocked.TabIndex = 6;
+            this.panelLocked.Visible = false;
+            // 
+            // btnStopProfile
+            // 
+            this.btnStopProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnStopProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnStopProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnStopProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnStopProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopProfile.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStopProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnStopProfile.Location = new System.Drawing.Point(215, 264);
+            this.btnStopProfile.Name = "btnStopProfile";
+            this.btnStopProfile.Size = new System.Drawing.Size(88, 32);
+            this.btnStopProfile.TabIndex = 8;
+            this.btnStopProfile.Text = "Stop Profile";
+            this.btnStopProfile.UseVisualStyleBackColor = false;
+            this.btnStopProfile.Visible = false;
+            this.btnStopProfile.Click += new System.EventHandler(this.btnStopProfile_Click);
+            // 
+            // pictureLockDown
+            // 
+            this.pictureLockDown.Image = global::Lockdown.Properties.Resources.Lock_Down_Arrow_cropped;
+            this.pictureLockDown.Location = new System.Drawing.Point(161, 81);
+            this.pictureLockDown.Name = "pictureLockDown";
+            this.pictureLockDown.Size = new System.Drawing.Size(187, 178);
+            this.pictureLockDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureLockDown.TabIndex = 1;
+            this.pictureLockDown.TabStop = false;
+            // 
+            // lblProfileLocked
+            // 
+            this.lblProfileLocked.AutoSize = true;
+            this.lblProfileLocked.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfileLocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblProfileLocked.Location = new System.Drawing.Point(65, 32);
+            this.lblProfileLocked.Name = "lblProfileLocked";
+            this.lblProfileLocked.Size = new System.Drawing.Size(383, 46);
+            this.lblProfileLocked.TabIndex = 0;
+            this.lblProfileLocked.Text = "Profile on Lockdown";
             // 
             // panelProfile
             // 
@@ -431,56 +503,6 @@
             this.btnAddBlockedApp.UseVisualStyleBackColor = false;
             this.btnAddBlockedApp.Click += new System.EventHandler(this.btnAddBlockedApp_Click);
             // 
-            // panelLocked
-            // 
-            this.panelLocked.Controls.Add(this.btnStopProfile);
-            this.panelLocked.Controls.Add(this.pictureLockDown);
-            this.panelLocked.Controls.Add(this.lblProfileLocked);
-            this.panelLocked.Location = new System.Drawing.Point(0, 97);
-            this.panelLocked.Name = "panelLocked";
-            this.panelLocked.Size = new System.Drawing.Size(528, 305);
-            this.panelLocked.TabIndex = 6;
-            this.panelLocked.Visible = false;
-            // 
-            // btnStopProfile
-            // 
-            this.btnStopProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnStopProfile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
-            this.btnStopProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
-            this.btnStopProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
-            this.btnStopProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopProfile.Font = new System.Drawing.Font("Impact", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStopProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.btnStopProfile.Location = new System.Drawing.Point(215, 264);
-            this.btnStopProfile.Name = "btnStopProfile";
-            this.btnStopProfile.Size = new System.Drawing.Size(88, 32);
-            this.btnStopProfile.TabIndex = 8;
-            this.btnStopProfile.Text = "Stop Profile";
-            this.btnStopProfile.UseVisualStyleBackColor = false;
-            this.btnStopProfile.Visible = false;
-            this.btnStopProfile.Click += new System.EventHandler(this.btnStopProfile_Click);
-            // 
-            // pictureLockDown
-            // 
-            this.pictureLockDown.Image = global::Lockdown.Properties.Resources.Lock_Down_Arrow_cropped;
-            this.pictureLockDown.Location = new System.Drawing.Point(161, 81);
-            this.pictureLockDown.Name = "pictureLockDown";
-            this.pictureLockDown.Size = new System.Drawing.Size(187, 178);
-            this.pictureLockDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureLockDown.TabIndex = 1;
-            this.pictureLockDown.TabStop = false;
-            // 
-            // lblProfileLocked
-            // 
-            this.lblProfileLocked.AutoSize = true;
-            this.lblProfileLocked.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileLocked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblProfileLocked.Location = new System.Drawing.Point(65, 32);
-            this.lblProfileLocked.Name = "lblProfileLocked";
-            this.lblProfileLocked.Size = new System.Drawing.Size(383, 46);
-            this.lblProfileLocked.TabIndex = 0;
-            this.lblProfileLocked.Text = "Profile on Lockdown";
-            // 
             // tabAddProfile
             // 
             this.tabAddProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
@@ -548,6 +570,195 @@
             this.lblNewProfile.Size = new System.Drawing.Size(124, 88);
             this.lblNewProfile.TabIndex = 14;
             this.lblNewProfile.Text = "New\nProfile:";
+            // 
+            // tabReminders
+            // 
+            this.tabReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.tabReminders.Controls.Add(this.ContentPanel);
+            this.tabReminders.Location = new System.Drawing.Point(4, 5);
+            this.tabReminders.Name = "tabReminders";
+            this.tabReminders.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReminders.Size = new System.Drawing.Size(516, 405);
+            this.tabReminders.TabIndex = 3;
+            this.tabReminders.Text = "Reminders";
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Controls.Add(this.lblDefaultReminders);
+            this.ContentPanel.Controls.Add(this.lblMyReminders);
+            this.ContentPanel.Controls.Add(this.panel2);
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(3, 3);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(510, 399);
+            this.ContentPanel.TabIndex = 3;
+            // 
+            // lblDefaultReminders
+            // 
+            this.lblDefaultReminders.AutoSize = true;
+            this.lblDefaultReminders.Font = new System.Drawing.Font("Impact", 16F);
+            this.lblDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblDefaultReminders.Location = new System.Drawing.Point(40, 3);
+            this.lblDefaultReminders.Name = "lblDefaultReminders";
+            this.lblDefaultReminders.Size = new System.Drawing.Size(179, 27);
+            this.lblDefaultReminders.TabIndex = 4;
+            this.lblDefaultReminders.Text = "Default Reminders";
+            // 
+            // lblMyReminders
+            // 
+            this.lblMyReminders.AutoSize = true;
+            this.lblMyReminders.Font = new System.Drawing.Font("Impact", 16F);
+            this.lblMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblMyReminders.Location = new System.Drawing.Point(330, 3);
+            this.lblMyReminders.Name = "lblMyReminders";
+            this.lblMyReminders.Size = new System.Drawing.Size(140, 27);
+            this.lblMyReminders.TabIndex = 3;
+            this.lblMyReminders.Text = "My Reminders";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.clbDefaultReminders);
+            this.panel2.Controls.Add(this.lblAddReminder);
+            this.panel2.Controls.Add(this.clbMyReminders);
+            this.panel2.Location = new System.Drawing.Point(6, 33);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(521, 366);
+            this.panel2.TabIndex = 1;
+            // 
+            // clbDefaultReminders
+            // 
+            this.clbDefaultReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.clbDefaultReminders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clbDefaultReminders.CheckOnClick = true;
+            this.clbDefaultReminders.Font = new System.Drawing.Font("Impact", 10F);
+            this.clbDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.clbDefaultReminders.FormattingEnabled = true;
+            this.clbDefaultReminders.Location = new System.Drawing.Point(3, 3);
+            this.clbDefaultReminders.Name = "clbDefaultReminders";
+            this.clbDefaultReminders.Size = new System.Drawing.Size(243, 268);
+            this.clbDefaultReminders.TabIndex = 3;
+            // 
+            // lblAddReminder
+            // 
+            this.lblAddReminder.AutoSize = true;
+            this.lblAddReminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblAddReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddReminder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.lblAddReminder.Location = new System.Drawing.Point(482, 242);
+            this.lblAddReminder.Name = "lblAddReminder";
+            this.lblAddReminder.Size = new System.Drawing.Size(25, 26);
+            this.lblAddReminder.TabIndex = 2;
+            this.lblAddReminder.Text = "+";
+            this.lblAddReminder.Click += new System.EventHandler(this.lblAddReminder_Click);
+            // 
+            // clbMyReminders
+            // 
+            this.clbMyReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.clbMyReminders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clbMyReminders.CheckOnClick = true;
+            this.clbMyReminders.Font = new System.Drawing.Font("Impact", 10F);
+            this.clbMyReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.clbMyReminders.FormattingEnabled = true;
+            this.clbMyReminders.Location = new System.Drawing.Point(269, 3);
+            this.clbMyReminders.Name = "clbMyReminders";
+            this.clbMyReminders.Size = new System.Drawing.Size(243, 268);
+            this.clbMyReminders.TabIndex = 1;
+            this.clbMyReminders.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbMyReminders_ItemCheck);
+            this.clbMyReminders.Click += new System.EventHandler(this.clbMyReminders_Click);
+            this.clbMyReminders.SelectedIndexChanged += new System.EventHandler(this.clbMyReminders_SelectedIndexChanged);
+            // 
+            // tabAddReminder
+            // 
+            this.tabAddReminder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.tabAddReminder.Controls.Add(this.btnSave);
+            this.tabAddReminder.Controls.Add(this.btnCancel);
+            this.tabAddReminder.Controls.Add(this.cboHowOften);
+            this.tabAddReminder.Controls.Add(this.txtNewReminderName);
+            this.tabAddReminder.Controls.Add(this.lblHowOften);
+            this.tabAddReminder.Controls.Add(this.lblName);
+            this.tabAddReminder.Location = new System.Drawing.Point(4, 5);
+            this.tabAddReminder.Name = "tabAddReminder";
+            this.tabAddReminder.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAddReminder.Size = new System.Drawing.Size(516, 405);
+            this.tabAddReminder.TabIndex = 4;
+            this.tabAddReminder.Text = "AddReminder";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Impact", 16F);
+            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnSave.Location = new System.Drawing.Point(260, 357);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(122, 41);
+            this.btnSave.TabIndex = 16;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Impact", 16F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCancel.Location = new System.Drawing.Point(132, 357);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(122, 41);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cboHowOften
+            // 
+            this.cboHowOften.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.cboHowOften.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.cboHowOften.FormattingEnabled = true;
+            this.cboHowOften.Location = new System.Drawing.Point(238, 95);
+            this.cboHowOften.Name = "cboHowOften";
+            this.cboHowOften.Size = new System.Drawing.Size(147, 23);
+            this.cboHowOften.TabIndex = 14;
+            // 
+            // txtNewReminderName
+            // 
+            this.txtNewReminderName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtNewReminderName.Font = new System.Drawing.Font("Impact", 8.25F);
+            this.txtNewReminderName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.txtNewReminderName.Location = new System.Drawing.Point(200, 7);
+            this.txtNewReminderName.Name = "txtNewReminderName";
+            this.txtNewReminderName.Size = new System.Drawing.Size(185, 21);
+            this.txtNewReminderName.TabIndex = 13;
+            // 
+            // lblHowOften
+            // 
+            this.lblHowOften.AutoSize = true;
+            this.lblHowOften.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblHowOften.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblHowOften.Location = new System.Drawing.Point(135, 95);
+            this.lblHowOften.Name = "lblHowOften";
+            this.lblHowOften.Size = new System.Drawing.Size(93, 23);
+            this.lblHowOften.TabIndex = 12;
+            this.lblHowOften.Text = "How Often:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblName.Location = new System.Drawing.Point(135, 7);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(59, 23);
+            this.lblName.TabIndex = 11;
+            this.lblName.Text = "Name:";
             // 
             // FormControlPanel
             // 
@@ -625,15 +836,22 @@
             this.NavigationPanel.ResumeLayout(false);
             this.tabProfiles.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panelLocked.ResumeLayout(false);
+            this.panelLocked.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).EndInit();
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
             this.BlockedWebPanel.ResumeLayout(false);
             this.BlockedAppPanel.ResumeLayout(false);
-            this.panelLocked.ResumeLayout(false);
-            this.panelLocked.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).EndInit();
             this.tabAddProfile.ResumeLayout(false);
             this.tabAddProfile.PerformLayout();
+            this.tabReminders.ResumeLayout(false);
+            this.ContentPanel.ResumeLayout(false);
+            this.ContentPanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabAddReminder.ResumeLayout(false);
+            this.tabAddReminder.PerformLayout();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -680,5 +898,20 @@
         private System.Windows.Forms.Label lblProfileLocked;
         private System.Windows.Forms.Button btnStopProfile;
         private System.Windows.Forms.OpenFileDialog ofdAddApp;
+        private System.Windows.Forms.TabPage tabReminders;
+        private System.Windows.Forms.Panel ContentPanel;
+        private System.Windows.Forms.Label lblDefaultReminders;
+        private System.Windows.Forms.Label lblMyReminders;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckedListBox clbDefaultReminders;
+        private System.Windows.Forms.Label lblAddReminder;
+        private System.Windows.Forms.CheckedListBox clbMyReminders;
+        private System.Windows.Forms.TabPage tabAddReminder;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox cboHowOften;
+        private System.Windows.Forms.TextBox txtNewReminderName;
+        private System.Windows.Forms.Label lblHowOften;
+        private System.Windows.Forms.Label lblName;
     }
 }

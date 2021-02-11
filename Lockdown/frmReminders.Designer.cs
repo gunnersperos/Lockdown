@@ -37,12 +37,12 @@
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
+            this.lblDefaultReminders = new System.Windows.Forms.Label();
             this.lblMyReminders = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.clbDefaultReminders = new System.Windows.Forms.CheckedListBox();
             this.lblAddReminder = new System.Windows.Forms.Label();
             this.clbMyReminders = new System.Windows.Forms.CheckedListBox();
-            this.clbDefaultReminders = new System.Windows.Forms.CheckedListBox();
-            this.lblDefaultReminders = new System.Windows.Forms.Label();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.FormControlPanel.SuspendLayout();
@@ -142,6 +142,17 @@
             this.ContentPanel.Size = new System.Drawing.Size(530, 411);
             this.ContentPanel.TabIndex = 2;
             // 
+            // lblDefaultReminders
+            // 
+            this.lblDefaultReminders.AutoSize = true;
+            this.lblDefaultReminders.Font = new System.Drawing.Font("Impact", 16F);
+            this.lblDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblDefaultReminders.Location = new System.Drawing.Point(40, 3);
+            this.lblDefaultReminders.Name = "lblDefaultReminders";
+            this.lblDefaultReminders.Size = new System.Drawing.Size(179, 27);
+            this.lblDefaultReminders.TabIndex = 4;
+            this.lblDefaultReminders.Text = "Default Reminders";
+            // 
             // lblMyReminders
             // 
             this.lblMyReminders.AutoSize = true;
@@ -162,6 +173,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(521, 366);
             this.panel2.TabIndex = 1;
+            // 
+            // clbDefaultReminders
+            // 
+            this.clbDefaultReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.clbDefaultReminders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clbDefaultReminders.CheckOnClick = true;
+            this.clbDefaultReminders.Font = new System.Drawing.Font("Impact", 10F);
+            this.clbDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.clbDefaultReminders.FormattingEnabled = true;
+            this.clbDefaultReminders.Location = new System.Drawing.Point(3, 3);
+            this.clbDefaultReminders.Name = "clbDefaultReminders";
+            this.clbDefaultReminders.Size = new System.Drawing.Size(243, 268);
+            this.clbDefaultReminders.TabIndex = 3;
             // 
             // lblAddReminder
             // 
@@ -191,30 +215,6 @@
             this.clbMyReminders.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbMyReminders_ItemCheck);
             this.clbMyReminders.Click += new System.EventHandler(this.clbMyReminders_Click);
             this.clbMyReminders.SelectedIndexChanged += new System.EventHandler(this.clbMyReminders_SelectedIndexChanged);
-            // 
-            // clbDefaultReminders
-            // 
-            this.clbDefaultReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.clbDefaultReminders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.clbDefaultReminders.CheckOnClick = true;
-            this.clbDefaultReminders.Font = new System.Drawing.Font("Impact", 10F);
-            this.clbDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.clbDefaultReminders.FormattingEnabled = true;
-            this.clbDefaultReminders.Location = new System.Drawing.Point(3, 3);
-            this.clbDefaultReminders.Name = "clbDefaultReminders";
-            this.clbDefaultReminders.Size = new System.Drawing.Size(243, 268);
-            this.clbDefaultReminders.TabIndex = 3;
-            // 
-            // lblDefaultReminders
-            // 
-            this.lblDefaultReminders.AutoSize = true;
-            this.lblDefaultReminders.Font = new System.Drawing.Font("Impact", 16F);
-            this.lblDefaultReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblDefaultReminders.Location = new System.Drawing.Point(40, 3);
-            this.lblDefaultReminders.Name = "lblDefaultReminders";
-            this.lblDefaultReminders.Size = new System.Drawing.Size(179, 27);
-            this.lblDefaultReminders.TabIndex = 4;
-            this.lblDefaultReminders.Text = "Default Reminders";
             // 
             // frmReminders
             // 

@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,19 @@ namespace Lockdown
         public frmTabbed()
         {
             InitializeComponent();
+
+            //Profiles
             PopulateProfilesBox();
+
+            //Reminders
+            UpdateMyRemindersList();
+            StartReminders();
+
+            //Add Reminder
+            PopulateAddReminderDropdowns();
+
+
+            isLoading = false;
         }
 
         #region Navigation
@@ -44,6 +57,16 @@ namespace Lockdown
         private void btnNewProfile_Click(object sender, EventArgs e)
         {
             tablessControl.SelectedTab = tabAddProfile;
+        }
+
+        private void btnReminders_Click(object sender, EventArgs e)
+        {
+            tablessControl.SelectedTab = tabReminders;
+        }
+
+        private void lblAddReminder_Click(object sender, EventArgs e)
+        {
+            tablessControl.SelectedTab = tabAddReminder;
         }
 
         private void tablessControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -431,6 +454,198 @@ namespace Lockdown
                 return;
             }
             RemoveBlockedSite(listBlockedWebsites.SelectedIndex);
+        }
+
+
+
+        #endregion
+
+        #region Reminders
+
+        private bool isLoading = true;
+        private bool isListClicked = false;
+        private List<Reminder> _defaultReminders = new List<Reminder>();
+        public List<Reminder> _myReminders = new List<Reminder>();
+        private const string REMINDERS_FILE_PATH = @"C:\Program Files\Lockdown\Reminders\Reminders.json";
+
+        //METHODS\\
+        public void UpdateMyRemindersList()
+        {
+            LoadMyReminders();
+            clbMyReminders.Items.Clear();
+            foreach (var reminder in _myReminders)
+            {
+                clbMyReminders.Items.Add(reminder.name);
+            }
+
+            //annoyingly long amount of code to make sure reminder checkstate is correct
+            int reminderListCount = clbMyReminders.Items.Count;
+            for (int i = 0; i < reminderListCount; i++)
+            {
+                clbMyReminders.SetItemCheckState(i, BoolToCheckState(_myReminders[i].isReminderOn));
+            }
+        }
+
+        private void LoadMyReminders()
+        {
+            _myReminders.Clear();
+            string[] jsonArray = System.IO.File.ReadAllLines(REMINDERS_FILE_PATH);
+            foreach (var line in jsonArray)
+            {
+                Reminder tempReminder = JsonSerializer.Deserialize<Reminder>(line);
+                _myReminders.Add(tempReminder);
+            }
+        }
+
+        private void StartReminders()
+        {
+            foreach (var reminder in _myReminders)
+            {
+                if (reminder.isReminderOn)
+                {
+                    reminder.ReminderTimer();
+                }
+            }
+        }
+
+        private void UpdateReminderOnOff(int reminderIndex, CheckState reminderSwitch)
+        {
+            //changes the reminder object enabled field then updates the clbMyReminders
+            _myReminders[reminderIndex].isReminderOn = CheckStateToBool(reminderSwitch);
+            //need to save over the reminders file
+            List<string> jsonStringArray = new List<string>();
+            System.IO.File.WriteAllText(REMINDERS_FILE_PATH, string.Empty);
+            foreach (var reminder in _myReminders)
+            {
+                string jsonString = JsonSerializer.Serialize(reminder);
+                jsonStringArray.Add(jsonString);
+            }
+            foreach (var jsonString in jsonStringArray)
+            {
+                System.IO.File.AppendAllText(REMINDERS_FILE_PATH, jsonString + '\n');
+            }
+        }
+
+        private bool CheckStateToBool(CheckState checkState)
+        {
+            // just converting CheckState object to bool
+            bool onOff = checkState is CheckState.Checked ? true : false;
+            return onOff;
+        }
+
+        private CheckState BoolToCheckState(bool checkState)
+        {
+            // just converting bool object to CheckState
+            CheckState onOff = checkState is true ? CheckState.Checked : CheckState.Unchecked;
+            return onOff;
+        }
+
+        //EVENTS\\
+
+        private void clbMyReminders_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (isLoading || !isListClicked)
+            {
+                return; // don't want to double do this when loading the app or checkstate not actually changing
+            }
+            UpdateReminderOnOff(e.Index, e.NewValue);
+            _myReminders[e.Index].StartStopReminder(e.NewValue);
+            isListClicked = false;
+        }
+
+        private void clbMyReminders_Click(object sender, EventArgs e)
+        {
+            this.isListClicked = true;
+        }
+
+        private void clbMyReminders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.isListClicked = false;
+        }
+
+        #endregion
+
+        #region Add Reminder
+
+        //METHODS\\
+        private void AddReminder()
+        {
+            //set all properties
+            Reminder newReminder = new Reminder();
+            newReminder.name = txtNewReminderName.Text;
+            newReminder.isReminderOn = false;
+            newReminder.remindInterval = (cboHowOften.SelectedIndex + 1); // index 1 is 15 minutes. do the math
+            //newReminder.reminderType = 0;// cboType.SelectedValue;
+
+            // Save to JSON
+            string jsonString = JsonSerializer.Serialize(newReminder);
+            System.IO.File.AppendAllText(REMINDERS_FILE_PATH, jsonString + '\n');
+
+        }
+
+        private void PopulateAddReminderDropdowns()
+        {
+            //How Often Dropdown
+
+            //1 minute increments
+            for (int i = 1; i < 60; i += 1)
+            {
+                cboHowOften.Items.Add(i + " minutes");
+            }
+            for (int j = 60; j < 120; j += 1)
+            {
+                if (j > 60)
+                {
+                    cboHowOften.Items.Add("1 hour " + (j - 60) + " minutes");
+                }
+                else
+                {
+                    cboHowOften.Items.Add("1 hour");
+                }
+            }
+            cboHowOften.Items.Add("2 hours");
+
+            // 15 minute increments
+            //for (int i = 15; i <= 240; i += 15)
+            //{
+            //    if (i < 60)
+            //    {
+            //        cboHowOften.Items.Add(i + " minutes");
+            //    }
+            //    else
+            //    {
+            //        int hours = (i / 60);
+            //        int minutes = i - (hours * 60);
+            //        if (minutes == 0)
+            //        {
+            //            cboHowOften.Items.Add(hours + " hour(s)");
+            //        }
+            //        else
+            //        {
+            //            cboHowOften.Items.Add(hours + " hour(s) " + minutes + " minutes");
+            //        }
+            //    }
+            //}
+        }
+
+        //EVENTS\\
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            tablessControl.SelectedTab = tabReminders;
+            txtNewReminderName.Text = string.Empty;
+            cboHowOften.SelectedIndex = -1;
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            AddReminder();
+            UpdateMyRemindersList();
+            tablessControl.SelectedTab = tabReminders;
+            txtNewReminderName.Text = string.Empty;
+            cboHowOften.SelectedIndex = -1;
+            
         }
 
         #endregion
