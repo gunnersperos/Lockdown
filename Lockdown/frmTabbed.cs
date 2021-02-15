@@ -648,8 +648,22 @@ namespace Lockdown
             
         }
 
+
         #endregion
 
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            //if clicked with left mouse
+            if (e.Button == MouseButtons.Left)
+            {
+                //Show main form
+                this.Show();
+            }
+        }
 
+        private void MenuItemClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTabbed));
             this.LogoImgBox = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -82,6 +83,9 @@
             this.lblMinimize = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Label();
             this.ofdAddApp = new System.Windows.Forms.OpenFileDialog();
+            this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.NotifyIconMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.panelMain.SuspendLayout();
             this.tablessControl.SuspendLayout();
@@ -100,6 +104,7 @@
             this.panel2.SuspendLayout();
             this.tabAddReminder.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
+            this.NotifyIconMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoImgBox
@@ -816,6 +821,34 @@
             this.ofdAddApp.InitialDirectory = "@\"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\"";
             this.ofdAddApp.ReadOnlyChecked = true;
             // 
+            // NotifyIcon
+            // 
+            this.NotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.NotifyIcon.BalloonTipText = "Lockdown";
+            this.NotifyIcon.BalloonTipTitle = "Lockdown";
+            this.NotifyIcon.ContextMenuStrip = this.NotifyIconMenu;
+            this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
+            this.NotifyIcon.Text = "Lockdown";
+            this.NotifyIcon.Visible = true;
+            this.NotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseClick);
+            // 
+            // NotifyIconMenu
+            // 
+            this.NotifyIconMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.HelpBalloon;
+            this.NotifyIconMenu.AllowMerge = false;
+            this.NotifyIconMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemClose});
+            this.NotifyIconMenu.Name = "NotifyIconMenu";
+            this.NotifyIconMenu.ShowImageMargin = false;
+            this.NotifyIconMenu.Size = new System.Drawing.Size(156, 48);
+            // 
+            // MenuItemClose
+            // 
+            this.MenuItemClose.Name = "MenuItemClose";
+            this.MenuItemClose.Size = new System.Drawing.Size(155, 22);
+            this.MenuItemClose.Text = "Close";
+            this.MenuItemClose.Click += new System.EventHandler(this.MenuItemClose_Click);
+            // 
             // frmTabbed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -854,6 +887,7 @@
             this.tabAddReminder.PerformLayout();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
+            this.NotifyIconMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -913,5 +947,8 @@
         private System.Windows.Forms.TextBox txtNewReminderName;
         private System.Windows.Forms.Label lblHowOften;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.NotifyIcon NotifyIcon;
+        private System.Windows.Forms.ContextMenuStrip NotifyIconMenu;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemClose;
     }
 }
