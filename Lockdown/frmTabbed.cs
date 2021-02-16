@@ -18,6 +18,10 @@ namespace Lockdown
         {
             InitializeComponent();
 
+            //make sure to create files and directories if first time running app
+            Profiles profile = new Profiles();
+            profile.CreateSaveFiles();
+
             //Profiles
             PopulateProfilesBox();
 
@@ -69,6 +73,18 @@ namespace Lockdown
             tablessControl.SelectedTab = tabAddReminder;
         }
 
+        private void btnScheduler_Click(object sender, EventArgs e)
+        {
+            tablessControl.SelectedTab = tabScheduler;
+        }
+
+        private void calendarScheduler_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            dateStart.Value = calendarScheduler.SelectionStart;
+            dateEnd.Value = calendarScheduler.SelectionEnd;
+            tablessControl.SelectedTab = tabSetSchedule;
+        }
+
         private void tablessControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             //hide back button if already on main page
@@ -80,6 +96,21 @@ namespace Lockdown
             {
                 lblBack.Visible = true;
             }
+        }
+
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            //if clicked with left mouse
+            if (e.Button == MouseButtons.Left)
+            {
+                //Show main form
+                this.Show();
+            }
+        }
+
+        private void MenuItemClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         #endregion
@@ -383,6 +414,9 @@ namespace Lockdown
                 btnStopProfile.Visible = false;
                 BlockedAppPanel.Visible = true;
                 BlockedWebPanel.Visible = true;
+
+                //let user use scheduler
+                panelChooseProfile.Visible = false;
             }
             else // choosing index 0
             {
@@ -390,6 +424,9 @@ namespace Lockdown
                 btnStopProfile.Visible = true;
                 BlockedAppPanel.Visible = false;
                 BlockedWebPanel.Visible = false;
+
+                //block scheduler when no profile is selected
+                panelChooseProfile.Visible = true;
             }
         }
 
@@ -649,21 +686,44 @@ namespace Lockdown
         }
 
 
+
         #endregion
 
-        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        #region Scheduler
+
+        private const string SCHEDULER_FILE_PATH = @"C:\Program Files\Lockdown\Scheduler\Scheduler.json";
+
+        // METHODS \\
+        private void SetSchedule()
         {
-            //if clicked with left mouse
-            if (e.Button == MouseButtons.Left)
-            {
-                //Show main form
-                this.Show();
-            }
+            //set all properties
+            Scheduler setSchedule = new Scheduler();
+            setSchedule.profile = cbProfiles.Text;
+            setSchedule.dateStart = dateStart.Value;
+            setSchedule.dateEnd = dateEnd.Value;
+            setSchedule.timeStart = timeStart.Value;
+            setSchedule.timeEnd = timeEnd.Value;
+
+            //Save to JSON
+            string jsonString = JsonSerializer.Serialize(setSchedule);
+            System.IO.File.AppendAllText(SCHEDULER_FILE_PATH, jsonString + '\n');
+
         }
 
-        private void MenuItemClose_Click(object sender, EventArgs e)
+        // EVENTS \\
+        private void btnCancelSetSchedule_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            tablessControl.SelectedTab = tabScheduler;
         }
+
+        private void btnSaveSetSchedule_Click(object sender, EventArgs e)
+        {
+            SetSchedule();
+            tablessControl.SelectedTab = tabScheduler;
+        }
+
+        #endregion
+
+
     }
 }

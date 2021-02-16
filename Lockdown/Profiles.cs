@@ -86,6 +86,14 @@ namespace Lockdown
                 System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Profiles\ProfilesList.txt", string.Empty);
             }
 
+            // **Scheduler - Create Directory and File** \\
+            if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Scheduler"))
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Program Files\Lockdown\Scheduler");
+                // create JSON file
+                System.IO.File.WriteAllText(@"C:\Program Files\Lockdown\Scheduler\Scheduler.json", string.Empty);
+            }
+
             // **Scripts** \\
             List<string> scriptFiles = new List<string>
                 {

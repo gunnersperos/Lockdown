@@ -40,13 +40,13 @@
             this.btnScheduler = new System.Windows.Forms.Button();
             this.btnProfiles = new System.Windows.Forms.Button();
             this.tabProfiles = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLocked = new System.Windows.Forms.Panel();
             this.btnStopProfile = new System.Windows.Forms.Button();
             this.pictureLockDown = new System.Windows.Forms.PictureBox();
             this.lblProfileLocked = new System.Windows.Forms.Label();
-            this.panelProfile = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnStartProfile = new System.Windows.Forms.Button();
+            this.panelProfile = new System.Windows.Forms.Panel();
             this.btnNewProfile = new System.Windows.Forms.Button();
             this.cbProfiles = new System.Windows.Forms.ComboBox();
             this.lblProfile = new System.Windows.Forms.Label();
@@ -78,6 +78,23 @@
             this.txtNewReminderName = new System.Windows.Forms.TextBox();
             this.lblHowOften = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.tabScheduler = new System.Windows.Forms.TabPage();
+            this.panelChooseProfile = new System.Windows.Forms.Panel();
+            this.lblChooseProfile = new System.Windows.Forms.Label();
+            this.calendarScheduler = new System.Windows.Forms.MonthCalendar();
+            this.tabSetSchedule = new System.Windows.Forms.TabPage();
+            this.cboRepeat = new System.Windows.Forms.ComboBox();
+            this.lblRepeat = new System.Windows.Forms.Label();
+            this.lblEndTime = new System.Windows.Forms.Label();
+            this.timeEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            this.timeStart = new System.Windows.Forms.DateTimePicker();
+            this.dateEnd = new System.Windows.Forms.DateTimePicker();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.dateStart = new System.Windows.Forms.DateTimePicker();
+            this.btnSaveSetSchedule = new System.Windows.Forms.Button();
+            this.btnCancelSetSchedule = new System.Windows.Forms.Button();
+            this.lblStartDate = new System.Windows.Forms.Label();
             this.FormControlPanel = new System.Windows.Forms.Panel();
             this.lblBack = new System.Windows.Forms.Label();
             this.lblMinimize = new System.Windows.Forms.Label();
@@ -92,9 +109,9 @@
             this.tabMain.SuspendLayout();
             this.NavigationPanel.SuspendLayout();
             this.tabProfiles.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelLocked.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panelProfile.SuspendLayout();
             this.BlockedWebPanel.SuspendLayout();
             this.BlockedAppPanel.SuspendLayout();
@@ -103,6 +120,9 @@
             this.ContentPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabAddReminder.SuspendLayout();
+            this.tabScheduler.SuspendLayout();
+            this.panelChooseProfile.SuspendLayout();
+            this.tabSetSchedule.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.NotifyIconMenu.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +153,8 @@
             this.tablessControl.Controls.Add(this.tabAddProfile);
             this.tablessControl.Controls.Add(this.tabReminders);
             this.tablessControl.Controls.Add(this.tabAddReminder);
+            this.tablessControl.Controls.Add(this.tabScheduler);
+            this.tablessControl.Controls.Add(this.tabSetSchedule);
             this.tablessControl.ItemSize = new System.Drawing.Size(0, 1);
             this.tablessControl.Location = new System.Drawing.Point(4, 23);
             this.tablessControl.Name = "tablessControl";
@@ -215,6 +237,7 @@
             this.btnScheduler.TabIndex = 2;
             this.btnScheduler.Text = "Scheduler";
             this.btnScheduler.UseVisualStyleBackColor = false;
+            this.btnScheduler.Click += new System.EventHandler(this.btnScheduler_Click);
             // 
             // btnProfiles
             // 
@@ -245,18 +268,6 @@
             this.tabProfiles.Size = new System.Drawing.Size(516, 405);
             this.tabProfiles.TabIndex = 1;
             this.tabProfiles.Text = "tabPage2";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnStartProfile);
-            this.panel1.Controls.Add(this.panelProfile);
-            this.panel1.Controls.Add(this.BlockedWebPanel);
-            this.panel1.Controls.Add(this.BlockedAppPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(510, 399);
-            this.panel1.TabIndex = 6;
             // 
             // panelLocked
             // 
@@ -308,16 +319,17 @@
             this.lblProfileLocked.TabIndex = 0;
             this.lblProfileLocked.Text = "Profile on Lockdown";
             // 
-            // panelProfile
+            // panel1
             // 
-            this.panelProfile.Controls.Add(this.btnNewProfile);
-            this.panelProfile.Controls.Add(this.cbProfiles);
-            this.panelProfile.Controls.Add(this.lblProfile);
-            this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProfile.Location = new System.Drawing.Point(0, 0);
-            this.panelProfile.Name = "panelProfile";
-            this.panelProfile.Size = new System.Drawing.Size(510, 94);
-            this.panelProfile.TabIndex = 5;
+            this.panel1.Controls.Add(this.btnStartProfile);
+            this.panel1.Controls.Add(this.panelProfile);
+            this.panel1.Controls.Add(this.BlockedWebPanel);
+            this.panel1.Controls.Add(this.BlockedAppPanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(510, 399);
+            this.panel1.TabIndex = 6;
             // 
             // btnStartProfile
             // 
@@ -336,6 +348,17 @@
             this.btnStartProfile.UseVisualStyleBackColor = false;
             this.btnStartProfile.Visible = false;
             this.btnStartProfile.Click += new System.EventHandler(this.btnStartProfile_Click);
+            // 
+            // panelProfile
+            // 
+            this.panelProfile.Controls.Add(this.btnNewProfile);
+            this.panelProfile.Controls.Add(this.cbProfiles);
+            this.panelProfile.Controls.Add(this.lblProfile);
+            this.panelProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelProfile.Location = new System.Drawing.Point(0, 0);
+            this.panelProfile.Name = "panelProfile";
+            this.panelProfile.Size = new System.Drawing.Size(510, 94);
+            this.panelProfile.TabIndex = 5;
             // 
             // btnNewProfile
             // 
@@ -765,6 +788,198 @@
             this.lblName.TabIndex = 11;
             this.lblName.Text = "Name:";
             // 
+            // tabScheduler
+            // 
+            this.tabScheduler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.tabScheduler.Controls.Add(this.panelChooseProfile);
+            this.tabScheduler.Controls.Add(this.calendarScheduler);
+            this.tabScheduler.Location = new System.Drawing.Point(4, 5);
+            this.tabScheduler.Name = "tabScheduler";
+            this.tabScheduler.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScheduler.Size = new System.Drawing.Size(516, 405);
+            this.tabScheduler.TabIndex = 5;
+            this.tabScheduler.Text = "Scheduler";
+            // 
+            // panelChooseProfile
+            // 
+            this.panelChooseProfile.Controls.Add(this.lblChooseProfile);
+            this.panelChooseProfile.Location = new System.Drawing.Point(17, 24);
+            this.panelChooseProfile.Name = "panelChooseProfile";
+            this.panelChooseProfile.Size = new System.Drawing.Size(482, 359);
+            this.panelChooseProfile.TabIndex = 2;
+            // 
+            // lblChooseProfile
+            // 
+            this.lblChooseProfile.AutoSize = true;
+            this.lblChooseProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblChooseProfile.Location = new System.Drawing.Point(3, 104);
+            this.lblChooseProfile.Name = "lblChooseProfile";
+            this.lblChooseProfile.Size = new System.Drawing.Size(478, 92);
+            this.lblChooseProfile.TabIndex = 0;
+            this.lblChooseProfile.Text = "Please Choose A Profile\nFrom the Profiles Page";
+            // 
+            // calendarScheduler
+            // 
+            this.calendarScheduler.CalendarDimensions = new System.Drawing.Size(2, 2);
+            this.calendarScheduler.Location = new System.Drawing.Point(29, 47);
+            this.calendarScheduler.Name = "calendarScheduler";
+            this.calendarScheduler.ShowTodayCircle = false;
+            this.calendarScheduler.TabIndex = 1;
+            this.calendarScheduler.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendarScheduler_DateSelected);
+            // 
+            // tabSetSchedule
+            // 
+            this.tabSetSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.tabSetSchedule.Controls.Add(this.cboRepeat);
+            this.tabSetSchedule.Controls.Add(this.lblRepeat);
+            this.tabSetSchedule.Controls.Add(this.lblEndTime);
+            this.tabSetSchedule.Controls.Add(this.timeEnd);
+            this.tabSetSchedule.Controls.Add(this.lblStartTime);
+            this.tabSetSchedule.Controls.Add(this.timeStart);
+            this.tabSetSchedule.Controls.Add(this.dateEnd);
+            this.tabSetSchedule.Controls.Add(this.lblEndDate);
+            this.tabSetSchedule.Controls.Add(this.dateStart);
+            this.tabSetSchedule.Controls.Add(this.btnSaveSetSchedule);
+            this.tabSetSchedule.Controls.Add(this.btnCancelSetSchedule);
+            this.tabSetSchedule.Controls.Add(this.lblStartDate);
+            this.tabSetSchedule.Location = new System.Drawing.Point(4, 5);
+            this.tabSetSchedule.Name = "tabSetSchedule";
+            this.tabSetSchedule.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSetSchedule.Size = new System.Drawing.Size(516, 405);
+            this.tabSetSchedule.TabIndex = 6;
+            this.tabSetSchedule.Text = "SetSchedule";
+            // 
+            // cboRepeat
+            // 
+            this.cboRepeat.FormattingEnabled = true;
+            this.cboRepeat.Location = new System.Drawing.Point(125, 229);
+            this.cboRepeat.Name = "cboRepeat";
+            this.cboRepeat.Size = new System.Drawing.Size(121, 21);
+            this.cboRepeat.TabIndex = 32;
+            // 
+            // lblRepeat
+            // 
+            this.lblRepeat.AutoSize = true;
+            this.lblRepeat.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblRepeat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblRepeat.Location = new System.Drawing.Point(26, 228);
+            this.lblRepeat.Name = "lblRepeat";
+            this.lblRepeat.Size = new System.Drawing.Size(70, 23);
+            this.lblRepeat.TabIndex = 31;
+            this.lblRepeat.Text = "Repeat:";
+            // 
+            // lblEndTime
+            // 
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblEndTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblEndTime.Location = new System.Drawing.Point(26, 185);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(84, 23);
+            this.lblEndTime.TabIndex = 30;
+            this.lblEndTime.Text = "End Time:";
+            // 
+            // timeEnd
+            // 
+            this.timeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeEnd.Location = new System.Drawing.Point(125, 188);
+            this.timeEnd.Name = "timeEnd";
+            this.timeEnd.Size = new System.Drawing.Size(86, 20);
+            this.timeEnd.TabIndex = 29;
+            this.timeEnd.Value = new System.DateTime(2020, 10, 22, 13, 9, 0, 0);
+            // 
+            // lblStartTime
+            // 
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblStartTime.Location = new System.Drawing.Point(26, 144);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(95, 23);
+            this.lblStartTime.TabIndex = 28;
+            this.lblStartTime.Text = "Start Time:";
+            // 
+            // timeStart
+            // 
+            this.timeStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeStart.Location = new System.Drawing.Point(125, 147);
+            this.timeStart.Name = "timeStart";
+            this.timeStart.Size = new System.Drawing.Size(86, 20);
+            this.timeStart.TabIndex = 27;
+            this.timeStart.Value = new System.DateTime(2020, 10, 22, 13, 9, 0, 0);
+            // 
+            // dateEnd
+            // 
+            this.dateEnd.Location = new System.Drawing.Point(125, 99);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.Size = new System.Drawing.Size(197, 20);
+            this.dateEnd.TabIndex = 26;
+            // 
+            // lblEndDate
+            // 
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblEndDate.Location = new System.Drawing.Point(26, 97);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(82, 23);
+            this.lblEndDate.TabIndex = 25;
+            this.lblEndDate.Text = "End Date:";
+            // 
+            // dateStart
+            // 
+            this.dateStart.Location = new System.Drawing.Point(125, 50);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Size = new System.Drawing.Size(197, 20);
+            this.dateStart.TabIndex = 24;
+            // 
+            // btnSaveSetSchedule
+            // 
+            this.btnSaveSetSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnSaveSetSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSaveSetSchedule.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnSaveSetSchedule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnSaveSetSchedule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnSaveSetSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveSetSchedule.Font = new System.Drawing.Font("Impact", 16F);
+            this.btnSaveSetSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnSaveSetSchedule.Location = new System.Drawing.Point(274, 358);
+            this.btnSaveSetSchedule.Name = "btnSaveSetSchedule";
+            this.btnSaveSetSchedule.Size = new System.Drawing.Size(122, 41);
+            this.btnSaveSetSchedule.TabIndex = 23;
+            this.btnSaveSetSchedule.Text = "Save";
+            this.btnSaveSetSchedule.UseVisualStyleBackColor = false;
+            this.btnSaveSetSchedule.Click += new System.EventHandler(this.btnSaveSetSchedule_Click);
+            // 
+            // btnCancelSetSchedule
+            // 
+            this.btnCancelSetSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnCancelSetSchedule.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(66)))), ((int)(((byte)(86)))));
+            this.btnCancelSetSchedule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(72)))));
+            this.btnCancelSetSchedule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(58)))));
+            this.btnCancelSetSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelSetSchedule.Font = new System.Drawing.Font("Impact", 16F);
+            this.btnCancelSetSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.btnCancelSetSchedule.Location = new System.Drawing.Point(146, 358);
+            this.btnCancelSetSchedule.Name = "btnCancelSetSchedule";
+            this.btnCancelSetSchedule.Size = new System.Drawing.Size(122, 41);
+            this.btnCancelSetSchedule.TabIndex = 22;
+            this.btnCancelSetSchedule.Text = "Cancel";
+            this.btnCancelSetSchedule.UseVisualStyleBackColor = false;
+            this.btnCancelSetSchedule.Click += new System.EventHandler(this.btnCancelSetSchedule_Click);
+            // 
+            // lblStartDate
+            // 
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Impact", 14F);
+            this.lblStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblStartDate.Location = new System.Drawing.Point(26, 48);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(93, 23);
+            this.lblStartDate.TabIndex = 21;
+            this.lblStartDate.Text = "Start Date:";
+            // 
             // FormControlPanel
             // 
             this.FormControlPanel.Controls.Add(this.lblBack);
@@ -868,10 +1083,10 @@
             this.tabMain.ResumeLayout(false);
             this.NavigationPanel.ResumeLayout(false);
             this.tabProfiles.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panelLocked.ResumeLayout(false);
             this.panelLocked.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLockDown)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
             this.BlockedWebPanel.ResumeLayout(false);
@@ -885,6 +1100,11 @@
             this.panel2.PerformLayout();
             this.tabAddReminder.ResumeLayout(false);
             this.tabAddReminder.PerformLayout();
+            this.tabScheduler.ResumeLayout(false);
+            this.panelChooseProfile.ResumeLayout(false);
+            this.panelChooseProfile.PerformLayout();
+            this.tabSetSchedule.ResumeLayout(false);
+            this.tabSetSchedule.PerformLayout();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.NotifyIconMenu.ResumeLayout(false);
@@ -950,5 +1170,22 @@
         private System.Windows.Forms.NotifyIcon NotifyIcon;
         private System.Windows.Forms.ContextMenuStrip NotifyIconMenu;
         private System.Windows.Forms.ToolStripMenuItem MenuItemClose;
+        private System.Windows.Forms.TabPage tabScheduler;
+        private System.Windows.Forms.MonthCalendar calendarScheduler;
+        private System.Windows.Forms.TabPage tabSetSchedule;
+        private System.Windows.Forms.ComboBox cboRepeat;
+        private System.Windows.Forms.Label lblRepeat;
+        private System.Windows.Forms.Label lblEndTime;
+        private System.Windows.Forms.DateTimePicker timeEnd;
+        private System.Windows.Forms.Label lblStartTime;
+        private System.Windows.Forms.DateTimePicker timeStart;
+        private System.Windows.Forms.DateTimePicker dateEnd;
+        private System.Windows.Forms.Label lblEndDate;
+        private System.Windows.Forms.DateTimePicker dateStart;
+        private System.Windows.Forms.Button btnSaveSetSchedule;
+        private System.Windows.Forms.Button btnCancelSetSchedule;
+        private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.Panel panelChooseProfile;
+        private System.Windows.Forms.Label lblChooseProfile;
     }
 }
