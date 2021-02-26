@@ -48,7 +48,7 @@ namespace Lockdown
             // **General Lockdown Directory** \\
             if (System.IO.Directory.Exists(@"C:\Program Files\Lockdown"))
             {
-                //return; //dont need to run rest of method if these all already exist
+                return; //dont need to run rest of method if these all already exist
             }
             else
             {
@@ -98,7 +98,8 @@ namespace Lockdown
             List<string> scriptFiles = new List<string>
                 {
                 "BlockAppList.ps1",
-                "BlockSiteList.ps1"
+                "BlockSiteList.ps1",
+                "SetSchedule.ps1"
                 };
             if (!System.IO.Directory.Exists(@"C:\Program Files\Lockdown\Scripts"))
             {

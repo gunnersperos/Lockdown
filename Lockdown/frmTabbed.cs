@@ -706,7 +706,12 @@ namespace Lockdown
 
             //Save to JSON
             string jsonString = JsonSerializer.Serialize(setSchedule);
-            System.IO.File.AppendAllText(SCHEDULER_FILE_PATH, jsonString + '\n');
+            System.IO.File.WriteAllText(SCHEDULER_FILE_PATH, jsonString + '\n');
+
+            //Writing to ps1 file
+            setSchedule.ScheduleTask();
+
+
 
         }
 
