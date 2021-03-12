@@ -37,31 +37,46 @@ namespace Lockdown
 
         public void ScheduleTask()
         {
-            //DateTime twelveHourTime = timeStart;
             string scheduleTime = timeStart.TimeOfDay.ToString();
-            int minute = timeStart.Minute;
-            string minuteString = timeStart.Minute.ToString();
-            if (minute < 10)//if minute is less than 10, it's just one digit
+
+            //check if this is the first time aka creating the schedule or just changing it
+
+            bool isSchedulerEmpty = System.IO.File.ReadAllLines(SET_SCHEDULE_SCRIPT).Length > 0 ? false : true;
+
+            if (isSchedulerEmpty)
             {
-                minuteString = '0' + minute.ToString();
-            }
-            if (timeStart.Hour == 0) //12 something in the morning
-            {
-                scheduleTime = "12:" + minuteString + "am";    
-            }
-            else if(timeStart.Hour > 12) //1 or later in the afternoon
-            {
-                int newHour = timeStart.Hour - 12;
-                scheduleTime = newHour + ':' + minuteString + "pm";
-            }
-            else
-            {
-                scheduleTime += "am";
-            }
-            System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT,
+                //scheduler file is empty, so write script to create task schedule
+                System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT,
                   "$action = New-ScheduledTaskAction -Execute 'notepad.exe'" + '\n'
                   + "$trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek " + this.dateStart.DayOfWeek.ToString() + " -At " + scheduleTime + '\n'
                   + "Register-ScheduledTask -Action $action -Trigger $trigger -TaskPath \"Lockdown\" -TaskName \"ScheduleLockdown\" -Description \"This task schedules opening Lockdown to block your profile.\"" + '\n'
+            );
+            }
+            else
+            {
+                //scheduler file isn't empty, so write script to change task schedule
+                System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT,
+                  "$trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek " + this.dateStart.DayOfWeek.ToString() + " -At " + scheduleTime + '\n'
+                  + "Set-ScheduledTask -Trigger $trigger -TaskPath \"Lockdown\" -TaskName \"ScheduleLockdown\""
+            );
+            }
+            
+
+            //run ps script
+            var runScript = new ProcessStartInfo()
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-window minimize -NoProfile -ExecutionPolicy bypass -file \"{SET_SCHEDULE_SCRIPT}\"",
+                UseShellExecute = false
+            };
+            Process.Start(runScript);
+        }
+
+        public void DeleteTaskSchedule()
+        {
+            //write to ps file to delete task schedule
+            System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT,
+                  "Unregister-ScheduledTask -TaskName \"ScheduleLockdown\" -Confirm:$false"
             );
 
             //run ps script
@@ -72,6 +87,9 @@ namespace Lockdown
                 UseShellExecute = false
             };
             Process.Start(runScript);
+
+            //last thing to do so that the SetSchedule method will create the task next time it's ran
+            //System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT, string.Empty);
         }
     }
 }

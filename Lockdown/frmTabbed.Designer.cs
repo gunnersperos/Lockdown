@@ -80,8 +80,9 @@
             this.lblName = new System.Windows.Forms.Label();
             this.tabScheduler = new System.Windows.Forms.TabPage();
             this.panelChooseProfile = new System.Windows.Forms.Panel();
-            this.lblChooseProfile = new System.Windows.Forms.Label();
+            this.btnDeleteSchedule = new System.Windows.Forms.Button();
             this.calendarScheduler = new System.Windows.Forms.MonthCalendar();
+            this.lblChooseProfile = new System.Windows.Forms.Label();
             this.tabSetSchedule = new System.Windows.Forms.TabPage();
             this.cboRepeat = new System.Windows.Forms.ComboBox();
             this.lblRepeat = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyIconMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelScheduler = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.panelMain.SuspendLayout();
             this.tablessControl.SuspendLayout();
@@ -125,6 +127,7 @@
             this.tabSetSchedule.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.NotifyIconMenu.SuspendLayout();
+            this.panelScheduler.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoImgBox
@@ -792,7 +795,7 @@
             // 
             this.tabScheduler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.tabScheduler.Controls.Add(this.panelChooseProfile);
-            this.tabScheduler.Controls.Add(this.calendarScheduler);
+            this.tabScheduler.Controls.Add(this.panelScheduler);
             this.tabScheduler.Location = new System.Drawing.Point(4, 5);
             this.tabScheduler.Name = "tabScheduler";
             this.tabScheduler.Padding = new System.Windows.Forms.Padding(3);
@@ -803,10 +806,30 @@
             // panelChooseProfile
             // 
             this.panelChooseProfile.Controls.Add(this.lblChooseProfile);
-            this.panelChooseProfile.Location = new System.Drawing.Point(17, 24);
+            this.panelChooseProfile.Location = new System.Drawing.Point(17, 10);
             this.panelChooseProfile.Name = "panelChooseProfile";
             this.panelChooseProfile.Size = new System.Drawing.Size(482, 359);
             this.panelChooseProfile.TabIndex = 2;
+            // 
+            // btnDeleteSchedule
+            // 
+            this.btnDeleteSchedule.Location = new System.Drawing.Point(181, 234);
+            this.btnDeleteSchedule.Name = "btnDeleteSchedule";
+            this.btnDeleteSchedule.Size = new System.Drawing.Size(124, 61);
+            this.btnDeleteSchedule.TabIndex = 2;
+            this.btnDeleteSchedule.Text = "Delete Schedule";
+            this.btnDeleteSchedule.UseVisualStyleBackColor = true;
+            this.btnDeleteSchedule.Click += new System.EventHandler(this.btnDeleteSchedule_Click);
+            // 
+            // calendarScheduler
+            // 
+            this.calendarScheduler.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.calendarScheduler.Location = new System.Drawing.Point(9, 9);
+            this.calendarScheduler.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.calendarScheduler.Name = "calendarScheduler";
+            this.calendarScheduler.ShowTodayCircle = false;
+            this.calendarScheduler.TabIndex = 1;
+            this.calendarScheduler.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendarScheduler_DateSelected);
             // 
             // lblChooseProfile
             // 
@@ -818,15 +841,6 @@
             this.lblChooseProfile.Size = new System.Drawing.Size(478, 92);
             this.lblChooseProfile.TabIndex = 0;
             this.lblChooseProfile.Text = "Please Choose A Profile\nFrom the Profiles Page";
-            // 
-            // calendarScheduler
-            // 
-            this.calendarScheduler.CalendarDimensions = new System.Drawing.Size(2, 2);
-            this.calendarScheduler.Location = new System.Drawing.Point(29, 47);
-            this.calendarScheduler.Name = "calendarScheduler";
-            this.calendarScheduler.ShowTodayCircle = false;
-            this.calendarScheduler.TabIndex = 1;
-            this.calendarScheduler.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendarScheduler_DateSelected);
             // 
             // tabSetSchedule
             // 
@@ -857,6 +871,7 @@
             this.cboRepeat.Name = "cboRepeat";
             this.cboRepeat.Size = new System.Drawing.Size(121, 21);
             this.cboRepeat.TabIndex = 32;
+            this.cboRepeat.Visible = false;
             // 
             // lblRepeat
             // 
@@ -868,6 +883,7 @@
             this.lblRepeat.Size = new System.Drawing.Size(70, 23);
             this.lblRepeat.TabIndex = 31;
             this.lblRepeat.Text = "Repeat:";
+            this.lblRepeat.Visible = false;
             // 
             // lblEndTime
             // 
@@ -879,6 +895,7 @@
             this.lblEndTime.Size = new System.Drawing.Size(84, 23);
             this.lblEndTime.TabIndex = 30;
             this.lblEndTime.Text = "End Time:";
+            this.lblEndTime.Visible = false;
             // 
             // timeEnd
             // 
@@ -888,6 +905,7 @@
             this.timeEnd.Size = new System.Drawing.Size(86, 20);
             this.timeEnd.TabIndex = 29;
             this.timeEnd.Value = new System.DateTime(2020, 10, 22, 13, 9, 0, 0);
+            this.timeEnd.Visible = false;
             // 
             // lblStartTime
             // 
@@ -915,6 +933,7 @@
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(197, 20);
             this.dateEnd.TabIndex = 26;
+            this.dateEnd.Visible = false;
             // 
             // lblEndDate
             // 
@@ -926,6 +945,7 @@
             this.lblEndDate.Size = new System.Drawing.Size(82, 23);
             this.lblEndDate.TabIndex = 25;
             this.lblEndDate.Text = "End Date:";
+            this.lblEndDate.Visible = false;
             // 
             // dateStart
             // 
@@ -1064,6 +1084,15 @@
             this.MenuItemClose.Text = "Close";
             this.MenuItemClose.Click += new System.EventHandler(this.MenuItemClose_Click);
             // 
+            // panelScheduler
+            // 
+            this.panelScheduler.Controls.Add(this.btnDeleteSchedule);
+            this.panelScheduler.Controls.Add(this.calendarScheduler);
+            this.panelScheduler.Location = new System.Drawing.Point(23, 21);
+            this.panelScheduler.Name = "panelScheduler";
+            this.panelScheduler.Size = new System.Drawing.Size(476, 348);
+            this.panelScheduler.TabIndex = 3;
+            // 
             // frmTabbed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1108,6 +1137,7 @@
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.NotifyIconMenu.ResumeLayout(false);
+            this.panelScheduler.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1187,5 +1217,7 @@
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Panel panelChooseProfile;
         private System.Windows.Forms.Label lblChooseProfile;
+        private System.Windows.Forms.Button btnDeleteSchedule;
+        private System.Windows.Forms.Panel panelScheduler;
     }
 }

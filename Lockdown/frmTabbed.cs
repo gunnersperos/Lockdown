@@ -700,9 +700,9 @@ namespace Lockdown
             Scheduler setSchedule = new Scheduler();
             setSchedule.profile = cbProfiles.Text;
             setSchedule.dateStart = dateStart.Value;
-            setSchedule.dateEnd = dateEnd.Value;
+            //setSchedule.dateEnd = dateEnd.Value;
             setSchedule.timeStart = timeStart.Value;
-            setSchedule.timeEnd = timeEnd.Value;
+            //setSchedule.timeEnd = timeEnd.Value;
 
             //Save to JSON
             string jsonString = JsonSerializer.Serialize(setSchedule);
@@ -710,9 +710,6 @@ namespace Lockdown
 
             //Writing to ps1 file
             setSchedule.ScheduleTask();
-
-
-
         }
 
         // EVENTS \\
@@ -726,6 +723,14 @@ namespace Lockdown
             SetSchedule();
             tablessControl.SelectedTab = tabScheduler;
         }
+
+        private void btnDeleteSchedule_Click(object sender, EventArgs e)
+        {
+            //should have a confrimaton here but lapotop almst dead
+            Scheduler deleteSchedule = new Scheduler();
+            deleteSchedule.DeleteTaskSchedule();
+        }
+
 
         #endregion
 
