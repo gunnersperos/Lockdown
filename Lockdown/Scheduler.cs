@@ -42,14 +42,15 @@ namespace Lockdown
             //check if this is the first time aka creating the schedule or just changing it
 
             bool isSchedulerEmpty = System.IO.File.ReadAllLines(SET_SCHEDULE_SCRIPT).Length > 0 ? false : true;
-
+            string userName = Environment.UserName;
             if (isSchedulerEmpty)
             {
                 //scheduler file is empty, so write script to create task schedule
                 System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT,
-                  "$action = New-ScheduledTaskAction -Execute 'notepad.exe'" + '\n'
+                  "$principal = New-ScheduledTaskPrincipal -GroupId \"BUILTIN\\Administrators\" -RunLevel Highest" + '\n'
+                  + "$action = New-ScheduledTaskAction -Execute 'C:\\Program Files\\Lockdown\\Release\\Lockdown.exe'" + '\n'
                   + "$trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek " + this.dateStart.DayOfWeek.ToString() + " -At " + scheduleTime + '\n'
-                  + "Register-ScheduledTask -Action $action -Trigger $trigger -TaskPath \"Lockdown\" -TaskName \"ScheduleLockdown\" -Description \"This task schedules opening Lockdown to block your profile.\"" + '\n'
+                  + "Register-ScheduledTask -Principal $principal -Action $action -Trigger $trigger -TaskPath \"Lockdown\" -TaskName \"ScheduleLockdown\" -Description \"This task schedules opening Lockdown to block your profile.\"" + '\n'
             );
             }
             else
@@ -86,10 +87,11 @@ namespace Lockdown
                 Arguments = $"-window minimize -NoProfile -ExecutionPolicy bypass -file \"{SET_SCHEDULE_SCRIPT}\"",
                 UseShellExecute = false
             };
-            Process.Start(runScript);
+            Process process = Process.Start(runScript);
+            process.WaitForExit();
 
             //last thing to do so that the SetSchedule method will create the task next time it's ran
-            //System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT, string.Empty);
+            System.IO.File.WriteAllText(SET_SCHEDULE_SCRIPT, string.Empty);
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Lockdown
         public frmTabbed()
         {
             InitializeComponent();
+            //MessageBox.Show(this, string.Format("Launched via userStartup arg: {0}", Program.LaunchedByUser));
 
             //make sure to create files and directories if first time running app
             Profiles profile = new Profiles();
@@ -31,6 +32,9 @@ namespace Lockdown
 
             //Add Reminder
             PopulateAddReminderDropdowns();
+
+            //SCHEDULER LOCKDOWN
+            LockdownOnStartup();
 
 
             isLoading = false;
@@ -710,6 +714,20 @@ namespace Lockdown
 
             //Writing to ps1 file
             setSchedule.ScheduleTask();
+        }
+
+        private void LockdownOnStartup()
+        {
+            //IF BEING STARTED BY USER, DONT RUN
+            //IF BEING STARTED BY TASK SCHEDULER, ARGUMENT IS FALSE SO LOCK PROFILE
+            if (!Program.LaunchedByUser)
+            {
+                string[] jsonArray = System.IO.File.ReadAllLines(SCHEDULER_FILE_PATH);
+                Scheduler setSchedule = JsonSerializer.Deserialize<Scheduler>(jsonArray[0]);
+                cbProfiles.Text = setSchedule.profile;
+                GetProfileData();
+                StartProfile();
+            }
         }
 
         // EVENTS \\
