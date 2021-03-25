@@ -104,9 +104,9 @@
             this.lblURL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.lblURL.Location = new System.Drawing.Point(12, 16);
             this.lblURL.Name = "lblURL";
-            this.lblURL.Size = new System.Drawing.Size(146, 27);
+            this.lblURL.Size = new System.Drawing.Size(89, 27);
             this.lblURL.TabIndex = 0;
-            this.lblURL.Text = "URL of Website:";
+            this.lblURL.Text = "Website:";
             // 
             // frmBlockWebsite
             // 

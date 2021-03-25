@@ -28,6 +28,7 @@ namespace Lockdown
 
             //Reminders
             UpdateMyRemindersList();
+            LoadDefaultReminders();
             StartReminders();
 
             //Add Reminder
@@ -527,6 +528,38 @@ namespace Lockdown
             }
         }
 
+        private void WriteDefaultReminders()
+        {
+            //weird name because i thougtht this would be writing to json file but thats not needed
+            Reminder getWater = new Reminder("Get Water", false, 30, 30, 0);
+            Reminder goWalk = new Reminder("Go for a walk", false, 30, 30, 0);
+            Reminder stretch = new Reminder("Stretch", false, 60, 60, 0);
+
+            _defaultReminders.Add(getWater);
+            _defaultReminders.Add(goWalk);
+            _defaultReminders.Add(stretch);
+
+            //Reminder test = new Reminder("test", false, 1, 1, 0);
+            //_defaultReminders.Add(test);
+        }
+
+        private void LoadDefaultReminders()
+        {
+            WriteDefaultReminders();
+            //string[] jsonArray = System.IO.File.ReadAllLines(REMINDERS_DEFAULT_FILE_PATH);
+            //foreach (var line in jsonArray)
+            //{
+            //    Reminder tempReminder = JsonSerializer.Deserialize<Reminder>(line);
+            //    _defaultReminders.Add(tempReminder);
+            //}
+            foreach (var reminder in _defaultReminders)
+            {
+                clbDefaultReminders.Items.Add(reminder.name);
+            }
+        }
+
+        
+
         private void LoadMyReminders()
         {
             _myReminders.Clear();
@@ -567,6 +600,12 @@ namespace Lockdown
             }
         }
 
+        private void UpdateDefaultReminderOnOff(int reminderIndex, CheckState reminderSwitch)
+        {
+            //changes the reminder object enabled field then updates the clbMyReminders
+            _defaultReminders[reminderIndex].isReminderOn = CheckStateToBool(reminderSwitch);
+        }
+
         private bool CheckStateToBool(CheckState checkState)
         {
             // just converting CheckState object to bool
@@ -602,6 +641,12 @@ namespace Lockdown
         private void clbMyReminders_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.isListClicked = false;
+        }
+
+        private void clbDefaultReminders_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            UpdateDefaultReminderOnOff(e.Index, e.NewValue);
+            _defaultReminders[e.Index].StartStopReminder(e.NewValue);
         }
 
         #endregion
@@ -750,8 +795,9 @@ namespace Lockdown
         }
 
 
+
         #endregion
 
-
+        
     }
 }

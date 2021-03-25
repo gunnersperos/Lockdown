@@ -80,9 +80,10 @@
             this.lblName = new System.Windows.Forms.Label();
             this.tabScheduler = new System.Windows.Forms.TabPage();
             this.panelChooseProfile = new System.Windows.Forms.Panel();
+            this.lblChooseProfile = new System.Windows.Forms.Label();
+            this.panelScheduler = new System.Windows.Forms.Panel();
             this.btnDeleteSchedule = new System.Windows.Forms.Button();
             this.calendarScheduler = new System.Windows.Forms.MonthCalendar();
-            this.lblChooseProfile = new System.Windows.Forms.Label();
             this.tabSetSchedule = new System.Windows.Forms.TabPage();
             this.cboRepeat = new System.Windows.Forms.ComboBox();
             this.lblRepeat = new System.Windows.Forms.Label();
@@ -104,7 +105,6 @@
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyIconMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelScheduler = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImgBox)).BeginInit();
             this.panelMain.SuspendLayout();
             this.tablessControl.SuspendLayout();
@@ -124,10 +124,10 @@
             this.tabAddReminder.SuspendLayout();
             this.tabScheduler.SuspendLayout();
             this.panelChooseProfile.SuspendLayout();
+            this.panelScheduler.SuspendLayout();
             this.tabSetSchedule.SuspendLayout();
             this.FormControlPanel.SuspendLayout();
             this.NotifyIconMenu.SuspendLayout();
-            this.panelScheduler.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoImgBox
@@ -279,7 +279,7 @@
             this.panelLocked.Controls.Add(this.lblProfileLocked);
             this.panelLocked.Location = new System.Drawing.Point(3, 89);
             this.panelLocked.Name = "panelLocked";
-            this.panelLocked.Size = new System.Drawing.Size(510, 316);
+            this.panelLocked.Size = new System.Drawing.Size(536, 316);
             this.panelLocked.TabIndex = 6;
             this.panelLocked.Visible = false;
             // 
@@ -668,6 +668,7 @@
             this.clbDefaultReminders.Name = "clbDefaultReminders";
             this.clbDefaultReminders.Size = new System.Drawing.Size(243, 268);
             this.clbDefaultReminders.TabIndex = 3;
+            this.clbDefaultReminders.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbDefaultReminders_ItemCheck);
             // 
             // lblAddReminder
             // 
@@ -811,6 +812,26 @@
             this.panelChooseProfile.Size = new System.Drawing.Size(482, 359);
             this.panelChooseProfile.TabIndex = 2;
             // 
+            // lblChooseProfile
+            // 
+            this.lblChooseProfile.AutoSize = true;
+            this.lblChooseProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.lblChooseProfile.Location = new System.Drawing.Point(3, 104);
+            this.lblChooseProfile.Name = "lblChooseProfile";
+            this.lblChooseProfile.Size = new System.Drawing.Size(478, 92);
+            this.lblChooseProfile.TabIndex = 0;
+            this.lblChooseProfile.Text = "Please Choose A Profile\nFrom the Profiles Page";
+            // 
+            // panelScheduler
+            // 
+            this.panelScheduler.Controls.Add(this.btnDeleteSchedule);
+            this.panelScheduler.Controls.Add(this.calendarScheduler);
+            this.panelScheduler.Location = new System.Drawing.Point(23, 21);
+            this.panelScheduler.Name = "panelScheduler";
+            this.panelScheduler.Size = new System.Drawing.Size(476, 348);
+            this.panelScheduler.TabIndex = 3;
+            // 
             // btnDeleteSchedule
             // 
             this.btnDeleteSchedule.Location = new System.Drawing.Point(181, 234);
@@ -830,17 +851,6 @@
             this.calendarScheduler.ShowTodayCircle = false;
             this.calendarScheduler.TabIndex = 1;
             this.calendarScheduler.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendarScheduler_DateSelected);
-            // 
-            // lblChooseProfile
-            // 
-            this.lblChooseProfile.AutoSize = true;
-            this.lblChooseProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChooseProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.lblChooseProfile.Location = new System.Drawing.Point(3, 104);
-            this.lblChooseProfile.Name = "lblChooseProfile";
-            this.lblChooseProfile.Size = new System.Drawing.Size(478, 92);
-            this.lblChooseProfile.TabIndex = 0;
-            this.lblChooseProfile.Text = "Please Choose A Profile\nFrom the Profiles Page";
             // 
             // tabSetSchedule
             // 
@@ -1084,15 +1094,6 @@
             this.MenuItemClose.Text = "Close";
             this.MenuItemClose.Click += new System.EventHandler(this.MenuItemClose_Click);
             // 
-            // panelScheduler
-            // 
-            this.panelScheduler.Controls.Add(this.btnDeleteSchedule);
-            this.panelScheduler.Controls.Add(this.calendarScheduler);
-            this.panelScheduler.Location = new System.Drawing.Point(23, 21);
-            this.panelScheduler.Name = "panelScheduler";
-            this.panelScheduler.Size = new System.Drawing.Size(476, 348);
-            this.panelScheduler.TabIndex = 3;
-            // 
             // frmTabbed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1132,12 +1133,12 @@
             this.tabScheduler.ResumeLayout(false);
             this.panelChooseProfile.ResumeLayout(false);
             this.panelChooseProfile.PerformLayout();
+            this.panelScheduler.ResumeLayout(false);
             this.tabSetSchedule.ResumeLayout(false);
             this.tabSetSchedule.PerformLayout();
             this.FormControlPanel.ResumeLayout(false);
             this.FormControlPanel.PerformLayout();
             this.NotifyIconMenu.ResumeLayout(false);
-            this.panelScheduler.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
